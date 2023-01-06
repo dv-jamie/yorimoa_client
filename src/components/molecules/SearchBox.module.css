@@ -6,7 +6,7 @@
 .search_wrap {
     display: flex;
     justify-content: space-between;
-    margin: 0 auto calc(24px - 25px) ;
+    margin-bottom: calc(24px - 25px) ;
     background: #fff;
     border-radius: var(--double-unit);
     box-shadow: var(--box-shadow);
