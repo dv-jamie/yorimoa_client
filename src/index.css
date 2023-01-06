@@ -1,7 +1,7 @@
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard-dynamic-subset.css");
 
 :root {
-	--standard-padding: 16px;
+	--standard-space: 16px;
 	--border-radius: 16px;
 	--box-shadow: 2px 2px 8px 4px rgb(0, 0, 0, 0.04);
 	--main-gray: #646464;
