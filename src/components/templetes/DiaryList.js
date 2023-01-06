@@ -1,7 +1,11 @@
+import styles from "./DiaryList.module.css";
+import DiaryCard from "../molecules/DiaryCard";
+ 
 function DiaryList() {
     return (
-        <div>
-            다이어리리스트
+        <div className={styles.container}>
+            <DiaryCard />
+            <DiaryCard />
         </div>
     );
 }

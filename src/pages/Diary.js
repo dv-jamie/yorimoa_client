@@ -1,9 +1,11 @@
-import Banner from "../components/templetes/Banner";
+import DiaryHeader from "../components/templetes/DiaryHeader";
+import DiaryList from "../components/templetes/DiaryList";
 
 function Diary() {
     return (
         <div>
-            <Banner type="diary" />
+            <DiaryHeader />
+            <DiaryList />
         </div>
     );
 }
