@@ -12,7 +12,7 @@ import Layout from './components/templetes/Layout';
 function App() {
   return (
     <>
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.BASE_URL}>
         <Routes>
           <Route element={<Layout />}>
               <Route path="/" element={<Diary />}></Route>
