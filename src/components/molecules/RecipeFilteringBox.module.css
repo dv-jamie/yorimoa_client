@@ -1,13 +1,13 @@
 .container {
-    padding: 0 var(--double-unit);
+    padding: 0 var(--quadruple-unit);
 }
 .filter_item_wrap {
-    margin-bottom: var(--triple-unit);
+    margin-bottom: var(--sextuple-unit);
 }
 .filter_item_wrap > li {
     display: inline-block;
-    padding: var(--standard-unit) 12px;
-    margin-right: var(--half-unit);
+    padding: var(--double-unit) 12px;
+    margin-right: var(--standard-unit);
     border: 1px solid var(--lightest-gray);
     border-radius: 24px;
     font-size: 12px;
@@ -20,10 +20,10 @@
 }
 .sorting_wrap {
     display: flex;
-    margin-bottom: var(--standard-unit);
+    margin-bottom: var(--double-unit);
 }
 .sorting_wrap > span {
-    margin-left: var(--quarter-unit);
+    margin-left: var(--half-unit);
     font-size: 12px;
     font-weight: 500;
 }

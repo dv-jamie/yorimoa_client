@@ -1,4 +1,4 @@
-import FilteringBox from "../molecules/FilteringBox";
+import RecipeFilteringBox from "../molecules/RecipeFilteringBox";
 import SearchBox from "../molecules/SearchBox";
 import Banner from "./Banner";
 
@@ -7,7 +7,7 @@ function RecipeHeader() {
         <div>
             <Banner type="recipe" />
             <SearchBox />
-            <FilteringBox />
+            <RecipeFilteringBox />
         </div>
     );
 }

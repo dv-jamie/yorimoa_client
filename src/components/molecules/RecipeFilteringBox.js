@@ -1,4 +1,4 @@
-import styles from "./FilteringBox.module.css";
+import styles from "./RecipeFilteringBox.module.css";
 import arrowDownIcon from "../../assets/icons/arrowDownIcon.png"
 
 function FilteringBox() {
