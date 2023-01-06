@@ -1,6 +1,6 @@
 .container {
     height: 196px;
-    padding: 54px var(--double-unit) 0;
+    padding: 54px var(--quadruple-unit) 0;
     background-size: cover;
 }
 .container_recipe {
@@ -19,5 +19,5 @@
     line-height: 38px;
 }
 .sub_title {
-    margin-top: var(--standard-unit);
+    margin-top: var(--double-unit);
 }

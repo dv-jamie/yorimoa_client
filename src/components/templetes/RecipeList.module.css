@@ -1,6 +1,6 @@
 .container {
     display: flex;
-    gap: 12px;
+    gap: var(--triple-unit);
     flex-wrap: wrap;
-    padding: 0 var(--double-unit) 65px;
+    padding: 0 var(--quadruple-unit) 65px;
 }

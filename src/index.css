@@ -1,12 +1,13 @@
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard-dynamic-subset.css");
 
 :root {
-	--quarter-unit: 2px;
-	--half-unit: 4px;
-	--standard-unit: 8px;
-	--double-unit: 16px;
-	--triple-unit: 24px;
-	--border-radius: 16px;
+	--half-unit: 2px;
+	--standard-unit: 4px;
+	--double-unit: 8px;
+	--triple-unit: 12px;
+	--quadruple-unit: 16px;
+	--sextuple-unit: 24px;
+	--octuple-unit: 32px;
 	--box-shadow: 2px 2px 8px 4px rgb(0, 0, 0, 0.04);
 	--main-orange: #E25E21;
 	--dark-gray: #646464;
@@ -75,7 +76,7 @@ table {
 
 /* scrollbar*/
 ::-webkit-scrollbar {
-	width: var(--standard-unit);
+	width: var(--double-unit);
 }
 ::-webkit-scrollbar-track {
 	background: var(--lightest-gray);

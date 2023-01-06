@@ -1,20 +1,20 @@
 .container {
     position: relative;
     top: -25px;
-    padding: 0 var(--double-unit);
+    padding: 0 var(--quadruple-unit);
 }
 .search_wrap {
     display: flex;
     justify-content: space-between;
     margin-bottom: calc(24px - 25px) ;
     background: #fff;
-    border-radius: var(--double-unit);
+    border-radius: var(--quadruple-unit);
     box-shadow: var(--box-shadow);
     overflow: hidden;
 }
 .search_wrap > input {
     width: 88%;
-    padding: 20px var(--double-unit);
+    padding: 20px var(--quadruple-unit);
     border: none;
     outline: none;
 }
@@ -24,6 +24,6 @@
 .search_wrap > img {
     width: 24px;
     height: 24px;
-    margin: var(--double-unit);
+    margin: var(--quadruple-unit);
     cursor: pointer;
 }
