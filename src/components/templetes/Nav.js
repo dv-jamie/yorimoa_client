@@ -1,18 +1,25 @@
 import { Link } from "react-router-dom";
+import styles from "./Nav.module.css";
 
 function Nav() {
     return (
-        <nav className='side-navi'>
-            <li>
-                <Link to='/diary'>일기</Link>
-            </li>
-            <li>
-                작성
-            </li>
-            <li>
-                <Link to='/recipe'>매칭 관리</Link>
-            </li>
-        </nav>
+        <div className={styles.container}>
+            <ul>
+                <li>
+                    <Link to='/diary'>
+                        <i>일기</i>
+                    </Link>
+                </li>
+                <li>
+                    <i>작성</i>
+                </li>
+                <li>
+                    <Link to='/recipe'>
+                        <i>레시피</i>
+                    </Link>
+                </li>
+            </ul>
+        </div>
     );
 }
 
