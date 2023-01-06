@@ -1,0 +1,23 @@
+.container {
+    height: 196px;
+    padding: 54px var(--standard-padding) 0;
+    background-size: cover;
+}
+.container_recipe {
+    background: url('../../assets/images/recipeBannerImage.png');
+}
+.container_diary {
+    background: url('../../assets/images/diaryBannerImage.png');
+}
+.title_wrap {
+    color: #fff;
+    white-space: pre-line;
+}
+.title {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 38px;
+}
+.sub_title {
+    margin-top: 8px;
+}
