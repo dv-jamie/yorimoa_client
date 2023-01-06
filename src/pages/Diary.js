@@ -1,7 +1,9 @@
+import Banner from "../components/templetes/Banner";
+
 function Diary() {
     return (
         <div>
-            요리일기 페이지
+            <Banner type="diary" />
         </div>
     );
 }

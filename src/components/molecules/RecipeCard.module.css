@@ -1,0 +1,40 @@
+.container {
+    width: 158px;
+    height: 233px;
+    background: #fff;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+.image_wrap {
+    position: relative;
+    height: 156px;
+}
+.image_wrap > img {
+    width: 100%;
+}
+.recipe_count {
+    position: absolute;
+    top: var(--standard-unit);
+    right: var(--standard-unit);
+    width: 23px;
+    height: 14px;
+    background: #fff;
+    border-radius: 4px;
+    color: var(--dark-gray);
+    font-size: 10px;
+    font-weight: 500;
+    overflow: hidden;
+}
+.content_wrap {
+    padding: var(--standard-unit);
+}
+.title {
+    font-weight: 600;
+    /* letter-spacing: -6%; */
+}
+.info {
+    display: inline-block;
+    margin-right: var(--quarter-unit);
+    font-size: 11px;
+    color: var(--dark-gray);
+}

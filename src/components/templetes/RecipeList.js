@@ -1,7 +1,14 @@
+import RecipeCard from "../molecules/RecipeCard";
+import styles from "./RecipeList.module.css";
+
 function RecipeList() {
     return (
-        <div>
-            레시피 리스트
+        <div className={styles.container}>
+            <RecipeCard />
+            <RecipeCard />
+            <RecipeCard />
+            <RecipeCard />
+            <RecipeCard />
         </div>
     );
 }

@@ -1,0 +1,27 @@
+.container {
+    position: relative;
+    top: -25px;
+    display: flex;
+    justify-content: space-between;
+    width: 328px;
+    margin: 0 auto calc(24px - 25px) ;
+    background: #fff;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+}
+.container > input {
+    width: 88%;
+    padding: 20px var(--double-unit);
+    border: none;
+    outline: none;
+}
+.container > input::placeholder {
+    color: var(--light-gray);
+}
+.container > img {
+    width: 24px;
+    height: 24px;
+    margin: var(--double-unit);
+    cursor: pointer;
+}

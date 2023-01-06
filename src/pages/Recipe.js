@@ -1,7 +1,11 @@
+import RecipeHeader from "../components/templetes/RecipeHeader";
+import RecipeList from "../components/templetes/RecipeList";
+
 function Recipe() {
     return (
         <div>
-            레시피 페이지
+            <RecipeHeader />
+            <RecipeList />
         </div>
     );
 }
