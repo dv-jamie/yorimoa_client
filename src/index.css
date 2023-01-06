@@ -1,11 +1,17 @@
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard-dynamic-subset.css");
 
 :root {
-	--standard-space: 16px;
+	--quarter-unit: 2px;
+	--half-unit: 4px;
+	--standard-unit: 8px;
+	--double-unit: 16px;
+	--triple-unit: 24px;
 	--border-radius: 16px;
 	--box-shadow: 2px 2px 8px 4px rgb(0, 0, 0, 0.04);
-	--main-gray: #646464;
+	--main-orange: #E25E21;
+	--dark-gray: #646464;
 	--light-gray: #A8A8A8;
+	--lightest-gray: #E4E4E4;
 }
 
 html, body, div, span, applet, object, iframe,
@@ -65,4 +71,17 @@ table {
 }
 ::placeholder {
 	font-family: 'Pretendard';
+}
+
+/* scrollbar*/
+::-webkit-scrollbar {
+	width: var(--standard-unit);
+}
+::-webkit-scrollbar-track {
+	background: var(--lightest-gray);
+	border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+	background: var(--main-orange);
+	border-radius: 10px;
 }
