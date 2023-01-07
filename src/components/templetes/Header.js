@@ -1,16 +1,16 @@
 import styles from "./Header.module.css";
-import bookmarkIcon from "../../assets/icons/bookmarkIcon.png"
-import profileIcon from "../../assets/icons/profileIcon.png"
+import bookmarkWhite from "../../assets/icons/bookmarkWhite.png"
+import profile from "../../assets/icons/profile.png"
 
 function Header() {
     return (
         <div className={styles.container}>
             <ul className={styles.nav}>
                 <li>
-                    <img src={bookmarkIcon} alt="북마크 아이콘" />
+                    <img src={bookmarkWhite} alt="북마크 아이콘" />
                 </li>
                 <li>
-                    <img src={profileIcon} alt="프로필 아이콘" />
+                    <img src={profile} alt="프로필 아이콘" />
                 </li>
             </ul>
         </div>

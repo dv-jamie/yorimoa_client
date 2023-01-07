@@ -1,7 +1,7 @@
 import styles from "./RecipeCard.module.css";
-import levelIcon from "../../assets/icons/levelIcon.png"
-import servingIcon from "../../assets/icons/servingIcon.png"
-import recipeIcon from "../../assets/icons/recipeIcon.png"
+import level from "../../assets/icons/recipeInfo/levelSmall.png"
+import serving from "../../assets/icons/serving.png"
+import recipeLink from "../../assets/icons/recipeLink.png"
 import recipeSampleImage from "../../assets/images/recipeSampleImage.png"
 
 function RecipeCard() {
@@ -10,7 +10,7 @@ function RecipeCard() {
             <div className={styles.image_wrap}>
                 <img src={recipeSampleImage} alt="레시피 썸네일 이미지" />
                 <div className={styles.recipe_count}>
-                    <img src={recipeIcon} alt="연동 레시피 개수" />
+                    <img src={recipeLink} alt="연동 레시피 개수" />
                     <span>5</span>
                 </div>
             </div>
@@ -24,11 +24,11 @@ function RecipeCard() {
                         <span>1시간이내</span>
                     </div>
                     <div className={styles.info}>
-                        <img src={levelIcon} alt="난이도 아이콘" />
+                        <img src={level} alt="난이도 아이콘" />
                         <span>초급</span>
                     </div>
                     <div className={styles.info}>
-                        <img src={servingIcon} alt="인원 아이콘" />
+                        <img src={serving} alt="인원 아이콘" />
                         <span>10인분</span>
                     </div>
                 </div>

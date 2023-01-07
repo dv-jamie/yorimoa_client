@@ -1,5 +1,5 @@
 import styles from "./RecipeFilteringBox.module.css";
-import arrowDownIcon from "../../assets/icons/arrowDownIcon.png"
+import arrowDown from "../../assets/icons/arrowDown.png"
 
 function FilteringBox() {
     const sortingText = {
@@ -18,7 +18,7 @@ function FilteringBox() {
                 <li>테마</li>
             </ul>
             <div className={styles.sorting_wrap}>
-                <img src={arrowDownIcon} alt="정렬 아이콘" />
+                <img src={arrowDown} alt="정렬 아이콘" />
                 <span>{sortingText.createdAt}</span>
             </div>
         </div>

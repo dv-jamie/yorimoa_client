@@ -1,6 +1,6 @@
 import styles from "./DiaryCard.module.css";
-import bookmarkBlackIcon from "../../assets/icons/bookmarkBlackIcon.png"
-import recipeIcon from "../../assets/icons/recipeIcon.png"
+import bookmarkBlack from "../../assets/icons/bookmarkBlack.png"
+import recipeLink from "../../assets/icons/recipeLink.png"
 import diarySampleImage from "../../assets/images/diarySampleImage.png"
 import profileSampleImage from "../../assets/images/profileSampleImage.png"
 
@@ -19,14 +19,14 @@ function DiaryCard() {
             <div className={styles.image_wrap}>
                 <img src={diarySampleImage} alt="레시피 썸네일 이미지" />
                 <div className={styles.recipe_count}>
-                    <img src={recipeIcon} alt="연동 레시피 개수" />
+                    <img src={recipeLink} alt="연동 레시피 개수" />
                     <span>5</span>
                 </div>
             </div>
             <div className={styles.content_wrap}>
                 <div className={styles.icon_wrap}>
-                    <img src={bookmarkBlackIcon} alt="스크랩 아이콘" />
-                    <img src={bookmarkBlackIcon} alt="댓글 아이콘" />
+                    <img src={bookmarkBlack} alt="스크랩 아이콘" />
+                    <img src={bookmarkBlack} alt="댓글 아이콘" />
                 </div>
                 <div className={styles.content}>
                     {content.length > 50 || linesCount > 1
