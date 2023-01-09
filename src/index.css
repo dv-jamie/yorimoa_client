@@ -10,9 +10,12 @@
 	--octuple-unit: 32px;
 	--box-shadow: 2px 2px 8px 4px rgb(0, 0, 0, 0.04);
 	--main-orange: #E25E21;
-	--dark-gray: #646464;
-	--light-gray: #A8A8A8;
-	--lightest-gray: #E4E4E4;
+	--charcoal: #3C3C3C;
+	--dim-gray: #646464;
+	--gray: #7A7A7A;
+	--sliver: #A8A8A8;
+	--light-gray: #D2D2D2;
+	--gainsboro: #E4E4E4;
 }
 
 html, body, div, span, applet, object, iframe,
@@ -77,9 +80,10 @@ table {
 /* scrollbar*/
 ::-webkit-scrollbar {
 	width: var(--double-unit);
+	height: var(--double-unit);
 }
 ::-webkit-scrollbar-track {
-	background: var(--lightest-gray);
+	background: var(--gainsboro);
 	border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb {

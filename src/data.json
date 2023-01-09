@@ -1,0 +1,134 @@
+{
+    "themes": [
+        {
+            "id": 1,
+            "name": "초간단",
+            "icon": "simpmle"
+        },
+        {
+            "id": 2,
+            "name": "원팬"
+        },
+        {
+            "id": 3,
+            "name": "안주/해장"
+        },
+        {
+            "id": 4,
+            "name": "다이어트"
+        },
+        {
+            "id": 5,
+            "name": "건강식"
+        },
+        {
+            "id": 6,
+            "name": "간식"
+        },
+        {
+            "id": 7,
+            "name": "도시락"
+        },
+        {
+            "id": 8,
+            "name": "손님접대"
+        },
+        {
+            "id": 9,
+            "name": "홈파티"
+        },
+        {
+            "id": 10,
+            "name": "명절"
+        },
+        {
+            "id": 11,
+            "name": "이유식"
+        },
+        {
+            "id": 12,
+            "name": "기타"
+        }
+    ],
+    "diaries": [
+        {
+            "id": 1,
+            "content": "오늘은 채소들로만 구성하여 볶아보았다. 버섯, 파프리카, 브로콜리, 토마토, 계란, 등등 정말 맛있었다. 그렇지만 지금은 배가 고프다 흑흑",
+            "createdAt": "2022-12-29 21:47:10.380305",
+            "image": {
+                "id": 1,
+                "url": "/images/diarySampleImage.png"
+            },
+            "writer": {
+                "id": 1,
+                "nick": "Shakeit_Food",
+                "image": "/images/profileSampleImage.png"
+            },
+            "recipesCount": 1,
+            "bookmarksCount": 24,
+            "repliesCount": 10
+        }
+    ],
+    "recipes": [
+        {
+            "id": 1,
+            "title": "유치원생을 위한 유부초밥 부드러운 식감",
+            "image": {
+                "id": 11,
+                "url": "/images/recipeSampleImage.png"
+            },
+            "time": 60,
+            "level": 1,
+            "serving": 10,
+            "diariesCount": 5
+        },
+        {
+            "id": 2,
+            "title": "전복 내장으로 만든 전복죽",
+            "image": {
+                "id": 11,
+                "url": "/images/recipeSampleImage2.png"
+            },
+            "time": 60,
+            "level": 1,
+            "serving": 10,
+            "diariesCount": 5
+        },
+        {
+            "id": 3,
+            "title": "유치원생을 위한 유부초밥 부드러운 식감",
+            "image": {
+                "id": 11,
+                "url": "/images/recipeSampleImage.png"
+            },
+            "time": 60,
+            "level": 1,
+            "serving": 10,
+            "diariesCount": 5
+        },
+        {
+            "id": 4,
+            "title": "전복 내장으로 만든 전복죽",
+            "image": {
+                "id": 11,
+                "url": "/images/recipeSampleImage2.png"
+            },
+            "time": 60,
+            "level": 1,
+            "serving": 10,
+            "diariesCount": 5
+        },
+        {
+            "id": 5,
+            "title": "유치원생을 위한 유부초밥 부드러운 식감",
+            "image": {
+                "id": 11,
+                "url": "/images/recipeSampleImage.png"
+            },
+            "time": 60,
+            "level": 1,
+            "serving": 10,
+            "diariesCount": 5
+        }
+    ]
+}

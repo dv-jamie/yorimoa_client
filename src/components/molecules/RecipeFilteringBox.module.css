@@ -8,11 +8,12 @@
     display: inline-block;
     padding: var(--double-unit) 12px;
     margin-right: var(--standard-unit);
-    border: 1px solid var(--lightest-gray);
+    border: 1px solid var(--gainsboro);
     border-radius: 24px;
     font-size: 12px;
     font-weight: 500;
-    color: var(--dark-gray);
+    color: var(--dim-gray);
+    cursor: pointer;
 }
 .filter_item_wrap > li.selected {
     border: 1px solid var(--main-orange);

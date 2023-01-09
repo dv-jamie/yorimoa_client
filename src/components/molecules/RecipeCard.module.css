@@ -12,18 +12,26 @@
 .image_wrap > img {
     width: 100%;
 }
-.recipe_count {
+.diary_count {
     position: absolute;
-    top: var(--double-unit);
+    bottom: var(--double-unit);
     right: var(--double-unit);
     width: 23px;
     height: 14px;
-    background: #fff;
+    background: rgba(255, 255, 255, 0.6);;
     border-radius: 4px;
-    color: var(--dark-gray);
+    overflow: hidden;
+}
+.diary_count > img {
+    margin-top: 1px;
+}
+.diary_count > span {
+    vertical-align: middle;
+}
+.diary_count > span {
+    color: var(--dim-gray);
     font-size: 10px;
     font-weight: 500;
-    overflow: hidden;
 }
 .content_wrap {
     padding: var(--double-unit);
@@ -36,5 +44,11 @@
     display: inline-block;
     margin-right: var(--half-unit);
     font-size: 11px;
-    color: var(--dark-gray);
+    color: var(--dim-gray);
+}
+.info > img {
+    vertical-align: middle;
+}
+.info > span {
+    vertical-align: middle;
 }

@@ -1,5 +1,10 @@
 import { Link } from "react-router-dom";
 import styles from "./Nav.module.css";
+import {
+    DiaryMono,
+    PencilMono,
+    ToqueMono
+} from "../../assets/icons"
 
 function Nav() {
     return (
@@ -7,15 +12,24 @@ function Nav() {
             <ul>
                 <li>
                     <Link to='/diary'>
-                        <i>일기</i>
+                        <div className={styles.icon}>
+                            <img src={DiaryMono} alt="요리일기 링크 아이콘" />
+                        </div>
+                        <span className={styles.icon_name}>요리일기</span>
                     </Link>
                 </li>
                 <li>
-                    <i>작성</i>
+                    <div className={styles.icon}>
+                        <img src={PencilMono} alt="업로드 링크 아이콘" />
+                    </div>
+                    <span className={styles.icon_name}>업로드</span>
                 </li>
                 <li>
                     <Link to='/recipe'>
-                        <i>레시피</i>
+                        <div className={styles.icon}>
+                            <img src={ToqueMono} alt="레시피 링크 아이콘" />
+                        </div>
+                        <span className={styles.icon_name}>레시피</span>
                     </Link>
                 </li>
             </ul>

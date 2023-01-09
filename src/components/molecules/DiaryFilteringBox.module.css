@@ -18,6 +18,7 @@
     width: 54px;
     height: 51px;
     text-align: center;
+    color: var(--dim-gray);
     cursor: pointer;
 }
 .theme > img {
