@@ -1,11 +1,18 @@
 import { Outlet } from "react-router-dom";
+import { useEffect, useState } from "react";
 import Header from "./Header";
 import Nav from "./Nav";
 import styles from "./Layout.module.css";
 
 function Layout() {
+    const [isModalShow, setIsModalShow] = useState(false)
+
+    useEffect(() => {
+        document.body.classList.toggle("unscrollable", isModalShow)
+    }, [isModalShow])
+
     return (
-        <div className={styles.container}>
+        <div>
             <header className={styles.header_area}>
                 <Header />
             </header>
@@ -13,7 +20,10 @@ function Layout() {
                 <Outlet />
             </main>
             <footer className={styles.footer_area}>
-                <Nav />
+                <Nav
+                    isModalShow = {isModalShow}
+                    setIsModalShow = {setIsModalShow}
+                />
             </footer>
         </div>
     );
