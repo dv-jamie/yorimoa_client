@@ -1,0 +1,15 @@
+.select_button_list > li {
+    display: inline-block;
+    padding: var(--double-unit) var(--triple-unit);
+    margin-right: var(--standard-unit);
+    border: 1px solid var(--gainsboro);
+    border-radius: var(--sextuple-unit);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--dim-gray);
+    cursor: pointer;
+}
+.filter_item_wrap > li.selected {
+    border: 1px solid var(--main-orange);
+    color: var(--main-orange);
+}

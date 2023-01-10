@@ -1,31 +1,14 @@
 import styles from "./DiaryFilteringBox.module.css";
 import {
-    BabyColor,
-    DietColor,
-    EtcColor,
-    GuestColor,
-    HealthColor,
-    HomePartyColor,
-    OnePanColor,
-    PackedColor,
-    SimpleColor,
-    SnackColor,
-    WithAlcoholColor,
-    Checkbox,
+    Checkbox
 } from "../../assets/icons"
+import ThemeList from "./ThemeList";
 
 function DiaryFilteringBox({ themes }) {
     return (
         <div className={styles.container}>
             <div className={styles.theme_wrap}>
-                {themes.map(theme => {
-                    return (
-                        <div className={styles.theme}>
-                            <img src={SimpleColor} alt={`${theme.name} 아이콘`} />
-                            <span>{theme.name}</span>
-                        </div>
-                    )
-                })}
+                <ThemeList themes={themes}/>
             </div>
             <div className={styles.check_wrap}>
                 <div className={styles.check_area}>

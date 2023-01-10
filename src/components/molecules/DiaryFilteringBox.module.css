@@ -4,35 +4,18 @@
     padding: 0 var(--quadruple-unit);
 }
 .theme_wrap {
-    display: flex;
-    gap: var(--sextuple-unit) var(--triple-unit);
-    flex-wrap: wrap;
-    margin-bottom: var(--octuple-unit);
     padding: var(--octuple-unit);
     background: #fff;
     border-radius: var(--quadruple-unit);
     box-shadow: var(--box-shadow);
     overflow: hidden;
 }
-.theme {
-    width: 54px;
-    height: 51px;
-    text-align: center;
-    color: var(--dim-gray);
-    cursor: pointer;
-}
-.theme > img {
-    display: block;
-    margin: 0 auto;
-}
-.theme > span {
-    font-size: 12px;
-}
 .check_wrap {
     margin-bottom: calc(-25px + var(--quadruple-unit));
 }
 .check_area {
     display: inline-flex;
+    margin-top: var(--octuple-unit);
     cursor: pointer;
 }
 .check_area > span {

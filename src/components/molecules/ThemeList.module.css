@@ -1,0 +1,19 @@
+.theme_list {
+    display: flex;
+    gap: var(--sextuple-unit) var(--triple-unit);
+    flex-wrap: wrap;
+}
+.theme {
+    width: 54px;
+    height: 51px;
+    text-align: center;
+    color: var(--dim-gray);
+    cursor: pointer;
+}
+.theme > img {
+    display: block;
+    margin: 0 auto;
+}
+.theme > span {
+    font-size: 12px;
+}
