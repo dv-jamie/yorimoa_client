@@ -2,6 +2,8 @@ import styles from "./RecipeFilteringWrap.module.css";
 import SelectButtonList from "./SelectButtonList";
 import { ArrowDown } from "../../assets/icons"
 import FilteringModal from "components/templetes/FilteringModal";
+import { ModalType } from "type";
+import { toggleModalShow } from "common";
 
 function RecipeFilteringWrap({
     categories,
@@ -24,16 +26,18 @@ function RecipeFilteringWrap({
         repliesCount: "댓글 많은순"
     }
 
+    const clickSelectButtonWrap= () => {
+        setModalType(ModalType.FILTERING_MODAL)
+        toggleModalShow(isModalShow, setIsModalShow)
+    }
+
     return (
         <div className={styles.container}>
-            <div className={styles.select_button_wrap}>
-                <SelectButtonList
-                    selectItems={selectItems}
-                    isModalShow={isModalShow}
-                    setIsModalShow={setIsModalShow}
-                    modalType={modalType}
-                    setModalType={setModalType}
-                />
+            <div
+                className={styles.select_button_wrap}
+                onClick={clickSelectButtonWrap}
+            >
+                <SelectButtonList selectItems={selectItems} />
             </div>
             <div className={styles.sorting_wrap}>
                 <img src={ArrowDown} alt="정렬 아이콘" />

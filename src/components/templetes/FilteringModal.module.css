@@ -7,6 +7,7 @@
     padding: var(--octuple-unit) var(--quadruple-unit);
     background: #fff;
     border-radius: var(--octuple-unit) var(--octuple-unit) 0 0;
+    text-align: left;
     overflow-y: scroll;
     z-index: 1000;
 }

@@ -4,6 +4,7 @@
     background: #fff;
     border-radius: var(--quadruple-unit);
     box-shadow: var(--box-shadow);
+    cursor: pointer;
 }
 .image_wrap {
     position: relative;

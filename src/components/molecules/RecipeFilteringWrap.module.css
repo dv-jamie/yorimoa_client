@@ -1,8 +1,9 @@
 .container {
     padding: 0 var(--quadruple-unit);
+    text-align: center;
 }
 .select_button_wrap {
-    text-align: center;
+    display: inline-block;
 }
 .sorting_wrap {
     display: flex;
