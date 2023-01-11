@@ -16,19 +16,20 @@ function App() {
         <Routes>
           <Route element={<Layout />}>
               <Route path="/" element={<Diary />}></Route>
-              <Route path="/login" element={<Login />}></Route>
-              <Route path="/join" element={<Join />}></Route>
-              <Route path="/diary">
-                <Route path="" element={<Diary />}></Route>
-                <Route path="create" element={<DiaryCreate />}></Route>
-              </Route>
-              <Route path="/recipe">
-                <Route path="" element={<Recipe />}></Route>
-                <Route path=":id" element={<RecipeDetail />}></Route>
-                <Route path="create" element={<RecipeCreate />}></Route>
-              </Route>
-            </Route>
-            <Route path="*" element={<NotFound />}></Route>
+              <Route path="/diary" element={<Diary />}></Route>
+              <Route path="/recipe" element={<Recipe />}></Route>
+          </Route>
+          <Route path="/diary">
+            <Route path=":id" element={<Diary />}></Route>
+            <Route path="create" element={<DiaryCreate />}></Route>
+          </Route>
+          <Route path="/recipe">
+            <Route path=":id" element={<RecipeDetail />}></Route>
+            <Route path="create" element={<RecipeCreate />}></Route>
+          </Route>
+          <Route path="/login" element={<Login />}></Route>
+          <Route path="/join" element={<Join />}></Route>
+          <Route path="*" element={<NotFound />}></Route>
         </Routes>
       </BrowserRouter>
     </>

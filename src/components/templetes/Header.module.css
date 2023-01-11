@@ -1,9 +1,9 @@
 .container {
-    padding: 10px 16px;
+    padding: 10px var(--quadruple-unit);
     text-align: right;
 }
 .nav > li {
     display: inline-block;
-    margin-left: 16px;
+    margin-left: var(--quadruple-unit);
     cursor: pointer;
 }
