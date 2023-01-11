@@ -66,10 +66,10 @@
 .more_button {
     margin-left: var(--double-unit);
     font-size: 12px;
-    color: var(--sliver);
+    color: var(--silver);
     cursor: pointer;
 }
 .date {
     font-size: 12px;
-    color: var(--sliver);
+    color: var(--silver);
 }

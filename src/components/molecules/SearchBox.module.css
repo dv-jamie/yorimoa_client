@@ -19,7 +19,7 @@
     outline: none;
 }
 .search_wrap > input::placeholder {
-    color: var(--sliver);
+    color: var(--silver);
 }
 .search_wrap > img {
     width: 24px;

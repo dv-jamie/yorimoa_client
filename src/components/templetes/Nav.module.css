@@ -45,7 +45,7 @@
 .selectbox_create button {
     width: 20px;
     height: 20px;
-    background: var(--sliver);
+    background: var(--silver);
     border: none;
     border-radius: 50%;
     color: #fff;
