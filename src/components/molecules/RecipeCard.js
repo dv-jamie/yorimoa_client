@@ -5,8 +5,11 @@ import {
     TimeSmall,
     DiaryLink
 } from "../../assets/icons"
+import { useNavigate } from "react-router-dom";
 
 function RecipeCard({ recipe }) {
+    const navigate = useNavigate();
+
     const levelText = new Map()
     levelText
         .set(1, '입문')
@@ -15,7 +18,10 @@ function RecipeCard({ recipe }) {
         .set(4, '고수')
 
     return (
-        <div className={styles.container}>
+        <div
+            className={styles.container}
+            onClick={() => navigate("/recipe/:id", { id: recipe.id })}
+        >
             <div className={styles.image_wrap}>
                 <img src={`${process.env.PUBLIC_URL}${recipe.image.url}`} alt="레시피 썸네일 이미지" />
                 <div className={styles.diary_count}>
