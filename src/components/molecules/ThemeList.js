@@ -8,7 +8,7 @@ function ThemeList({ themes }) {
         <div className={styles.theme_list}>
             {themes.map(theme => {
                 return (
-                    <div className={styles.theme}>
+                    <div key={theme.id} className={styles.theme}>
                         <img src={SimpleColor} alt={`${theme.name} 아이콘`} />
                         <span>{theme.name}</span>
                     </div>
