@@ -20,7 +20,7 @@ function RecipeCard({ recipe }) {
     return (
         <div
             className={styles.container}
-            onClick={() => navigate("/recipe/:id", { id: recipe.id })}
+            onClick={() => navigate(`/recipe/${recipe.id}`)}
         >
             <div className={styles.image_wrap}>
                 <img src={`${process.env.PUBLIC_URL}${recipe.image.url}`} alt="레시피 썸네일 이미지" />

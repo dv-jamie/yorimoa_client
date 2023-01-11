@@ -117,7 +117,20 @@
             "time": 60,
             "level": 1,
             "serving": 10,
-            "diariesCount": 5
+            "diariesCount": 5,
+            "writer": {
+                "id": 1,
+                "nick": "Shakeit_Food",
+                "image": "/images/profileSampleImage.png",
+                "introduction": "소개글입니다.."
+            },
+            "categories": [
+                { "id": 1, "name": "밥/죽" }
+            ],
+            "themes": [
+                { "id": 1, "name": "테마1"},
+                { "id": 2, "name": "테마2"}
+            ]
         },
         {
             "id": 2,
@@ -129,7 +142,20 @@
             "time": 60,
             "level": 1,
             "serving": 10,
-            "diariesCount": 5
+            "diariesCount": 5,
+            "writer": {
+                "id": 1,
+                "nick": "Shakeit_Food",
+                "image": "/images/profileSampleImage.png",
+                "introduction": "소개글입니다.."
+            },
+            "categories": [
+                { "id": 1, "name": "밥/죽" }
+            ],
+            "themes": [
+                { "id": 1, "name": "테마1"},
+                { "id": 2, "name": "테마2"}
+            ]
         },
         {
             "id": 3,
@@ -141,7 +167,20 @@
             "time": 60,
             "level": 1,
             "serving": 10,
-            "diariesCount": 5
+            "diariesCount": 5,
+            "writer": {
+                "id": 1,
+                "nick": "Shakeit_Food",
+                "image": "/images/profileSampleImage.png",
+                "introduction": "소개글입니다.."
+            },
+            "categories": [
+                { "id": 1, "name": "밥/죽" }
+            ],
+            "themes": [
+                { "id": 1, "name": "테마1"},
+                { "id": 2, "name": "테마2"}
+            ]
         },
         {
             "id": 4,
@@ -153,7 +192,20 @@
             "time": 60,
             "level": 1,
             "serving": 10,
-            "diariesCount": 5
+            "diariesCount": 5,
+            "writer": {
+                "id": 1,
+                "nick": "Shakeit_Food",
+                "image": "/images/profileSampleImage.png",
+                "introduction": "소개글입니다.."
+            },
+            "categories": [
+                { "id": 1, "name": "밥/죽" }
+            ],
+            "themes": [
+                { "id": 1, "name": "테마1"},
+                { "id": 2, "name": "테마2"}
+            ]
         },
         {
             "id": 5,
@@ -165,7 +217,34 @@
             "time": 60,
             "level": 1,
             "serving": 10,
-            "diariesCount": 5
+            "diariesCount": 5,
+            "writer": {
+                "id": 1,
+                "nick": "Shakeit_Food",
+                "image": "/images/profileSampleImage.png",
+                "introduction": "소개글입니다.."
+            },
+            "categories": [
+                { "id": 1, "name": "밥/죽" }
+            ],
+            "themes": [
+                { "id": 1, "name": "테마1"},
+                { "id": 2, "name": "테마2"}
+            ]
+        }
+    ],
+    "users": [
+        {
+            "id": 1,
+            "nick": "Shakeit_Food",
+            "image": "/images/profileSampleImage.png",
+            "introduction": "소개글입니다.."
+        },
+        {
+            "id": 2,
+            "nick": "second",
+            "image": "/images/profileSampleImage.png",
+            "introduction": "두번째 유저.."
         }
     ]
 }
