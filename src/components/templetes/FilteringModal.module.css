@@ -1,0 +1,29 @@
+.container {
+    position: absolute;
+    left: 0;
+    top: 215px;
+    width: 100%;
+    height: 100%;
+    padding: var(--octuple-unit) var(--quadruple-unit);
+    background: #fff;
+    border-radius: var(--octuple-unit) var(--octuple-unit) 0 0;
+    overflow-y: scroll;
+    z-index: 1000;
+}
+.item_wrap {
+    height: 913px;
+}
+.item_wrap > li {
+    margin-bottom: var(--octuple-unit);
+}
+.item_wrap > li > label {
+    display: inline-block;
+    margin-bottom: var(--quadruple-unit);
+    font-weight: 600;
+    color: var(--sliver);
+}
+.item_wrap > li > div {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: var(--quadruple-unit);
+}

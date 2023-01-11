@@ -5,7 +5,7 @@ function RecipeList({ recipes }) {
     return (
         <div className={styles.container}>
             {recipes.map(recipe => {
-                return <RecipeCard recipe={recipe} />
+                return <RecipeCard key={recipe.id} recipe={recipe} />
             })}
         </div>
     );

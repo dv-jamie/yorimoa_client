@@ -1,11 +1,11 @@
-import DiaryFilteringBox from "../molecules/DiaryFilteringBox";
+import DiaryFilteringWrap from "../molecules/DiaryFilteringWrap";
 import Banner from "./Banner";
 
 function DiaryHeader({ themes }) {
     return (
         <div>
             <Banner type="diary" />
-            <DiaryFilteringBox themes={themes}/>
+            <DiaryFilteringWrap themes={themes}/>
         </div>
     );
 }

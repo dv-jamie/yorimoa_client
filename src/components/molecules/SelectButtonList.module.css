@@ -1,7 +1,7 @@
 .select_button_list > li {
     display: inline-block;
     padding: var(--double-unit) var(--triple-unit);
-    margin-right: var(--standard-unit);
+    margin: 0 var(--standard-unit) var(--standard-unit) 0;
     border: 1px solid var(--gainsboro);
     border-radius: var(--sextuple-unit);
     font-size: 12px;

@@ -5,12 +5,18 @@ import {
     PencilMono,
     ToqueMono
 } from "../../assets/icons"
+import { toggleModalShow } from "common";
+import { ModalType } from "type";
 
-function Nav({ isModalShow, setIsModalShow }) {
+function Nav({
+    isModalShow,
+    setIsModalShow,
+    modalType,
+    setModalType
+}) {
     const clickUploadButton = () => {
-        isModalShow === true
-            ? setIsModalShow(false)
-            : setIsModalShow(true)
+        setModalType(ModalType.UPLOAD)
+        toggleModalShow(isModalShow, setIsModalShow)
     }
 
     return (
@@ -35,7 +41,7 @@ function Nav({ isModalShow, setIsModalShow }) {
                         <img src={PencilMono} alt="업로드 링크 아이콘" />
                     </div>
                     <span className={styles.icon_name}>업로드</span>
-                    <ul className={isModalShow
+                    <ul className={isModalShow && modalType === ModalType.UPLOAD
                             ? `${styles.selectbox_create}`
                             : `${styles.selectbox_create} hide`
                     }>

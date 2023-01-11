@@ -6,6 +6,7 @@ import styles from "./Layout.module.css";
 
 function Layout() {
     const [isModalShow, setIsModalShow] = useState(false)
+    const [modalType, setModalType] = useState(null)
 
     useEffect(() => {
         document.body.classList.toggle("unscrollable", isModalShow)
@@ -17,12 +18,17 @@ function Layout() {
                 <Header />
             </header>
             <main className={styles.main_area}>
-                <Outlet />
+                <Outlet context={{
+                    isModalShowContext: [isModalShow, setIsModalShow],
+                    modalTypeContext: [modalType, setModalType]
+                }} />
             </main>
             <footer className={styles.footer_area}>
                 <Nav
                     isModalShow = {isModalShow}
                     setIsModalShow = {setIsModalShow}
+                    modalType = {modalType}
+                    setModalType = {setModalType}
                 />
             </footer>
         </div>

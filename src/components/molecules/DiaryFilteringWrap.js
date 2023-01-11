@@ -1,10 +1,10 @@
-import styles from "./DiaryFilteringBox.module.css";
+import styles from "./DiaryFilteringWrap.module.css";
 import {
     Checkbox
 } from "../../assets/icons"
 import ThemeList from "./ThemeList";
 
-function DiaryFilteringBox({ themes }) {
+function DiaryFilteringWrap({ themes }) {
     return (
         <div className={styles.container}>
             <div className={styles.theme_wrap}>
@@ -20,4 +20,4 @@ function DiaryFilteringBox({ themes }) {
     );
 }
 
-export default DiaryFilteringBox;
+export default DiaryFilteringWrap;

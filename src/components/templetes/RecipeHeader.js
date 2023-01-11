@@ -1,13 +1,27 @@
-import RecipeFilteringBox from "../molecules/RecipeFilteringBox";
+import RecipeFilteringWrap from "../molecules/RecipeFilteringWrap";
 import SearchBox from "../molecules/SearchBox";
 import Banner from "./Banner";
 
-function RecipeHeader() {
+function RecipeHeader({
+    categories,
+    themes,
+    isModalShow,
+    setIsModalShow,
+    modalType,
+    setModalType
+}) {
     return (
         <div>
             <Banner type="recipe" />
             <SearchBox />
-            <RecipeFilteringBox />
+            <RecipeFilteringWrap
+                categories={categories}
+                themes={themes}
+                isModalShow={isModalShow}
+                setIsModalShow={setIsModalShow}
+                modalType = {modalType}
+                setModalType = {setModalType}
+            />
         </div>
     );
 }
