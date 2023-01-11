@@ -5,7 +5,7 @@ function DiaryList({ diaries }) {
     return (
         <div className={styles.container}>
             {diaries.map(diary => {
-                return <DiaryCard diary={diary} />
+                return <DiaryCard key={diary.id} diary={diary} />
             })}
         </div>
     );
