@@ -44,9 +44,6 @@
     font-weight: 500;
     color: var(--dim-gray);
 }
-.icon_wrap {
-    margin: var(--triple-unit) 0;
-}
 .icon_wrap > li {
     display: inline-block;
     margin-right: var(--triple-unit);
@@ -64,7 +61,7 @@
     padding: var(--triple-unit) var(--quadruple-unit);
 }
 .content {
-    margin-bottom: var(--triple-unit);
+    margin: var(--triple-unit) 0;
 }
 .more_button {
     margin-left: var(--double-unit);
