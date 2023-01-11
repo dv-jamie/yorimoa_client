@@ -52,12 +52,6 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-	width: var(--app-width);
-	margin: 0 auto;
-	background: #fff;
-    box-shadow: 0px 0px 20px rgb(0, 0, 0, 0.1);
-    font-size: 14px;
-	line-height: 18px;
 	font-family: 'Pretendard';
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -99,4 +93,15 @@ table {
 }
 .unscrollable {
 	overflow: hidden;
+}
+
+#root {
+	position: relative;
+	width: var(--app-width);
+	height: 100vh;
+	margin: 0 auto;
+	background: #fff;
+    box-shadow: 0px 0px 20px rgb(0, 0, 0, 0.1);
+    font-size: 14px;
+	line-height: 18px;
 }
