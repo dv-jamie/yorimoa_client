@@ -1,17 +1,15 @@
 {
   "files": {
-    "main.css": "/yorimoa_client/static/css/main.ca8957fa.css",
-    "main.js": "/yorimoa_client/static/js/main.4d7ff193.js",
-    "static/media/diarySampleImage.png": "/yorimoa_client/static/media/diarySampleImage.dbba12cdbd04c2af0890.png",
+    "main.css": "/yorimoa_client/static/css/main.d925061a.css",
+    "main.js": "/yorimoa_client/static/js/main.c0ca1fa6.js",
     "static/media/recipeBannerImage.png": "/yorimoa_client/static/media/recipeBannerImage.07ab32e98644d9858af5.png",
     "static/media/diaryBannerImage.png": "/yorimoa_client/static/media/diaryBannerImage.d00155b7a732d3231124.png",
-    "static/media/recipeSampleImage.png": "/yorimoa_client/static/media/recipeSampleImage.2f21a3a2638f1db65082.png",
     "index.html": "/yorimoa_client/index.html",
-    "main.ca8957fa.css.map": "/yorimoa_client/static/css/main.ca8957fa.css.map",
-    "main.4d7ff193.js.map": "/yorimoa_client/static/js/main.4d7ff193.js.map"
+    "main.d925061a.css.map": "/yorimoa_client/static/css/main.d925061a.css.map",
+    "main.c0ca1fa6.js.map": "/yorimoa_client/static/js/main.c0ca1fa6.js.map"
   },
   "entrypoints": [
-    "static/css/main.ca8957fa.css",
-    "static/js/main.4d7ff193.js"
+    "static/css/main.d925061a.css",
+    "static/js/main.c0ca1fa6.js"
   ]
 }
