@@ -19,21 +19,23 @@ function App() {
           <Route element={<Layout />}>
             <Route path="/" element={<Diary />}></Route>
             <Route path="/profile" element={<Profile />}></Route>
+            <Route path="/bookmark" element={<BookmarkList />}></Route>
+            <Route path="/login" element={<Login />}></Route>
+            <Route path="/join" element={<Join />}></Route>
+
             <Route path="/diary">
               <Route path="" element={<Diary />}></Route>
               <Route path=":id" element={<Diary />}></Route>
               <Route path="create" element={<DiaryCreate />}></Route>
             </Route>
+
             <Route path="/recipe">
               <Route path="" element={<Recipe />}></Route>
               <Route path=":id" element={<RecipeDetail />}></Route>
               <Route path="create" element={<RecipeCreate />}></Route>
             </Route>
-            <Route path="/bookmark" element={<BookmarkList />}></Route>
-            
-            <Route path="/login" element={<Login />}></Route>
-            <Route path="/join" element={<Join />}></Route>
           </Route>
+          
           <Route path="*" element={<NotFound />}></Route>
         </Routes>
       </BrowserRouter>
