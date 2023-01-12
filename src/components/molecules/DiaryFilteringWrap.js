@@ -13,7 +13,10 @@ function DiaryFilteringWrap({ themes }) {
                 <ThemeList themes={themes}/>
             </div>
             <div className={styles.check_wrap}>
-                <div className={styles.check_area}>
+                <div
+                    className={styles.check_area}
+                    onClick={() => setOnlyRecipesLinked(current => !current)}
+                >
                     <CheckboxFill
                         width="18px"
                         height="18px"
@@ -25,7 +28,6 @@ function DiaryFilteringWrap({ themes }) {
                             ? "white"
                             : ColorType.SILVER
                         }
-                        onClick={() => setOnlyRecipesLinked(current => !current)}
                     />
                     <span>레시피 있는 일기만 보기</span>
                 </div>

@@ -1,20 +1,44 @@
-import styles from "./ThemeList.module.css";
+import { useState } from "react";
+import { ColorType } from "type";
 import {
     Diet,
     OneFan,
     Simple,
     WithAlcohol
 } from "../../assets/icons"
-import { ColorType } from "type";
-import { useState } from "react";
+import styles from "./ThemeList.module.css";
 
 function ThemeList({ themes }) {
-    const [selectedThemes, setSelectedThemes] = useState(defaultSelectedThemes)
+    const themeIds = Array(themes.length).fill().map((_, i) => i + 1)
+    const [selectedThemes, setSelectedThemes] = useState(themeIds)
 
     const clickThemeIcon = (id) => {
-        const currentBoolean = selectedThemes.get(id)
-        selectedThemes.set(id, !currentBoolean)
-        setSelectedThemes(selectedThemes)
+        if(selectedThemes.includes(id)) {
+            setSelectedThemes(selectedThemes.filter(theme => theme != id))
+        } else {
+            setSelectedThemes(prev => [...prev, id])
+        }
+    }
+    
+    const themeIconFill = (themeId) => {
+        return selectedThemes.includes(themeId)
+            ? ColorType.MAIN_ORANGE
+            : ColorType.GAINSBRO
+    }
+
+    const themeIcon = {
+        1: <Simple fill={themeIconFill(1)} />,
+        2: <OneFan fill={themeIconFill(2)} />,
+        3: <WithAlcohol fill={themeIconFill(3)} />,
+        4: <Diet fill={themeIconFill(4)} />,
+        5: <WithAlcohol fill={themeIconFill(5)} />,
+        6: <WithAlcohol fill={themeIconFill(6)} />,
+        7: <WithAlcohol fill={themeIconFill(7)} />,
+        8: <WithAlcohol fill={themeIconFill(8)} />,
+        9: <WithAlcohol fill={themeIconFill(9)} />,
+        10: <WithAlcohol fill={themeIconFill(10)} />,
+        11: <WithAlcohol fill={themeIconFill(11)} />,
+        12: <WithAlcohol fill={themeIconFill(12)} />
     }
 
     return (
@@ -35,34 +59,5 @@ function ThemeList({ themes }) {
         </div>
     );
 }
-
-const themeIcon = {
-    1: <Simple fill={ColorType.MAIN_ORANGE} />,
-    2: <OneFan fill={ColorType.MAIN_ORANGE} />,
-    3: <WithAlcohol fill={ColorType.MAIN_ORANGE} />,
-    4: <Diet fill={ColorType.MAIN_ORANGE} />,
-    5: <WithAlcohol fill={ColorType.MAIN_ORANGE} />,
-    6: <WithAlcohol fill={ColorType.MAIN_ORANGE} />,
-    7: <WithAlcohol fill={ColorType.MAIN_ORANGE} />,
-    8: <WithAlcohol fill={ColorType.MAIN_ORANGE} />,
-    9: <WithAlcohol fill={ColorType.MAIN_ORANGE} />,
-    10: <WithAlcohol fill={ColorType.MAIN_ORANGE} />,
-    11: <WithAlcohol fill={ColorType.MAIN_ORANGE} />,
-    12: <WithAlcohol fill={ColorType.MAIN_ORANGE} />
-}
-const defaultSelectedThemes = new Map([
-    [1, true],
-    [2, true],
-    [3, true],
-    [4, true],
-    [5, true],
-    [6, true],
-    [7, true],
-    [8, true],
-    [9, true],
-    [10, true],
-    [11, true],
-    [12, true],
-])
 
 export default ThemeList;

@@ -14,9 +14,17 @@ import { ReactComponent as ServingOutline } from './servingOutline.svg'
 import { ReactComponent as ToqueFill } from './toqueFill.svg'
 import { ReactComponent as ToqueOutline } from './toqueOutline.svg'
 
+import { ReactComponent as BaBy } from './theme/diet.svg'
 import { ReactComponent as Diet } from './theme/diet.svg'
+import { ReactComponent as Etc } from './theme/diet.svg'
+import { ReactComponent as Guest } from './theme/diet.svg'
+import { ReactComponent as Healthy } from './theme/diet.svg'
+import { ReactComponent as Holiday } from './theme/diet.svg'
+import { ReactComponent as HomeParty } from './theme/diet.svg'
 import { ReactComponent as OneFan } from './theme/oneFan.svg'
+import { ReactComponent as Packed } from './theme/diet.svg'
 import { ReactComponent as Simple } from './theme/simple.svg'
+import { ReactComponent as Snack } from './theme/diet.svg'
 import { ReactComponent as WithAlcohol } from './theme/withAlcohol.svg'
 
 export {
@@ -36,8 +44,16 @@ export {
     ToqueFill,
     ToqueOutline,
  
+    BaBy,
     Diet,
+    Etc,
+    Guest,
+    Healthy,
+    Holiday,
+    HomeParty,
     OneFan,
+    Packed,
     Simple,
+    Snack,
     WithAlcohol
 }
