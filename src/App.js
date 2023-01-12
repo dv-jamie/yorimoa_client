@@ -17,9 +17,10 @@ function App() {
       <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Routes>
           <Route element={<Layout />}>
-              <Route path="/" element={<Diary />}></Route>
-              <Route path="/diary" element={<Diary />}></Route>
-              <Route path="/recipe" element={<Recipe />}></Route>
+            <Route path="/" element={<Diary />}></Route>
+            <Route path="/diary" element={<Diary />}></Route>
+            <Route path="/recipe" element={<Recipe />}></Route>
+            <Route path="/profile" element={<Profile />}></Route>
           </Route>
           <Route path="/diary">
             <Route path=":id" element={<Diary />}></Route>
@@ -29,7 +30,6 @@ function App() {
             <Route path=":id" element={<RecipeDetail />}></Route>
             <Route path="create" element={<RecipeCreate />}></Route>
           </Route>
-          <Route path="/profile" element={<Profile />}></Route>
           <Route path="/bookmark" element={<BookmarkList />}></Route>
           <Route path="/login" element={<Login />}></Route>
           <Route path="/join" element={<Join />}></Route>
