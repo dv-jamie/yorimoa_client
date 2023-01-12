@@ -13,7 +13,7 @@ function Layout() {
     }, [isModalShow])
 
     return (
-        <div>
+        <div className={styles.container}>
             <header className={styles.header_area}>
                 <Header />
             </header>
