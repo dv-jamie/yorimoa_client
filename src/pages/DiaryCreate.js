@@ -1,7 +1,19 @@
 import { BackOutline } from "assets/icons";
+import { useOutletContext } from "react-router-dom";
+import { ModalType } from "type";
+import ConfirmModal from "components/molecules/ConfirmModal";
 import styles from "./DiaryCreate.module.css"
 
 function DiaryCreate() {
+    const { isModalShowContext, modalTypeContext } = useOutletContext()
+    const [isModalShow, setIsModalShow] = isModalShowContext
+    const [modalType, setModalType] = modalTypeContext
+
+    const clickBackButton = () => {
+        setIsModalShow(true)
+        setModalType(ModalType.CONFIRM_BACK)
+    }
+
     const clickCompleteButton = () => {
         console.log("complete")
     }
@@ -12,6 +24,7 @@ function DiaryCreate() {
                 <BackOutline
                     width={24}
                     height={24}
+                    onClick={clickBackButton}
                 />
                 <button
                     onClick={clickCompleteButton}
@@ -35,6 +48,11 @@ function DiaryCreate() {
                 - 요리를 하다가 발견한 꿀팁이 있나요?<br />
                 - 실패는 성공의 어머니! 다음에는 꼭 성공해봐요.
             </p>
+            <ConfirmModal
+                isModalShow={isModalShow}
+                setIsModalShow={setIsModalShow}
+                modalType={modalType}
+            />
         </div>
     );
 }

@@ -1,11 +1,11 @@
 import dayjs from "dayjs";
-import styles from "./DiaryCard.module.css";
 import {
     BookmarkOutline,
     CommentOutline,
     ToqueOutline,
 } from "../../assets/icons"
 import { ColorType } from "type";
+import styles from "./DiaryCard.module.css";
 
 function DiaryCard({ diary }) {
     const { content } = diary

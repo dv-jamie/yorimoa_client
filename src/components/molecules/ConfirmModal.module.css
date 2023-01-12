@@ -1,0 +1,31 @@
+.container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    padding: var(--quadruple-unit);
+    transform: translate(-50%, -50%);
+    background: #fff;
+    border-radius: var(--quadruple-unit);
+    z-index: 1000;
+}
+.container > h3 {
+    font-size: 18px;
+    margin-bottom: var(--double-unit);
+}
+.button_wrap {
+    margin-top: var(--quadruple-unit);
+    text-align: right;
+}
+.button_wrap > button {
+    margin-left: var(--double-unit);
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+.button_wrap > button:first-of-type {
+    color: var(--main-orange);
+}
+.button_wrap > button:last-of-type {
+    color: var(--silver);
+}

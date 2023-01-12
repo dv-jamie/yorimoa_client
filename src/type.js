@@ -1,6 +1,7 @@
 export const ModalType = {
     FILTERING_MODAL: "filteringModal",
-    UPLOAD: "upload"
+    UPLOAD: "upload",
+    CONFIRM_BACK: "confirmBack"
 }
 
 export const ColorType = {
