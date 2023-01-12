@@ -1,5 +1,6 @@
 import styles from "./SearchBox.module.css";
-import { Search } from "../../assets/icons"
+import { SearchOutline } from "../../assets/icons"
+import { ColorType } from "type";
 
 function SearchBox() {
     return (
@@ -9,7 +10,11 @@ function SearchBox() {
                     placeholder="원하는 레시피를 검색해보세요"
                     spellCheck="false"
                 />
-                <img src={Search} alt="검색 아이콘" />
+                <SearchOutline
+                    width={24}
+                    height={24}
+                    stroke={ColorType.GRAY}
+                />
             </div>
         </div>
     );

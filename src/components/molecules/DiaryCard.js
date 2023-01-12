@@ -1,9 +1,11 @@
 import dayjs from "dayjs";
 import styles from "./DiaryCard.module.css";
 import {
-    BookmarkBlack,
+    BookmarkOutline,
+    CommentOutline,
     ToqueOutline,
 } from "../../assets/icons"
+import { ColorType } from "type";
 
 function DiaryCard({ diary }) {
     const { content } = diary
@@ -20,18 +22,26 @@ function DiaryCard({ diary }) {
             <div className={styles.image_wrap}>
                 <img src={`${process.env.PUBLIC_URL}${diary.image.url}`} alt="레시피 썸네일 이미지" />
                 <div className={styles.recipe_count}>
-                    <img src={ToqueOutline} alt="연동 레시피 개수" />
+                    <ToqueOutline
+                        width={14}
+                        height={14}
+                        stroke={ColorType.DIM_GRAY}
+                    />
                     <span>{diary.recipesCount}</span>
                 </div>
             </div>
             <div className={styles.content_wrap}>
                 <ul className={styles.icon_wrap}>
                     <li>
-                        <img src={BookmarkBlack} alt="스크랩 아이콘" />
+                        <BookmarkOutline
+                            width={20}
+                            height={20}
+                            stroke="black"
+                        />
                         <span>{diary.bookmarksCount}</span>
                     </li>
                     <li>
-                        <img src={BookmarkBlack} alt="댓글 아이콘" />
+                        <CommentOutline width={20} height={20} />
                         <span>{diary.repliesCount}</span>
                     </li>
                 </ul>

@@ -1,11 +1,12 @@
 import styles from "./RecipeCard.module.css";
 import {
-    LevelSmall,
-    ServingSmall,
-    TimeSmall,
-    DiaryLink
+    ClockOutline,
+    LevelOutline,
+    ServingOutline,
+    RecipeOutline
 } from "../../assets/icons"
 import { useNavigate } from "react-router-dom";
+import { ColorType } from "type";
 
 function RecipeCard({ recipe }) {
     const navigate = useNavigate();
@@ -25,7 +26,11 @@ function RecipeCard({ recipe }) {
             <div className={styles.image_wrap}>
                 <img src={`${process.env.PUBLIC_URL}${recipe.image.url}`} alt="레시피 썸네일 이미지" />
                 <div className={styles.diary_count}>
-                    <img src={DiaryLink} alt="연동 일기 개수" />
+                    <RecipeOutline
+                        width={12}
+                        height={12}
+                        stroke={ColorType.DIM_GRAY}
+                    />
                     <span>{recipe.diariesCount}</span>
                 </div>
             </div>
@@ -35,15 +40,27 @@ function RecipeCard({ recipe }) {
                 </h2>
                 <div className={styles.info_wrap}>
                     <div className={styles.info}>
-                        <img src={TimeSmall} alt="조리시간 아이콘" />
+                        <ClockOutline
+                            width={14}
+                            heigh={14}
+                            stroke={ColorType.SILVER}
+                        />
                         <span>{recipe.time}분</span>
                     </div>
                     <div className={styles.info}>
-                        <img src={LevelSmall} alt="난이도 아이콘" />
+                        <LevelOutline
+                            width={14}
+                            heigh={14}
+                            stroke={ColorType.SILVER}
+                        />
                         <span>{levelText.get(recipe.level)}</span>
                     </div>
                     <div className={styles.info}>
-                        <img src={ServingSmall} alt="인원 아이콘" />
+                        <ServingOutline
+                            width={14}
+                            heigh={14}
+                            stroke={ColorType.SILVER}
+                        />
                         <span>{recipe.serving}인분</span>
                     </div>
                 </div>

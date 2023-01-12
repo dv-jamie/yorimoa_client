@@ -8,6 +8,8 @@ import RecipeDetail from './pages/RecipeDetail';
 import RecipeCreate from './pages/RecipeCreate';
 import NotFound from './pages/NotFound';
 import Layout from './components/templetes/Layout';
+import BookmarkList from "pages/BookmarkList";
+import Profile from "pages/Profile";
 
 function App() {
   return (
@@ -27,6 +29,8 @@ function App() {
             <Route path=":id" element={<RecipeDetail />}></Route>
             <Route path="create" element={<RecipeCreate />}></Route>
           </Route>
+          <Route path="/profile" element={<Profile />}></Route>
+          <Route path="/bookmark" element={<BookmarkList />}></Route>
           <Route path="/login" element={<Login />}></Route>
           <Route path="/join" element={<Join />}></Route>
           <Route path="*" element={<NotFound />}></Route>

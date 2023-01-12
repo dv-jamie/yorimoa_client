@@ -32,14 +32,12 @@
     text-align: center;
     overflow: hidden;
 }
-.recipe_count > img,
+.recipe_count > svg,
 .recipe_count > span {
     vertical-align: middle;
 }
-.recipe_count > img {
-    margin-right: 1px;
-}
 .recipe_count > span {
+    margin-left: 1px;
     font-size: 12px;
     font-weight: 500;
     color: var(--dim-gray);
@@ -49,7 +47,7 @@
     margin-right: var(--triple-unit);
     cursor: pointer;
 }
-.icon_wrap > li > img,
+.icon_wrap > li > svg,
 .icon_wrap > li > span {
     vertical-align: middle;
 }

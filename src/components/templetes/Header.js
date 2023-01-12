@@ -1,18 +1,31 @@
-import styles from "./Header.module.css";
+import { Link } from "react-router-dom";
 import {
-    BookmarkWhite,
-    Person,
+    BookmarkOutline,
+    PersonOutline
 } from "../../assets/icons"
+import styles from "./Header.module.css";
 
 function Header() {
     return (
         <div className={styles.container}>
             <ul className={styles.nav}>
                 <li>
-                    <img src={BookmarkWhite} alt="북마크 아이콘" />
+                    <Link to="/bookmark">
+                        <BookmarkOutline
+                            width={24}
+                            height={24}
+                            stroke="white"
+                        />
+                    </Link>
                 </li>
                 <li>
-                    <img src={Person} alt="프로필 아이콘" />
+                    <Link to="/profile">
+                        <PersonOutline
+                            width={24}
+                            height={24}
+                            stroke="white"
+                        />
+                    </Link>
                 </li>
             </ul>
         </div>

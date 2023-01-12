@@ -1,12 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import styles from "./Nav.module.css";
 import {
-    DiaryMono,
-    PencilMono,
-    ToqueMono
+    DiaryFill,
+    PencilFill,
+    ToqueFill,
 } from "../../assets/icons"
-import { toggleModalShow } from "common";
-import { ModalType } from "type";
+import { ColorType, ModalType } from "type";
 
 function Nav({
     isModalShow,
@@ -14,18 +13,28 @@ function Nav({
     modalType,
     setModalType
 }) {
+    const location = useLocation()
+    const pathname = location.pathname
+
     const clickUploadButton = () => {
         setModalType(ModalType.UPLOAD)
-        toggleModalShow(isModalShow, setIsModalShow)
+        setIsModalShow(current => !current)
     }
 
     return (
         <div className={styles.container}>
             <ul>
                 <li>
-                    <Link to='/diary'>
+                    <Link to="/diary">
                         <div className={styles.icon}>
-                            <img src={DiaryMono} alt="요리일기 링크 아이콘" />
+                            <DiaryFill
+                                width="24"
+                                height="24"
+                                fill={pathname === "/diary"
+                                    ? `${ColorType.MAIN_ORANGE}`
+                                    : `${ColorType.SILVER}`
+                                }
+                            />
                         </div>
                         <span className={styles.icon_name}>요리일기</span>
                     </Link>
@@ -38,7 +47,14 @@ function Nav({
                     onClick={clickUploadButton}
                 >
                     <div className={styles.icon}>
-                        <img src={PencilMono} alt="업로드 링크 아이콘" />
+                        <PencilFill
+                            width="24"
+                            height="24"
+                            fill={pathname === "/diary/create" || pathname === "/recipe/create"
+                                ? `${ColorType.MAIN_ORANGE}`
+                                : `${ColorType.SILVER}`
+                            }
+                        />
                     </div>
                     <span className={styles.icon_name}>업로드</span>
                     <ul className={isModalShow && modalType === ModalType.UPLOAD
@@ -46,10 +62,10 @@ function Nav({
                             : `${styles.selectbox_create} hide`
                     }>
                         <li>
-                            <Link to='/diary/create'>요리일기 작성하기</Link>
+                            <Link to="/diary/create">요리일기 작성하기</Link>
                         </li>
                         <li>
-                            <Link to='/recipe/create'>레시피 작성하기</Link>
+                            <Link to="/recipe/create">레시피 작성하기</Link>
                         </li>
                         <li>
                             <button>X</button>
@@ -57,9 +73,16 @@ function Nav({
                     </ul>
                 </li>
                 <li>
-                    <Link to='/recipe'>
+                    <Link to="/recipe">
                         <div className={styles.icon}>
-                            <img src={ToqueMono} alt="레시피 링크 아이콘" />
+                            <ToqueFill
+                                width="24"
+                                height="24"
+                                fill={pathname === "/recipe"
+                                    ? `${ColorType.MAIN_ORANGE}`
+                                    : `${ColorType.SILVER}`
+                                }
+                            />
                         </div>
                         <span className={styles.icon_name}>레시피</span>
                     </Link>

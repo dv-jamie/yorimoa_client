@@ -21,15 +21,16 @@
     height: 14px;
     background: rgba(255, 255, 255, 0.6);;
     border-radius: 4px;
+    line-height: 14px;
+    text-align: center;
     overflow: hidden;
 }
-.diary_count > img {
-    margin-top: 1px;
-}
+.diary_count > svg,
 .diary_count > span {
     vertical-align: middle;
 }
 .diary_count > span {
+    display: inline-block;
     color: var(--dim-gray);
     font-size: 10px;
     font-weight: 500;
@@ -45,11 +46,10 @@
     display: inline-block;
     margin-right: var(--half-unit);
     font-size: 11px;
+    line-height: 11px;
     color: var(--dim-gray);
 }
-.info > img {
-    vertical-align: middle;
-}
+.info > svg,
 .info > span {
     vertical-align: middle;
 }

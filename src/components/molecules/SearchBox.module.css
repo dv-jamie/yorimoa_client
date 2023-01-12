@@ -13,17 +13,13 @@
     overflow: hidden;
 }
 .search_wrap > input {
-    width: 88%;
+    width: 100%;
     padding: 20px var(--quadruple-unit);
     border: none;
     outline: none;
 }
-.search_wrap > input::placeholder {
-    color: var(--silver);
-}
-.search_wrap > img {
-    width: 24px;
-    height: 24px;
+.search_wrap > svg {
     margin: var(--quadruple-unit);
+    margin-left: 0;
     cursor: pointer;
 }

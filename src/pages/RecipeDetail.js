@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
+import { ClockOutline, LevelOutline, ServingOutline } from "assets/icons";
+import { ColorType } from "type";
 import styles from "./RecipeDetail.module.css";
 import dummy from "../data.json";
 
@@ -37,15 +39,27 @@ function RecipeDetail() {
                     <span>{recipe.categories[0].name}</span>
                 </li>
                 <li>
-                    <i>icon</i>
+                    <ClockOutline
+                        width={24}
+                        heigh={24}
+                        stroke={ColorType.SILVER}
+                    />
                     <span>{recipe.time}</span>
                 </li>
                 <li>
-                    <i>icon</i>
+                    <LevelOutline
+                        width={24}
+                        heigh={24}
+                        stroke={ColorType.SILVER}
+                    />
                     <span>{levelText.get(recipe.level)}</span>
                 </li>
                 <li>
-                    <i>icon</i>
+                    <ServingOutline
+                        width={24}
+                        heigh={24}
+                        stroke={ColorType.SILVER}
+                    />
                     <span>{recipe.serving}인분</span>
                 </li>
             </ul>

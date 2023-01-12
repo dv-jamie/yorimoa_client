@@ -1,22 +1,8 @@
 import ArrowDown from './common/arrowDown.png';
-import BookmarkBlack from './common/bookmarkBlack.png';
-import BookmarkWhite from './common/bookmarkWhite.png';
-import Checkbox from './common/checkbox.png';
 import DiaryLink from './common/diaryLink.png';
-import Person from './common/person.png';
-import Search from './common/search.png';
 import Serving from './common/serving.png';
-import ToqueOutline from './common/toqueOutline.png';
 
-import DiaryColor from './nav/diaryColor.png';
-import DiaryMono from './nav/diaryMono.png';
-import PencilMono from './nav/pencilMono.png';
-import ToqueColor from './nav/toqueColor.png';
-import ToqueMono from './nav/toqueMono.png';
-
-import LevelSmall from './recipeInfo/levelSmall.png';
 import ServingSmall from './recipeInfo/servingSmall.png';
-import TimeSmall from './recipeInfo/timeSmall.png';
 
 import BabyColor from './theme/babyColor.png';
 import DietColor from './theme/dietColor.png';
@@ -31,26 +17,40 @@ import SimpleColor from './theme/simpleColor.png';
 import SnackColor from './theme/snackColor.png';
 import WithAlcoholColor from './theme/withAlcoholColor.png';
 
+import { ReactComponent as BookmarkOutline } from './bookmarkOutline.svg'
+import { ReactComponent as CheckboxFill } from './checkboxFill.svg'
+import { ReactComponent as ClockOutline } from './clockOutline.svg'
+import { ReactComponent as CommentOutline } from './commentOutline.svg'
+import { ReactComponent as DiaryFill } from './diaryFill.svg'
+import { ReactComponent as LevelOutline } from './levelOutline.svg'
+import { ReactComponent as PencilFill } from './pencilFill.svg'
+import { ReactComponent as PersonOutline } from './personOutline.svg'
+import { ReactComponent as RecipeOutline } from './recipeOutline.svg'
+import { ReactComponent as SearchOutline } from './searchOutline.svg'
+import { ReactComponent as ServingOutline } from './servingOutline.svg'
+import { ReactComponent as ToqueFill } from './toqueFill.svg'
+import { ReactComponent as ToqueOutline } from './toqueOutline.svg'
+
 export {
-    ArrowDown,
-    BookmarkBlack,
-    BookmarkWhite,
-    Checkbox,
-    DiaryLink,
-    Person,
-    Search,
-    Serving,
+    BookmarkOutline,
+    CheckboxFill,
+    ClockOutline,
+    CommentOutline,
+    DiaryFill,
+    LevelOutline,
+    PencilFill,
+    PersonOutline,
+    RecipeOutline,
+    SearchOutline,
+    ServingOutline,
+    ToqueFill,
     ToqueOutline,
 
-    DiaryColor,
-    DiaryMono,
-    PencilMono,
-    ToqueColor,
-    ToqueMono,
+    ArrowDown,
+    DiaryLink,
+    Serving,
 
-    LevelSmall,
     ServingSmall,
-    TimeSmall,
     
     BabyColor,
     DietColor,
