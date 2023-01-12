@@ -1,3 +1,4 @@
+import { BackOutline } from "assets/icons";
 import styles from "./DiaryCreate.module.css"
 
 function DiaryCreate() {
@@ -8,7 +9,10 @@ function DiaryCreate() {
     return (
         <div className={styles.container}>
             <header className={styles.header}>
-                <i className={styles.back_icon}>←</i>
+                <BackOutline
+                    width={24}
+                    height={24}
+                />
                 <button
                     onClick={clickCompleteButton}
                 >완료</button>

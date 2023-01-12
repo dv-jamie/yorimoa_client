@@ -33,7 +33,9 @@
     overflow: hidden;
 }
 .recipe_count > svg,
-.recipe_count > span {
+.recipe_count > span,
+.icon_wrap > li > svg,
+.icon_wrap > li > span {
     vertical-align: middle;
 }
 .recipe_count > span {
@@ -46,10 +48,6 @@
     display: inline-block;
     margin-right: var(--triple-unit);
     cursor: pointer;
-}
-.icon_wrap > li > svg,
-.icon_wrap > li > span {
-    vertical-align: middle;
 }
 .icon_wrap > li > span {
     margin-left: 2px;

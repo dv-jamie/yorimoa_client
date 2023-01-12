@@ -1,8 +1,8 @@
-import styles from "./RecipeFilteringWrap.module.css";
+import { ArrowDownOutline } from "../../assets/icons"
+import { ColorType, ModalType } from "type";
 import SelectButtonList from "./SelectButtonList";
-import { ArrowDown } from "../../assets/icons"
 import FilteringModal from "components/templetes/FilteringModal";
-import { ModalType } from "type";
+import styles from "./RecipeFilteringWrap.module.css";
 
 function RecipeFilteringWrap({
     categories,
@@ -39,7 +39,11 @@ function RecipeFilteringWrap({
                 <SelectButtonList selectItems={selectItems} />
             </div>
             <div className={styles.sorting_wrap}>
-                <img src={ArrowDown} alt="정렬 아이콘" />
+                <ArrowDownOutline
+                    width={14}
+                    height={14}
+                    stroke={ColorType.SILVER}
+                />
                 <span>{sortingText.createdAt}</span>
             </div>
             <FilteringModal

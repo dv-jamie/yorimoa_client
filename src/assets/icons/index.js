@@ -1,22 +1,5 @@
-import ArrowDown from './common/arrowDown.png';
-import DiaryLink from './common/diaryLink.png';
-import Serving from './common/serving.png';
-
-import ServingSmall from './recipeInfo/servingSmall.png';
-
-import BabyColor from './theme/babyColor.png';
-import DietColor from './theme/dietColor.png';
-import EtcColor from './theme/etcColor.png';
-import GuestColor from './theme/guestColor.png';
-import HealthColor from './theme/healthColor.png';
-import HolidayColor from './theme/holidayColor.png';
-import HomePartyColor from './theme/homePartyColor.png';
-import OnePanColor from './theme/onePanColor.png';
-import PackedColor from './theme/packedColor.png';
-import SimpleColor from './theme/simpleColor.png';
-import SnackColor from './theme/snackColor.png';
-import WithAlcoholColor from './theme/withAlcoholColor.png';
-
+import { ReactComponent as ArrowDownOutline } from './arrowDownOutline.svg'
+import { ReactComponent as BackOutline } from './backOutline.svg'
 import { ReactComponent as BookmarkOutline } from './bookmarkOutline.svg'
 import { ReactComponent as CheckboxFill } from './checkboxFill.svg'
 import { ReactComponent as ClockOutline } from './clockOutline.svg'
@@ -31,7 +14,14 @@ import { ReactComponent as ServingOutline } from './servingOutline.svg'
 import { ReactComponent as ToqueFill } from './toqueFill.svg'
 import { ReactComponent as ToqueOutline } from './toqueOutline.svg'
 
+import { ReactComponent as Diet } from './theme/diet.svg'
+import { ReactComponent as OneFan } from './theme/oneFan.svg'
+import { ReactComponent as Simple } from './theme/simple.svg'
+import { ReactComponent as WithAlcohol } from './theme/withAlcohol.svg'
+
 export {
+    ArrowDownOutline,
+    BackOutline,
     BookmarkOutline,
     CheckboxFill,
     ClockOutline,
@@ -45,23 +35,9 @@ export {
     ServingOutline,
     ToqueFill,
     ToqueOutline,
-
-    ArrowDown,
-    DiaryLink,
-    Serving,
-
-    ServingSmall,
-    
-    BabyColor,
-    DietColor,
-    EtcColor,
-    GuestColor,
-    HealthColor,
-    HolidayColor,
-    HomePartyColor,
-    OnePanColor,
-    PackedColor,
-    SimpleColor,
-    SnackColor,
-    WithAlcoholColor
+ 
+    Diet,
+    OneFan,
+    Simple,
+    WithAlcohol
 }

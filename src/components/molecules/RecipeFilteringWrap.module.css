@@ -10,8 +10,13 @@
     margin-top: var(--sextuple-unit);
     margin-bottom: var(--double-unit);
 }
+.sorting_wrap > svg,
+.sorting_wrap > span {
+    vertical-align: middle;
+}
 .sorting_wrap > span {
     margin-left: var(--half-unit);
     font-size: 12px;
+    line-height: 12px;
     font-weight: 500;
 }

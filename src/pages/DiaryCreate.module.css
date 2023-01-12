@@ -3,7 +3,7 @@
     justify-content: space-between;
     padding: var(--triple-unit) var(--quadruple-unit) 0;
 }
-.back_icon {
+.header > svg {
     cursor: pointer;
 }
 .header > button {

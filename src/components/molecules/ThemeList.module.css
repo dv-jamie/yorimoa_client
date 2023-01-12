@@ -10,10 +10,11 @@
     color: var(--dim-gray);
     cursor: pointer;
 }
-.theme > img {
+.theme > svg {
     display: block;
-    margin: 0 auto;
+    margin: 0 auto var(--half-unit);
 }
 .theme > span {
     font-size: 12px;
+    font-weight: 500;
 }
