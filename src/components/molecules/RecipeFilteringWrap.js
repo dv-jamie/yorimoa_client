@@ -3,7 +3,6 @@ import SelectButtonList from "./SelectButtonList";
 import { ArrowDown } from "../../assets/icons"
 import FilteringModal from "components/templetes/FilteringModal";
 import { ModalType } from "type";
-import { toggleModalShow } from "common";
 
 function RecipeFilteringWrap({
     categories,
@@ -28,7 +27,7 @@ function RecipeFilteringWrap({
 
     const clickSelectButtonWrap= () => {
         setModalType(ModalType.FILTERING_MODAL)
-        toggleModalShow(isModalShow, setIsModalShow)
+        setIsModalShow(current => !current)
     }
 
     return (
