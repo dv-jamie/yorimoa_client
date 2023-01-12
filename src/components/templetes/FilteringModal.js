@@ -1,7 +1,7 @@
 import SelectButtonList from "components/molecules/SelectButtonList";
 import Themes from "components/molecules/ThemeList";
-import styles from "./FilteringModal.module.css";
 import { ModalType } from "type";
+import styles from "./FilteringModal.module.css";
  
 function FilteringModal({
     categories,

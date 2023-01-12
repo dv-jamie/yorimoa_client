@@ -18,10 +18,13 @@ function Layout() {
                 <Header />
             </header>
             <main className={styles.main_area}>
-                <Outlet context={{
-                    isModalShowContext: [isModalShow, setIsModalShow],
-                    modalTypeContext: [modalType, setModalType]
-                }} />
+                <Outlet
+                    context={{
+                        isModalShowContext: [isModalShow, setIsModalShow],
+                        modalTypeContext: [modalType, setModalType]
+                    }}
+                    className={styles.main_area}
+                />
             </main>
             <footer className={styles.footer_area}>
                 <Nav
