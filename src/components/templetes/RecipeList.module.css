@@ -2,5 +2,6 @@
     display: flex;
     gap: var(--triple-unit);
     flex-wrap: wrap;
-    padding: 0 var(--quadruple-unit) 65px;
+    padding: 0 var(--quadruple-unit);
+    padding-bottom: calc(65px + var(--quadruple-unit));
 }

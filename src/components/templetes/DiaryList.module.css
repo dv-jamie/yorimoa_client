@@ -1,3 +1,4 @@
 .container {
-    padding: 0 var(--quadruple-unit) 65px;
+    padding: 0 var(--quadruple-unit);
+    padding-bottom: calc(65px + var(--quadruple-unit));
 }
