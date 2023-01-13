@@ -13,7 +13,7 @@ function Diary() {
     const [page, setPage] = useState(0)
 
     const getThemes = async () => {
-        const response = await axios.get(`${process.env.REACT_APP_API_URL}/categories`)
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/themes`)
         const themes = response.data
         const themeIds = Array(themes.length).fill().map((_, i) => i + 1)
         setThemes(themes)
