@@ -23,7 +23,11 @@ function DiaryCard({ diary }) {
             </div>
             <div className={styles.recipe_image_wrap}>
                 <img src={diary.images[0].url} alt="레시피 썸네일 이미지" />
-                <div className={styles.recipe_count}>
+                <div className={
+                    diary.recipesCount === 0
+                    ? `${styles.recipe_count} hide`
+                    : `${styles.recipe_count}`
+                }>
                     <ToqueOutline
                         width={14}
                         height={14}
