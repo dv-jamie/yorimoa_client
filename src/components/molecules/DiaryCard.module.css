@@ -69,9 +69,12 @@
 }
 .content {
     margin: var(--triple-unit) 0;
+    white-space: pre-line;
 }
 .more_button {
     margin-left: var(--double-unit);
+    border: none;
+    background: none;
     font-size: 12px;
     color: var(--silver);
     cursor: pointer;

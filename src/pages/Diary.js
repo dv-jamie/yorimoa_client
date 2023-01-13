@@ -33,7 +33,6 @@ function Diary() {
         })
         const diaries = response.data.data
         setDiaries(diaries)
-        console.log(diaries)
     }
 
     useEffect(() => {

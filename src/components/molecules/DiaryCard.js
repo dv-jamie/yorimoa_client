@@ -1,4 +1,5 @@
 import dayjs from "dayjs";
+import { useState } from "react";
 import {
     BookmarkOutline,
     CommentOutline,
@@ -9,7 +10,14 @@ import styles from "./DiaryCard.module.css";
 
 function DiaryCard({ diary }) {
     const { content } = diary
-    const linesCount = content.split("\n").length
+    const lines = content.split("\n")
+    const standardLimit = 50
+    const defaultLimit =
+        content.length <= standardLimit && lines.length > 1
+            ? lines[0].length
+            : standardLimit
+
+    const [contentLimit, setContentLimit] = useState(defaultLimit)
 
     return (
         <div className={styles.container}>
@@ -52,15 +60,24 @@ function DiaryCard({ diary }) {
                     </li>
                 </ul>
                 <div className={styles.content}>
-                    {content.length > 50 || linesCount > 1
-                        ? content.substring(0, 50) + "..."
-                        : content
-                    }
-                    <span className={styles.more_button}>
-                        {content.length > 50 || linesCount > 1
-                            ? "더 보기" : ""
+                    {content.substring(0, contentLimit)}
+                    <span
+                        className={
+                            contentLimit === content.length
+                            || content.length < defaultLimit
+                                ? "hide"
+                                : ""
                         }
-                    </span>
+                    >...</span>
+                    <button
+                        className={
+                            contentLimit === content.length
+                            || content.length < defaultLimit
+                                ? `${styles.more_button} hide`
+                                : `${styles.more_button}`
+                        }
+                        onClick={() => setContentLimit(content.length)}
+                    >더 보기</button>
                 </div>
                 <p className={styles.date}>
                     {dayjs(diary.createdAt).format("YYYY.MM.DD")}
