@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Login from './pages/Login';
 import Join from './pages/Join';
 import Diary from './pages/Diary';
@@ -17,7 +17,7 @@ function App() {
       <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Routes>
           <Route element={<Layout />}>
-            <Route path="/" element={<Diary />}></Route>
+            <Route path="/" element={<Navigate to="/diary"/>}></Route>
             <Route path="/profile" element={<Profile />}></Route>
             <Route path="/bookmark" element={<BookmarkList />}></Route>
             <Route path="/login" element={<Login />}></Route>
