@@ -9,17 +9,28 @@
     align-items: center;
     padding: var(--triple-unit) var(--quadruple-unit);
 }
+.writer_image_wrap {
+    width: 32px;
+    height: 32px;
+    border: 1px solid var(--gainsboro);
+    border-radius: 50%;
+    overflow: hidden;
+}
+.writer_image_wrap > img {
+    max-width: 100%;
+}
 .writer > span {
     margin-left: var(--double-unit);
     font-weight: 600;
 }
-.image_wrap {
+.recipe_image_wrap {
     position: relative;
     height: 328px;
+    background: var(--gainsboro);
     overflow: hidden;
 }
-.image_wrap > img {
-    width: 100%;
+.recipe_image_wrap > img {
+    max-width: 100%;
 }
 .recipe_count {
     position: absolute;

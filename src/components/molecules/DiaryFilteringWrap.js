@@ -1,16 +1,23 @@
 import styles from "./DiaryFilteringWrap.module.css";
 import { CheckboxFill } from "../../assets/icons"
-import ThemeList from "./ThemeList";
 import { ColorType } from "type";
-import { useState } from "react";
+import ThemeList from "./ThemeList";
 
-function DiaryFilteringWrap({ themes }) {
-    const [onlyRecipesLinked, setOnlyRecipesLinked] = useState(false)
-
+function DiaryFilteringWrap({
+    themes,
+    selectedThemes,
+    setSelectedThemes,
+    onlyRecipesLinked,
+    setOnlyRecipesLinked
+}) {
     return (
         <div className={styles.container}>
             <div className={styles.theme_wrap}>
-                <ThemeList themes={themes}/>
+                <ThemeList
+                    themes={themes}
+                    selectedThemes={selectedThemes}
+                    setSelectedThemes={setSelectedThemes}
+                />
             </div>
             <div className={styles.check_wrap}>
                 <div

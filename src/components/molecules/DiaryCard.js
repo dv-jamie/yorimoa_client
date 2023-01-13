@@ -15,12 +15,14 @@ function DiaryCard({ diary }) {
         <div className={styles.container}>
             <div className={styles.writer_wrap}>
                 <div className={styles.writer}>
-                    <img src={`${process.env.PUBLIC_URL}${diary.writer.image}`} alt="유저 프로필 이미지" />
+                    <div className={styles.writer_image_wrap}>
+                        <img src={diary.writer.image} alt="유저 프로필 이미지" />
+                    </div>
                     <span>{diary.writer.nick}</span>
                 </div>
             </div>
-            <div className={styles.image_wrap}>
-                <img src={`${process.env.PUBLIC_URL}${diary.image.url}`} alt="레시피 썸네일 이미지" />
+            <div className={styles.recipe_image_wrap}>
+                <img src={diary.images[0].url} alt="레시피 썸네일 이미지" />
                 <div className={styles.recipe_count}>
                     <ToqueOutline
                         width={14}

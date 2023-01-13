@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { ColorType } from "type";
 import {
     Diet,
@@ -8,13 +7,14 @@ import {
 } from "../../assets/icons"
 import styles from "./ThemeList.module.css";
 
-function ThemeList({ themes }) {
-    const themeIds = Array(themes.length).fill().map((_, i) => i + 1)
-    const [selectedThemes, setSelectedThemes] = useState(themeIds)
-
+function ThemeList({
+    themes,
+    selectedThemes,
+    setSelectedThemes
+}) {
     const clickThemeIcon = (id) => {
         if(selectedThemes.includes(id)) {
-            setSelectedThemes(selectedThemes.filter(theme => theme != id))
+            setSelectedThemes(selectedThemes.filter(theme => theme !== id))
         } else {
             setSelectedThemes(prev => [...prev, id])
         }
