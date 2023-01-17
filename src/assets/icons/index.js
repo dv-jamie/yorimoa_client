@@ -1,6 +1,7 @@
 import { ReactComponent as ArrowDownOutline } from './arrowDownOutline.svg'
 import { ReactComponent as BackOutline } from './backOutline.svg'
 import { ReactComponent as BookmarkOutline } from './bookmarkOutline.svg'
+import { ReactComponent as CategoryOutline } from './categoryOutline.svg'
 import { ReactComponent as CheckboxFill } from './checkboxFill.svg'
 import { ReactComponent as ClockOutline } from './clockOutline.svg'
 import { ReactComponent as CommentOutline } from './commentOutline.svg'
@@ -31,6 +32,7 @@ export {
     ArrowDownOutline,
     BackOutline,
     BookmarkOutline,
+    CategoryOutline,
     CheckboxFill,
     ClockOutline,
     CommentOutline,

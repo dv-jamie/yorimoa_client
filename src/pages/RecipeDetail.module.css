@@ -1,0 +1,83 @@
+.writer_info_wrap,
+.recipe_content_wrap {
+    padding: 0 var(--quadruple-unit);    
+}
+.writer_info_wrap {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--triple-unit);
+}
+.writer_image_wrap {
+    width: 40px;
+    height: 40px;
+    margin-right: var(--triple-unit);
+    border-radius: 50%;
+    background: var(--gainsboro);
+    overflow: hidden;
+}
+.writer_image_wrap > img {
+    width: 100%;
+}
+.writer_info_wrap > span {
+    font-size: 16px;
+    font-weight: 600;
+}
+.recipe_image_wrap {
+    width: 360px;
+    height: 360px;
+    margin-bottom: var(--octuple-unit);
+    background: var(--gainsboro);
+    overflow: hidden;
+}
+.recipe_image_wrap > img {
+    width: 100%;
+}
+
+.theme_wrap > span {
+    margin-right: var(--triple-unit);
+    color: var(--dim-gray);
+}
+.title {
+    margin: var(--quadruple-unit) 0;
+    font-size: 22px;
+    font-weight: 600;
+}
+.info_wrap {
+    display: flex;
+    justify-content: space-evenly;
+    height: 66px;
+    margin-bottom: var(--quadruple-unit);
+    padding: var(--triple-unit);
+    border-radius: var(--quadruple-unit);
+    background: var(--gainsboro);
+    color: var(--silver);
+}
+.info_wrap > li {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 25%;
+}
+.info_wrap > li:not(:last-of-type) {
+    border-right: 1px solid #fff;
+}
+.summary {
+    font-size: 16px;
+    line-height: 21px;
+}
+
+.sub_title {
+    margin: 64px 0 var(--quadruple-unit);
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--main-orange);
+}
+
+.division_name {
+    display: block;
+    margin-bottom: var(--triple-unit);
+    padding-bottom: var(--triple-unit);
+    border-bottom: 1px solid var(--dim-gray);
+    font-weight: 700;
+}
