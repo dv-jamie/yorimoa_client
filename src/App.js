@@ -7,7 +7,7 @@ import Recipe from './pages/Recipe';
 import RecipeDetail from './pages/RecipeDetail';
 import RecipeCreate from './pages/RecipeCreate';
 import NotFound from './pages/NotFound';
-import Layout from './components/templetes/Layout';
+import Layout from './pages/Layout';
 import BookmarkList from "pages/BookmarkList";
 import Profile from "pages/Profile";
 
