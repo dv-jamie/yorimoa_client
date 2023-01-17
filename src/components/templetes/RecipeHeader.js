@@ -5,6 +5,8 @@ import Banner from "./Banner";
 function RecipeHeader({
     categories,
     themes,
+    selectedThemes,
+    setSelectedThemes,
     isModalShow,
     setIsModalShow,
     modalType,
@@ -17,6 +19,8 @@ function RecipeHeader({
             <RecipeFilteringWrap
                 categories={categories}
                 themes={themes}
+                selectedThemes={selectedThemes}
+                setSelectedThemes={setSelectedThemes}
                 isModalShow={isModalShow}
                 setIsModalShow={setIsModalShow}
                 modalType = {modalType}

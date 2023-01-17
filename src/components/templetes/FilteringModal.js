@@ -1,11 +1,13 @@
 import SelectButtonList from "components/molecules/SelectButtonList";
-import Themes from "components/molecules/ThemeList";
+import ThemeList from "components/molecules/ThemeList";
 import { ModalType } from "type";
 import styles from "./FilteringModal.module.css";
  
 function FilteringModal({
     categories,
     themes,
+    selectedThemes,
+    setSelectedThemes,
     isModalShow,
     modalType,
     setModalType
@@ -47,7 +49,11 @@ function FilteringModal({
                 </li>
                 <li className={styles.icon_button}>
                     <label>테마</label>
-                    <Themes themes={themes}/>
+                    <ThemeList
+                        themes={themes}
+                        selectedThemes={selectedThemes}
+                        setSelectedThemes={setSelectedThemes}
+                    />
                 </li>
             </ul>
         </div>

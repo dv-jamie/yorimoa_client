@@ -7,6 +7,8 @@ import styles from "./RecipeFilteringWrap.module.css";
 function RecipeFilteringWrap({
     categories,
     themes,
+    selectedThemes,
+    setSelectedThemes,
     isModalShow,
     setIsModalShow,
     modalType,
@@ -49,6 +51,8 @@ function RecipeFilteringWrap({
             <FilteringModal
                 categories={categories}
                 themes={themes}
+                selectedThemes={selectedThemes}
+                setSelectedThemes={setSelectedThemes}
                 isModalShow={isModalShow}
                 modalType={modalType}
                 setModalType={setModalType}
