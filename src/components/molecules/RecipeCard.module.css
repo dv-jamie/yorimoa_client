@@ -9,6 +9,7 @@
 .image_wrap {
     position: relative;
     height: 156px;
+    background: var(--gainsboro);
 }
 .image_wrap > img {
     width: 100%;
@@ -36,6 +37,10 @@
     font-weight: 500;
 }
 .content_wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 77px;
     padding: var(--double-unit);
 }
 .title {

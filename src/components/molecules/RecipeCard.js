@@ -24,8 +24,12 @@ function RecipeCard({ recipe }) {
             onClick={() => navigate(`/recipe/${recipe.id}`)}
         >
             <div className={styles.image_wrap}>
-                <img src={`${process.env.PUBLIC_URL}${recipe.image.url}`} alt="레시피 썸네일 이미지" />
-                <div className={styles.diary_count}>
+                <img src={recipe.images[0].url} alt="레시피 썸네일 이미지" />
+                <div className={
+                    recipe.diariesCount === 0
+                        ? `${styles.diary_count} hide`
+                        : `${styles.diary_count}`
+                }>
                     <RecipeOutline
                         width={12}
                         height={12}
