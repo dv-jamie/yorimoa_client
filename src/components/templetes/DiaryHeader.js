@@ -1,23 +1,11 @@
-import DiaryFilteringWrap from "../molecules/DiaryFilteringWrap";
+import SearchBox from "components/molecules/SearchBox";
 import Banner from "./Banner";
 
-function DiaryHeader({
-    themes,
-    selectedThemes,
-    setSelectedThemes,
-    onlyRecipesLinked,
-    setOnlyRecipesLinked
-}) {
+function DiaryHeader() {
     return (
         <div>
             <Banner type="diary" />
-            <DiaryFilteringWrap
-                themes={themes}
-                selectedThemes={selectedThemes}
-                setSelectedThemes={setSelectedThemes}
-                onlyRecipesLinked={onlyRecipesLinked}
-                setOnlyRecipesLinked={setOnlyRecipesLinked}
-            />
+            <SearchBox type="diary" />
         </div>
     );
 }

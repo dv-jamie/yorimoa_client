@@ -15,7 +15,7 @@ function RecipeHeader({
     return (
         <div>
             <Banner type="recipe" />
-            <SearchBox />
+            <SearchBox type="recipe" />
             <RecipeFilteringWrap
                 categories={categories}
                 themes={themes}

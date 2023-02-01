@@ -6,8 +6,8 @@ function Banner({ type }) {
     switch (type) {
         case 'diary':
             style = `${styles.container} ${styles.container_diary}`
-            title = `요리 일기\n같이 공유해요`
-            subTitle = '다른 사람들과 함께 공유해볼까요?'
+            title = `요리 친구가 쓴\n요리 일기`
+            subTitle = '요리 친구들이 남긴 요리 기록들'
             break
         case 'recipe':
             style = `${styles.container} ${styles.container_recipe}`
