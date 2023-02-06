@@ -2,6 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import styles from "./Nav.module.css";
 import {
     DiaryFill,
+    MemoFill,
     PencilFill,
     ToqueFill,
 } from "../../assets/icons"
@@ -39,6 +40,36 @@ function Nav({
                         <span className={styles.icon_name}>요리일기</span>
                     </Link>
                 </li>
+                <li>
+                    <Link to="/recipe">
+                        <div className={styles.icon}>
+                            <ToqueFill
+                                width="24"
+                                height="24"
+                                fill={pathname === "/recipe"
+                                    ? `${ColorType.MAIN_ORANGE}`
+                                    : `${ColorType.SILVER}`
+                                }
+                            />
+                        </div>
+                        <span className={styles.icon_name}>레시피</span>
+                    </Link>
+                </li>
+                <li>
+                    <Link to="/memo">
+                        <div className={styles.icon}>
+                            <MemoFill
+                                width="24"
+                                height="24"
+                                fill={pathname === "/memo"
+                                    ? `${ColorType.MAIN_ORANGE}`
+                                    : `${ColorType.SILVER}`
+                                }
+                            />
+                        </div>
+                        <span className={styles.icon_name}>메모</span>
+                    </Link>
+                </li>
                 <li
                     className={isModalShow
                         ? `${styles.upload_button} overlap`
@@ -71,21 +102,6 @@ function Nav({
                             <button>X</button>
                         </li>
                     </ul>
-                </li>
-                <li>
-                    <Link to="/recipe">
-                        <div className={styles.icon}>
-                            <ToqueFill
-                                width="24"
-                                height="24"
-                                fill={pathname === "/recipe"
-                                    ? `${ColorType.MAIN_ORANGE}`
-                                    : `${ColorType.SILVER}`
-                                }
-                            />
-                        </div>
-                        <span className={styles.icon_name}>레시피</span>
-                    </Link>
                 </li>
             </ul>
         </div>

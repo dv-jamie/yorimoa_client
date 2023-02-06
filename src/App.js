@@ -34,6 +34,12 @@ function App() {
               <Route path=":id" element={<RecipeDetail />}></Route>
               <Route path="create" element={<RecipeCreate />}></Route>
             </Route>
+
+            <Route path="/memo">
+              <Route path="" element={<Recipe />}></Route>
+              <Route path=":id" element={<RecipeDetail />}></Route>
+              <Route path="create" element={<RecipeCreate />}></Route>
+            </Route>
           </Route>
           
           <Route path="*" element={<NotFound />}></Route>

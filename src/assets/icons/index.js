@@ -7,6 +7,7 @@ import { ReactComponent as ClockOutline } from './clockOutline.svg'
 import { ReactComponent as CommentOutline } from './commentOutline.svg'
 import { ReactComponent as DiaryFill } from './diaryFill.svg'
 import { ReactComponent as LevelOutline } from './levelOutline.svg'
+import { ReactComponent as MemoFill } from './memoFill.svg'
 import { ReactComponent as PencilFill } from './pencilFill.svg'
 import { ReactComponent as PersonOutline } from './personOutline.svg'
 import { ReactComponent as RecipeOutline } from './recipeOutline.svg'
@@ -38,6 +39,7 @@ export {
     CommentOutline,
     DiaryFill,
     LevelOutline,
+    MemoFill,
     PencilFill,
     PersonOutline,
     RecipeOutline,
