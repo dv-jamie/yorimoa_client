@@ -1,6 +1,6 @@
+import { ModalType } from "type";
 import SelectButtonList from "components/molecules/SelectButtonList";
 import ThemeList from "components/molecules/ThemeList";
-import { ModalType } from "type";
 import styles from "./FilteringModal.module.css";
  
 function FilteringModal({
@@ -18,6 +18,14 @@ function FilteringModal({
         { id: 3, name: "30분 이하", minTime: 16, maxTime: 30 },
         { id: 4, name: "1시간 이하", minTime: 31, maxTime: 60 }
     ]
+
+    const clickResetButton = () => {
+        console.log("clickResetButton")
+    }
+
+    const clickApplyButton = () => {
+        console.log("clickApplyButton")
+    }
 
     return (
         <div className={isModalShow && modalType === ModalType.FILTERING_MODAL
@@ -56,6 +64,20 @@ function FilteringModal({
                     />
                 </li>
             </ul>
+            <div className={styles.button_wrap}>
+                <button
+                    className={`${styles.button} ${styles.reset_button}`}
+                    onClick={clickResetButton}
+                    >
+                    초기화
+                </button>
+                <button
+                    className={`${styles.button} ${styles.apply_button}`}
+                    onClick={clickApplyButton}
+                >
+                    적용하기
+                </button>
+            </div>
         </div>
     );
 }
