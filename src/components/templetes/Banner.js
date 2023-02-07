@@ -14,6 +14,11 @@ function Banner({ type }) {
             title = `요리 레시피\n같이 공유해요`
             subTitle = '다른 사람들과 함께 공유해볼까요?'
             break
+        case 'memo':
+            style = `${styles.container} ${styles.container_memo}`
+            title = `냉장고에 있는\n재료 적어두세요!`
+            subTitle = '재료명을 클릭하면 레시피를 볼 수 있어요'
+            break
     }
 
     return (

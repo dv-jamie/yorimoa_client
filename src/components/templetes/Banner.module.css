@@ -9,6 +9,9 @@
 .container_diary {
     background: url('../../assets/images/diaryBannerImage.png');
 }
+.container_memo {
+    background: url('../../assets/images/RefrigeratorImage.png');
+}
 .title_wrap {
     color: #fff;
     white-space: pre-line;

@@ -1,0 +1,14 @@
+.container {
+    min-height: 100vh;
+    box-shadow: 0px 0px 20px rgb(0, 0, 0, 0.1);
+}
+.header_area {
+    position: absolute;
+    width: var(--app-width);
+}
+.footer_area {
+    position: fixed;
+    bottom: 0;
+    width: var(--app-width);
+    height: 65px;
+}
