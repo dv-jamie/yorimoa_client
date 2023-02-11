@@ -1,0 +1,84 @@
+.container {
+    padding: 0 var(--quadruple-unit) 65px;
+}
+
+/* 데이터 없을 때 */
+.no_data {
+    margin-top: 88px;
+    text-align: center;
+    font-size: 15px;
+    color: var(--silver);
+}
+
+/* 아이콘 설명 영역 */
+.explain_wrap {
+    margin: var(--octuple-unit) 0 var(--sextuple-unit);
+    text-align: right;
+}
+.tag {
+    display: inline-flex;
+    align-items: center;
+}
+.tag:first-of-type {
+    margin-right: var(--double-unit);
+}
+.tag > span {
+    margin-left: var(--half-unit);
+    font-size: 12px;
+    color: var(--silver);
+}
+
+/* 카테고리별 테이블 */
+.table {
+    margin-bottom: 48px;
+}
+.category_name {
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--main-orange);
+}
+
+/* row */
+.row {
+    display: flex;
+    align-items: center;
+}
+.row:not(:first-of-type) {
+    height: 36px;
+}
+.row:first-of-type {
+    margin-top: var(--quadruple-unit);
+    padding-bottom: var(--triple-unit);
+    font-weight: 700;
+    font-size: 14px;
+    border-bottom: 1px solid var(--dim-gray);
+}
+.row:not(:first-of-type) {
+    border-bottom: 1px solid var(--gainsboro);
+}
+
+/* column */
+.column:first-of-type {
+    width: 70%;
+}
+.column:last-of-type {
+    width: 30%;
+    text-align: right;
+}
+
+/* 재료명 영역 */
+.ingredient_name,
+.icon {
+    padding: 0 calc(var(--triple-unit) / 2);
+    cursor: pointer;
+}
+.icon > svg {
+    vertical-align: middle;
+    transform: translateY(-1px);
+}
+.ingredient_name:first-of-type {
+    padding-left: 0;
+}
+.ingredient_name:hover {
+    color: var(--main-orange);
+}

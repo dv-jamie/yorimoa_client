@@ -1,0 +1,33 @@
+.container {
+    position: fixed;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    padding: var(--sextuple-unit) var(--sextuple-unit) 63px;
+    width: var(--app-width);
+    background: #fff;
+    border-radius: 32px 32px 0px 0px;
+    z-index: 1000;
+}
+
+.list_item {
+    text-align: center;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: -0.06em;
+    cursor: pointer;
+}
+.list_item:hover {
+    color: var(--main-orange);
+}
+.list_item:first-of-type {
+    margin-bottom: var(--sextuple-unit);
+}
+
+.close_button {
+    margin-bottom: var(--sextuple-unit);
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+}

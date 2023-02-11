@@ -4,6 +4,7 @@ import {
     DiaryFill,
     MemoFill,
     PencilFill,
+    RefrigeratorFill,
     ToqueFill,
 } from "../../assets/icons"
 import { ColorType, ModalType } from "type";
@@ -17,10 +18,10 @@ function Nav({
     const location = useLocation()
     const pathname = location.pathname
 
-    const clickUploadButton = () => {
-        setModalType(ModalType.UPLOAD)
-        setIsModalShow(current => !current)
-    }
+    // const clickUploadButton = () => {
+    //     setModalType(ModalType.UPLOAD)
+    //     setIsModalShow(current => !current)
+    // }
 
     return (
         <div className={styles.container}>
@@ -56,21 +57,21 @@ function Nav({
                     </Link>
                 </li>
                 <li>
-                    <Link to="/memo">
+                    <Link to="/refrigerator">
                         <div className={styles.icon}>
-                            <MemoFill
+                            <RefrigeratorFill
                                 width="24"
                                 height="24"
-                                fill={pathname === "/memo"
+                                fill={pathname === "/refrigerator"
                                     ? `${ColorType.MAIN_ORANGE}`
                                     : `${ColorType.SILVER}`
                                 }
                             />
                         </div>
-                        <span className={styles.icon_name}>메모</span>
+                        <span className={styles.icon_name}>냉장고</span>
                     </Link>
                 </li>
-                <li
+                {/* <li
                     className={isModalShow
                         ? `${styles.upload_button} overlap`
                         :`${styles.upload_button}`
@@ -102,7 +103,7 @@ function Nav({
                             <button>X</button>
                         </li>
                     </ul>
-                </li>
+                </li> */}
             </ul>
         </div>
     );

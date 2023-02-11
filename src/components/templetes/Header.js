@@ -1,35 +1,45 @@
-import { Link, useLocation } from "react-router-dom";
+import UploadBottomSheet from "components/molecules/UploadBottomSheet";
+import { useLocation } from "react-router-dom";
 import {
-    BookmarkOutline,
+    PencilOutline,
+    SettingOutline
 } from "../../assets/icons"
 import styles from "./Header.module.css";
 
-function Header() {
+function Header({
+    isBottomSheetShow,
+    setIsBottomSheetShow
+}) {
     const location = useLocation()
     const pathname = location.pathname
 
     switch (pathname) {
-        case "/memo":
+        case "/refrigerator":
             return (
-                <div className={styles.container}>
+                <div className={isBottomSheetShow
+                    ? `${styles.container} overlap`
+                    : `${styles.container}`
+                }>
                     <ul className={styles.nav}>
-                        <li>
-                            <Link to="/memo/create">
-                                <BookmarkOutline
-                                    width={24}
-                                    height={24}
-                                    stroke="white"
-                                />
-                            </Link>
-                        </li>
-                        <li>
-                            <BookmarkOutline
+                        <li onClick={() => setIsBottomSheetShow(true)}>
+                            <PencilOutline
                                 width={24}
                                 height={24}
-                                stroke="white"
+                            />
+                        </li>
+                        <li>
+                            <SettingOutline
+                                width={24}
+                                height={24}
                             />
                         </li>
                     </ul>
+
+                    {/* 업로드 바텀시트 */}
+                    <UploadBottomSheet
+                        isBottomSheetShow={isBottomSheetShow}
+                        setIsBottomSheetShow={setIsBottomSheetShow}
+                    />
                 </div>
             );
     }
