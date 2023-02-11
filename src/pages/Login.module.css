@@ -1,0 +1,58 @@
+.container {
+    height: 100vh;
+    padding: 72px 16px 0;
+    text-align: center;
+}
+.sub_title {
+    font-weight: 600;
+    font-size: 22px;
+    color: var(--gray);
+}
+.title {
+    margin: var(--triple-unit) 0;
+}
+.sub_title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 22px;
+}
+.sub_title > svg {
+    margin-right: var(--standard-unit);
+}
+.title {
+    margin: var(--triple-unit) 0;
+    font-weight: 700;
+    font-size: 32px;
+}
+
+.image {
+    width: 197px;
+    height: 358px;
+    margin: 0 auto;
+    background: url('../assets/images/refrigeratorMockup.png');
+}
+
+.description{
+    line-height: 21px;
+    letter-spacing: -0.06em;
+    color: var(--gray);
+}
+.kakao_login_button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--triple-unit);
+    width: 100%;
+    height: 64px;
+    margin-top: 46px;
+    border: none;
+    border-radius: 12px;
+    outline: none;
+    background: var(--main-yellow);
+    font-weight: 600;
+    font-size: 17px;
+    color: #3B1E1D;
+    cursor: pointer;
+}
