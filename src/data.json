@@ -14,15 +14,26 @@
         { "id": 12, "name": "기타" }
     ],
     "categories": [
-        { "id": 1, "name": "밥/죽" },
-        { "id": 2, "name": "국/스튜" },
-        { "id": 3, "name": "파스타/면" },
-        { "id": 4, "name": "브런치" },
-        { "id": 5, "name": "분식" },
-        { "id": 6, "name": "반찬" },
-        { "id": 7, "name": "베이킹" },
-        { "id": 8, "name": "음료" },
-        { "id": 9, "name": "기타" }
+        { "id": 1, "type": "recipe", "name": "밥/죽" },
+        { "id": 2, "type": "recipe", "name": "국/스튜" },
+        { "id": 3, "type": "recipe", "name": "파스타/면" },
+        { "id": 4, "type": "recipe", "name": "브런치" },
+        { "id": 5, "type": "recipe", "name": "분식" },
+        { "id": 6, "type": "recipe", "name": "반찬" },
+        { "id": 7, "type": "recipe", "name": "베이킹" },
+        { "id": 8, "type": "recipe", "name": "음료" },
+        { "id": 9, "type": "recipe", "name": "기타" },
+        { "id": 10, "type": "refrigerator", "name": "과일" },
+        { "id": 11, "type": "refrigerator", "name": "채소" },
+        { "id": 12, "type": "refrigerator", "name": "고기" },
+        { "id": 13, "type": "refrigerator", "name": "수산물" },
+        { "id": 14, "type": "refrigerator", "name": "유제품" },
+        { "id": 15, "type": "refrigerator", "name": "곡물" },
+        { "id": 16, "type": "refrigerator", "name": "빵" },
+        { "id": 17, "type": "refrigerator", "name": "면" },
+        { "id": 18, "type": "refrigerator", "name": "조미료" },
+        { "id": 19, "type": "refrigerator", "name": "음료" },
+        { "id": 20, "type": "refrigerator", "name": "기타" }
     ],
     "diaries": [
         {
@@ -41,6 +52,35 @@
             "recipesCount": 1,
             "bookmarksCount": 24,
             "repliesCount": 10
+        }
+    ],
+    "refrigerators": [
+        {
+            "id": 1,
+            "category": 10,
+            "name": "사과",
+            "boughtAt": "2023-01-04 14:35:31.052305",
+            "eatTag": false,
+            "buyTag": false,
+            "writer": 1
+        },
+        {
+            "id": 2,
+            "category": 10,
+            "name": "바나나",
+            "boughtAt": "2023-01-04 14:35:31.052305",
+            "eatTag": true,
+            "buyTag": false,
+            "writer": 1
+        },
+        {
+            "id": 3,
+            "category": 11,
+            "name": "브로콜리",
+            "boughtAt": "2023-01-04 14:35:31.052305",
+            "eatTag": true,
+            "buyTag": true,
+            "writer": 1
         }
     ],
     "recipes": [
