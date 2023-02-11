@@ -18,8 +18,11 @@
     border: none;
     outline: none;
 }
-.search_wrap > svg {
+.search_button {
     margin: var(--quadruple-unit);
     margin-left: 0;
+    border: none;
+    outline: none;
+    background: none;
     cursor: pointer;
 }
