@@ -11,6 +11,7 @@
 	--octuple-unit: 32px;
 	--box-shadow: 2px 2px 8px 4px rgb(0, 0, 0, 0.04);
 	--main-orange: #E05E21;
+	--main-yellow: #FFDC00;
 	--charcoal: #3C3C3C;
 	--dim-gray: #646464;
 	--gray: #7A7A7A;
@@ -84,12 +85,14 @@ table {
 }
 .overlap::before {
 	content: "";
+	position: absolute;
     width: 100%;
     height: 100%;
     position: fixed;
     top: 0;
 	left: 0;
     background: rgba(0, 0, 0, 0.3);
+	z-index: 1;
 }
 .unscrollable {
 	overflow: hidden;
