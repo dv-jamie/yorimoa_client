@@ -1,12 +1,16 @@
 import { CloseOutline } from "assets/icons";
-import styles from "./UploadBottomSheet.module.css";
+import { BottomSheetType } from "type";
+import styles from "./SelectMenuBottomSheet.module.css";
 
-function UploadBottomSheet({
+function SelectMenuBottomSheet({
     isBottomSheetShow,
-    setIsBottomSheetShow
+    setIsBottomSheetShow,
+    bottomSheetType,
+    setBottomSheetType,
 }) {
     const clickAddButton = () => {
-        console.log("add")
+        setIsBottomSheetShow(true)
+        setBottomSheetType(BottomSheetType.ADD_INGREDIENT)
     }
 
     const clickUpdateButton = () => {
@@ -15,8 +19,8 @@ function UploadBottomSheet({
 
     return (
         <div className={isBottomSheetShow
-            ? `${styles.container} show`
-            : `${styles.container} hide`
+            ? "bottomsheet show"
+            : "bottomsheet hide"
         }>
             <button
                 className={styles.close_button}
@@ -42,4 +46,4 @@ function UploadBottomSheet({
     );
 }
 
-export default UploadBottomSheet;
+export default SelectMenuBottomSheet;
