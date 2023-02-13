@@ -1,14 +1,16 @@
 import { CloseOutline } from "assets/icons";
-import RefrigeratorFilteringWrap from "components/molecules/RefrigeratorFilteringWrap";
-import styles from "./AddIngredientBottomsheet.module.css";
+import styles from "./EditIngredientBottomsheet.module.css";
 
-function AddIngredientBottomsheet({
+function EditIngredientBottomsheet({
     isTwoDepthBottomsheetShow,
-    setIsTwoDepthBottomsheetShow,
-    refrigeratorCategories
+    setIsTwoDepthBottomsheetShow
 }) {
-    const clickAddButton = () => {
-        setIsTwoDepthBottomsheetShow(false)
+    const clickDeleteButton = () => {
+        console.log("add")
+    }
+
+    const clickEditButton = () => {
+        console.log("add")
     }
 
     return (
@@ -30,25 +32,18 @@ function AddIngredientBottomsheet({
             <ul>
                 <li className={styles.list_item}>
                     <label>상품명</label>
-                    <div className={styles.input_wrap}>
-                        <input
-                            placeholder="ex) 스테이크용소고기"
-                        />
+                    <div>
+                        <input />
                     </div>
                 </li>
                 <li className={styles.list_item}>
                     <label>카테고리</label>
-                    <RefrigeratorFilteringWrap
-                        className={styles.category_wrap}
-                        categories={refrigeratorCategories}
-                    />
+                    <div>카테..</div>
                 </li>
                 <li className={styles.list_item}>
                     <label>구매일</label>
-                    <div className={styles.input_wrap}>
-                    <input
-                        placeholder="여긴 달력으로.....??"
-                    />
+                    <div>
+                        <input />
                     </div>
                 </li>
             </ul>
@@ -56,14 +51,20 @@ function AddIngredientBottomsheet({
             {/* 하단 버튼 영역 */}
             <div className={styles.button_wrap}>
                 <button
-                    className={`${styles.button} ${styles.add_button}`}
-                    onClick={clickAddButton}
+                    className={`${styles.button} ${styles.delete_button}`}
+                    onClick={clickDeleteButton}
                 >
-                    추가하기
+                    삭제하기
+                </button>
+                <button
+                    className={`${styles.button} ${styles.edit_button}`}
+                    onClick={clickEditButton}
+                >
+                    수정하기
                 </button>
             </div>
         </div>
     );
 }
 
-export default AddIngredientBottomsheet;
+export default EditIngredientBottomsheet;

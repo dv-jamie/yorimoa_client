@@ -1,5 +1,4 @@
 import SelectButtonList from "./SelectButtonList";
-import styles from "./RefrigeratorFilteringWrap.module.css";
 
 function RefrigeratorFilteringWrap({
     categories
@@ -9,9 +8,8 @@ function RefrigeratorFilteringWrap({
     }
 
     return (
-        <div className={styles.container}>
+        <div>
             <div
-                className={styles.select_button_wrap}
                 onClick={clickSelectButtonWrap}
             >
                 <SelectButtonList selectItems={categories} />

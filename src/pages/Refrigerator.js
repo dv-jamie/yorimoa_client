@@ -2,16 +2,15 @@ import { useEffect, useState } from "react";
 import dummy from "../data.json";
 import RefrigeratorHeader from "components/templetes/RefrigeratorHeader";
 import RefrigetraotrTable from "components/templetes/RefrigeratorTable";
+import { useOutletContext } from "react-router-dom";
 
 function Refrigerator() {
     // 더미데이터
     const refrigeratorsDummy = dummy.refrigerators
-    const categoriesDummy = dummy.categories.filter(category => {
-        return category.type === "refrigerator"
-    })
 
+    const { isModalShowContext, refrigeratorCategoriesContext } = useOutletContext()
+    const [refrigeratorCategories] = refrigeratorCategoriesContext
     const [refrigerators, setRefrigerators] = useState(refrigeratorsDummy)
-    const [categories, setCategories] = useState(categoriesDummy)
     const [keyword, setKeyword] = useState("")
     // const [page, setPage] = useState(0)
 
@@ -37,11 +36,11 @@ function Refrigerator() {
     return (
         <div>
             <RefrigeratorHeader
-                categories={categories}
+                categories={refrigeratorCategories}
                 setKeyword={setKeyword}
             />
             <RefrigetraotrTable
-                categories={categories}
+                categories={refrigeratorCategories}
                 refrigerators={refrigerators}
                 setRefrigerators={setRefrigerators}
             />
