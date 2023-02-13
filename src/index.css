@@ -46,6 +46,10 @@ a {
 	color: inherit;
 	text-decoration: none;
 }
+button {
+	padding: 0;
+	cursor: pointer;
+}
 
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -81,7 +85,12 @@ table {
 }
 
 .hide {
-	display: none;
+	padding: 0;
+	max-height: 0;
+	overflow: hidden;
+}
+.show {
+	max-height: 203px;
 }
 .overlap::before {
 	content: "";

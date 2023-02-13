@@ -15,7 +15,7 @@ function UploadBottomSheet({
 
     return (
         <div className={isBottomSheetShow
-            ? `${styles.container}`
+            ? `${styles.container} show`
             : `${styles.container} hide`
         }>
             <button

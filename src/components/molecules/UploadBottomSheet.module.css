@@ -8,6 +8,7 @@
     background: #fff;
     border-radius: 32px 32px 0px 0px;
     z-index: 1000;
+    transition: max-height 0.1s ease-out;
 }
 
 .list_item {
