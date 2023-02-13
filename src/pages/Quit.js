@@ -1,11 +1,23 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
+import { useOutletContext } from "react-router-dom";
 import { CheckboxFill, SmilingFaceWithTear } from "assets/icons";
-import { ColorType } from "type";
+import { ColorType, ModalType } from "type";
+import Modal from "components/molecules/Modal";
 import styles from "./Quit.module.css";
 
 function Quit() {
+    const agreeButtonRef = useRef()
+
+    const { isModalShowContext } = useOutletContext()
+    const [isModalShow, setIsModalShow] = isModalShowContext
+
     const [isAgree, setIsAgree] = useState(false)
     
+    const clikcQuitButton = () => {
+        if(!isAgree) return
+        setIsModalShow(true)
+    }
+
     return (
         <div className={styles.container}>
             <h2 className={styles.title}>
@@ -44,6 +56,7 @@ function Quit() {
 
             <button
                 className={styles.agree_button}
+                ref={agreeButtonRef}
                 onClick={() => setIsAgree(isAgree ? false : true)}
             >
                 <CheckboxFill
@@ -57,10 +70,19 @@ function Quit() {
                 모든 데이터를 삭제하는 것에 동의합니다.
             </button>
 
-            <button className={isAgree
-                ? `${styles.quit_button} ${styles.button_active}`
-                : `${styles.quit_button}`
+            <button
+                onClick={clikcQuitButton}
+                className={isAgree
+                    ? `${styles.quit_button} ${styles.button_active}`
+                    : `${styles.quit_button}`
             }>탈퇴하기</button>
+
+            <Modal
+                isModalShow={isModalShow}
+                setIsModalShow={setIsModalShow}
+                modalType={ModalType.ALERT}
+                message="탈퇴가 완료되었습니다."
+            />
         </div>
     );
 }

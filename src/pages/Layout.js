@@ -10,11 +10,13 @@ function Layout() {
     let headerStyle = styles.header_area
     let footerStyle = styles.footer_area
 
+    const [isModalShow, setIsModalShow] = useState(false)
     const [isBottomSheetShow, setIsBottomSheetShow] = useState(false)
     
     useEffect(() => {
         document.body.classList.toggle("unscrollable", isBottomSheetShow)
-    }, [isBottomSheetShow])
+        document.body.classList.toggle("unscrollable", isModalShow)
+    }, [isModalShow, isBottomSheetShow])
 
     switch (pathname) {
         case "/login":
@@ -30,7 +32,10 @@ function Layout() {
     }
 
     return (
-        <div className={styles.container}>
+        <div className={isModalShow
+            ? `${styles.container} overlap`
+            : `${styles.container}`
+        }>
             <header className={headerStyle}>
                 <Header
                     isBottomSheetShow={isBottomSheetShow}
@@ -39,6 +44,9 @@ function Layout() {
             </header>
             <main className={styles.main_area}>
                 <Outlet
+                    context={{
+                        isModalShowContext: [isModalShow, setIsModalShow],
+                    }}
                     className={styles.main_area}
                 />
             </main>

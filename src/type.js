@@ -10,7 +10,9 @@ export const ColorType = {
 export const ModalType = {
     FILTERING_MODAL: "filteringModal",
     UPLOAD: "upload",
-    CONFIRM_BACK: "confirmBack"
+    ALERT: "alert",
+    CONFIRM_BACK: "confirmBack",
+    CONFIRM_DELETE: "confirmDelete"
 }
 
 export const RecipeOrderType = {

@@ -1,7 +1,7 @@
 import { BackOutline } from "assets/icons";
 import { useOutletContext } from "react-router-dom";
 import { ModalType } from "type";
-import ConfirmModal from "components/molecules/ConfirmModal";
+import Modal from "components/molecules/Modal";
 import styles from "./DiaryCreate.module.css"
 
 function DiaryCreate() {
@@ -48,7 +48,7 @@ function DiaryCreate() {
                 - 요리를 하다가 발견한 꿀팁이 있나요?<br />
                 - 실패는 성공의 어머니! 다음에는 꼭 성공해봐요.
             </p>
-            <ConfirmModal
+            <Modal
                 isModalShow={isModalShow}
                 setIsModalShow={setIsModalShow}
                 modalType={modalType}
