@@ -1,16 +1,16 @@
-import styles from "./AddIngredientBottomSheet.module.css";
+import styles from "./AddIngredientBottomsheet.module.css";
 
-function AddIngredientBottomSheet({
-    isBottomSheetShow,
-    setIsBottomSheetShow
+function AddIngredientBottomsheet({
+    isBottomsheetShow,
+    setIsBottomsheetShow
 }) {
     const clickAddButton = () => {
         console.log("add")
     }
 
     return (
-        <div className={isBottomSheetShow
-            ? "bottomsheet show"
+        <div className={isBottomsheetShow
+            ? `bottomsheet ${styles.add_bottomsheet} show`
             : "bottomsheet hide"
         }>
             <ul>
@@ -38,4 +38,4 @@ function AddIngredientBottomSheet({
     );
 }
 
-export default AddIngredientBottomSheet;
+export default AddIngredientBottomsheet;

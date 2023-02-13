@@ -102,7 +102,7 @@ table {
     width: var(--app-width);
     background: #fff;
     border-radius: 32px 32px 0px 0px;
-    z-index: 1000;
+    z-index: 100;
     transition: max-height 0.1s ease-out;
 }
 .hide {

@@ -11,12 +11,15 @@ function Layout() {
     let footerStyle = styles.footer_area
 
     const [isModalShow, setIsModalShow] = useState(false)
-    const [isBottomSheetShow, setIsBottomSheetShow] = useState(false)
+    const [isBottomsheetShow, setIsBottomsheetShow] = useState(false)
     
     useEffect(() => {
-        document.body.classList.toggle("unscrollable", isBottomSheetShow)
         document.body.classList.toggle("unscrollable", isModalShow)
-    }, [isModalShow, isBottomSheetShow])
+    }, [isModalShow])
+    
+    useEffect(() => {
+        document.body.classList.toggle("unscrollable", isBottomsheetShow)
+    }, [isBottomsheetShow])
 
     switch (pathname) {
         case "/login":
@@ -38,8 +41,8 @@ function Layout() {
         }>
             <header className={headerStyle}>
                 <Header
-                    isBottomSheetShow={isBottomSheetShow}
-                    setIsBottomSheetShow={setIsBottomSheetShow}
+                    isBottomsheetShow={isBottomsheetShow}
+                    setIsBottomsheetShow={setIsBottomsheetShow}
                 />
             </header>
             <main className={styles.main_area}>

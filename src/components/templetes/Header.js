@@ -4,12 +4,12 @@ import {
     PencilOutline,
     SettingOutline
 } from "../../assets/icons"
-import UploadBottomSheet from "components/molecules/UploadBottomSheet";
+import SelectMenuBottomsheet from "components/molecules/SelectMenuBottomsheet";
 import styles from "./Header.module.css";
 
 function Header({
-    isBottomSheetShow,
-    setIsBottomSheetShow
+    isBottomsheetShow,
+    setIsBottomsheetShow
 }) {
     const navigate = useNavigate()
     const location = useLocation()
@@ -36,12 +36,12 @@ function Header({
         default:
             // 기본 헤더
             return (
-                <div className={isBottomSheetShow
+                <div className={isBottomsheetShow
                     ? `${styles.container} overlap`
                     : `${styles.container}`
                 }>
                     <ul className={styles.nav}>
-                        <li onClick={() => setIsBottomSheetShow(true)}>
+                        <li onClick={() => setIsBottomsheetShow(true)}>
                             <PencilOutline
                                 width={24}
                                 height={24}
@@ -56,9 +56,9 @@ function Header({
                     </ul>
         
                     {/* 업로드 바텀시트 */}
-                    <UploadBottomSheet
-                        isBottomSheetShow={isBottomSheetShow}
-                        setIsBottomSheetShow={setIsBottomSheetShow}
+                    <SelectMenuBottomsheet
+                        isBottomsheetShow={isBottomsheetShow}
+                        setIsBottomsheetShow={setIsBottomsheetShow}
                     />
                 </div>
             );

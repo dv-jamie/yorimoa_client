@@ -1,16 +1,13 @@
 import { CloseOutline } from "assets/icons";
-import { BottomSheetType } from "type";
-import styles from "./SelectMenuBottomSheet.module.css";
+import AddIngredientBottomsheet from "./AddIngredientBottomsheet";
+import styles from "./SelectMenuBottomsheet.module.css";
 
-function SelectMenuBottomSheet({
-    isBottomSheetShow,
-    setIsBottomSheetShow,
-    bottomSheetType,
-    setBottomSheetType,
+function SelectMenuBottomsheet({
+    isBottomsheetShow,
+    setIsBottomsheetShow,
 }) {
     const clickAddButton = () => {
-        setIsBottomSheetShow(true)
-        setBottomSheetType(BottomSheetType.ADD_INGREDIENT)
+        setIsBottomsheetShow(true)
     }
 
     const clickUpdateButton = () => {
@@ -18,13 +15,13 @@ function SelectMenuBottomSheet({
     }
 
     return (
-        <div className={isBottomSheetShow
+        <div className={isBottomsheetShow
             ? "bottomsheet show"
             : "bottomsheet hide"
         }>
             <button
                 className={styles.close_button}
-                onClick={() => setIsBottomSheetShow(false)}
+                onClick={() => setIsBottomsheetShow(false)}
             >
                 <CloseOutline />
             </button>
@@ -34,6 +31,7 @@ function SelectMenuBottomSheet({
                     onClick={clickAddButton}
                 >
                     재료 추가하기
+                    <AddIngredientBottomsheet />
                 </li> 
                 <li
                     className={styles.list_item}
@@ -46,4 +44,4 @@ function SelectMenuBottomSheet({
     );
 }
 
-export default SelectMenuBottomSheet;
+export default SelectMenuBottomsheet;
