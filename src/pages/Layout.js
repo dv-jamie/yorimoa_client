@@ -6,9 +6,10 @@ import styles from "./Layout.module.css";
 
 function Layout() {
     const location = useLocation()
-    let pathname = location.pathname
+    const pathname = location.pathname
     let headerStyle = styles.header_area
     let footerStyle = styles.footer_area
+
 
     const [isBottomSheetShow, setIsBottomSheetShow] = useState(false)
     
@@ -22,6 +23,10 @@ function Layout() {
         case "/recipe":
             headerStyle = `${styles.header_area} hide`
             footerStyle = `${styles.footer_area} hide`
+            break
+        case "/setting":
+            footerStyle = `${styles.footer_area} hide`
+            break
     }
 
     return (

@@ -4,6 +4,8 @@ import Layout from './pages/Layout';
 import Refrigerator from "pages/Refrigerator";
 import ComingSoon from "pages/ComingSoon";
 import Login from "pages/Login";
+import Setting from "pages/Setting";
+import Quit from "pages/Quit";
 
 function App() {
   return (
@@ -13,6 +15,8 @@ function App() {
           <Route element={<Layout />}>
             <Route path="/" element={<Navigate to="/refrigerator" />}></Route>
             <Route path="/login" element={<Login />}></Route>
+            <Route path="/setting" element={<Setting />}></Route>
+            <Route path="/quit" element={<Quit />}></Route>
             <Route path="/diary" element={<ComingSoon type="diary" />}></Route>
             <Route path="/recipe" element={<ComingSoon type="recipe" />}></Route>
             <Route path="/refrigerator" element={<Refrigerator />}></Route>
