@@ -12,7 +12,6 @@
     font-weight: 600;
     font-size: 16px;
     color: var(--silver);
-    cursor: pointer;
 }
 .container > h2 {
     margin-top: var(--sextuple-unit);

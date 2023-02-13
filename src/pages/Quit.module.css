@@ -1,0 +1,77 @@
+.container {
+    padding: 76px var(--quadruple-unit) var(--quadruple-unit);
+}
+.list > p,
+.link_button,
+.guide {
+    letter-spacing: -0.06em;
+}
+.title {
+    font-weight: 700;
+    font-size: 28px;
+    margin-bottom: var(--octuple-unit);
+}
+.title:last-of-type {
+    display: flex;
+    align-self: center;
+    margin-bottom: var(--triple-unit);
+}
+
+/* 어떤 부분이 불편하셨나요? */
+.list {
+    margin-bottom: var(--quadruple-unit);
+    padding: var(--sextuple-unit) var(--quadruple-unit);
+    box-shadow: 2px 2px 8px 4px rgba(0, 0, 0, 0.04);
+    border-radius: 16px;
+}
+.list:last-of-type {
+    margin-bottom: 64px;
+}
+.list > h3 {
+    margin-bottom: var(--double-unit);
+    font-weight: 600;
+    font-size: 16px;
+}
+.list > p {
+    color: var(--silver);
+}
+.link_button {
+    margin-top: var(--triple-unit);
+    padding: 0;
+    background: none;
+    border: none;
+    outline: none;
+    text-decoration: underline;
+    color: var(--main-orange);
+}
+
+/* 그래도 탈퇴를 원하시나요? */
+.guide {
+    margin-bottom: 52px;
+    font-weight: 600;
+    line-height: 19px;
+    color: var(--charcoal);
+}
+.agree_button,
+.quit_button {
+    outline: none;
+    border: none;
+}
+.agree_button {
+    display: flex;
+    align-items: center;
+    gap: var(--standard-unit);
+    background: none;
+    color: var(--dim-gray);
+}
+.quit_button {
+    width: 100%;
+    height: 54px;
+    margin-top: var(--octuple-unit);
+    border-radius: 12px;
+    background: var(--light-gray);
+    color: #fff;
+}
+.button_active {
+    background: var(--main-orange);
+}

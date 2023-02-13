@@ -10,7 +10,6 @@ function Layout() {
     let headerStyle = styles.header_area
     let footerStyle = styles.footer_area
 
-
     const [isBottomSheetShow, setIsBottomSheetShow] = useState(false)
     
     useEffect(() => {
@@ -25,6 +24,7 @@ function Layout() {
             footerStyle = `${styles.footer_area} hide`
             break
         case "/setting":
+        case "/quit":
             footerStyle = `${styles.footer_area} hide`
             break
     }

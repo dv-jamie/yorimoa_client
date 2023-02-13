@@ -22,6 +22,7 @@ import { ReactComponent as RefrigeratorFill } from './refrigeratorFill.svg'
 import { ReactComponent as SearchOutline } from './searchOutline.svg'
 import { ReactComponent as ServingOutline } from './servingOutline.svg'
 import { ReactComponent as SettingOutline } from './settingOutline.svg'
+import { ReactComponent as SmilingFaceWithTear } from './smilingFaceWithTear.svg'
 import { ReactComponent as SpoonFill } from './spoonFill.svg'
 import { ReactComponent as ToqueFill } from './toqueFill.svg'
 import { ReactComponent as ToqueOutline } from './toqueOutline.svg'
@@ -64,6 +65,7 @@ export {
     SearchOutline,
     ServingOutline,
     SettingOutline,
+    SmilingFaceWithTear,
     SpoonFill,
     ToqueFill,
     ToqueOutline,

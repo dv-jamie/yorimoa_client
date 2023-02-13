@@ -21,7 +21,6 @@
     margin-left: var(--double-unit);
     border: none;
     background: none;
-    cursor: pointer;
 }
 .button_wrap > button:first-of-type {
     color: var(--main-orange);
