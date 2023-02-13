@@ -85,13 +85,33 @@ table {
 	color: var(--silver);
 }
 
+#root {
+	position: relative;
+	width: var(--app-width);
+	height: 100vh;
+	margin: 0 auto;
+    font-size: 14px;
+}
+
+.bottomsheet {
+	position: fixed;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    padding: var(--sextuple-unit) var(--sextuple-unit) 63px;
+    width: var(--app-width);
+    background: #fff;
+    border-radius: 32px 32px 0px 0px;
+    z-index: 1000;
+    transition: max-height 0.1s ease-out;
+}
 .hide {
 	padding: 0;
 	max-height: 0;
 	overflow: hidden;
 }
 .show {
-	max-height: 203px;
+	max-height: 100vh;
 }
 .overlap::before {
 	content: "";
@@ -106,12 +126,4 @@ table {
 }
 .unscrollable {
 	overflow: hidden;
-}
-
-#root {
-	position: relative;
-	width: var(--app-width);
-	height: 100vh;
-	margin: 0 auto;
-    font-size: 14px;
 }
