@@ -18,7 +18,6 @@ function App() {
             <Route path="/refrigerator" element={<Refrigerator />}></Route>
             <Route path="*" element={<NotFound />}></Route>
           </Route>
-          
         </Routes>
 
         <Routes>
