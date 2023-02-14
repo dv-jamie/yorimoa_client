@@ -98,7 +98,7 @@ table {
     left: 50%;
     bottom: 0;
     transform: translateX(-50%);
-    padding: var(--sextuple-unit) var(--sextuple-unit) 63px;
+    padding: var(--sextuple-unit) var(--sextuple-unit) 40px;
     width: var(--app-width);
     background: #fff;
     border-radius: 32px 32px 0px 0px;
