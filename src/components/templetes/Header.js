@@ -1,4 +1,4 @@
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import {
     BackOutline,
     PencilOutline,
@@ -45,10 +45,12 @@ function Header({
                             />
                         </li>
                         <li>
-                            <SettingOutline
-                                width={24}
-                                height={24}
-                            />
+                            <Link to="/setting">
+                                <SettingOutline
+                                    width={24}
+                                    height={24}
+                                />
+                            </Link>
                         </li>
                     </ul>
                 </div>
