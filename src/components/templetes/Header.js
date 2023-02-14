@@ -7,6 +7,7 @@ import {
 import styles from "./Header.module.css";
 
 function Header({
+    pageTitle,
     setIsBottomsheetShow
 }) {
     const navigate = useNavigate()
@@ -14,6 +15,7 @@ function Header({
     const pathname = location.pathname
 
     switch (pathname) {
+        case "/setting":
         case "/quit":
             // 뒤로가기 버튼 있는 헤더
             return (
@@ -27,7 +29,7 @@ function Header({
                             height={24}
                         />
                     </button>
-                    <h1 className={styles.page_title}>탈퇴하기</h1>
+                    <h1 className={styles.page_title}>{pageTitle}</h1>
                     <div className={styles.blank}></div>
                 </div>
             );

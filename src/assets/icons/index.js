@@ -7,6 +7,7 @@ import { ReactComponent as CheckboxFill } from './checkboxFill.svg'
 import { ReactComponent as ClockOutline } from './clockOutline.svg'
 import { ReactComponent as CloseOutline } from './closeOutline.svg'
 import { ReactComponent as CommentOutline } from './commentOutline.svg'
+import { ReactComponent as DeleteOutline } from './deleteOutline.svg'
 import { ReactComponent as DiaryFill } from './diaryFill.svg'
 import { ReactComponent as HeadsetOutline } from './headsetOutline.svg'
 import { ReactComponent as KakaoSymbol } from './kakaoSymbol.svg'
@@ -50,6 +51,7 @@ export {
     ClockOutline,
     CloseOutline,
     CommentOutline,
+    DeleteOutline,
     DiaryFill,
     HeadsetOutline,
     KakaoSymbol,

@@ -1,21 +1,37 @@
-import { HeadsetOutline, PowerOutline, QuitOutline } from "assets/icons";
+import {
+    DeleteOutline,
+    HeadsetOutline,
+    PowerOutline,
+    QuitOutline
+} from "assets/icons";
+import { Link } from "react-router-dom";
 import styles from "./Setting.module.css";
 
 function Setting() {
     return (
         <div className={styles.container}>
             <ul className={styles.list_wrap}>
-                <li>
+                <li className={styles.list_item}>
                     <PowerOutline />
                     <span>로그아웃</span>
                 </li>
-                <li>
+                <li className={styles.list_item}>
                     <HeadsetOutline />
-                    <span>문의하기</span>
+                    <Link to="/">
+                        <span>문의하기</span>
+                    </Link>
                 </li>
-                <li>
+                <li className={styles.list_item}>
+                    <DeleteOutline />
+                    <Link to="/reset">
+                        <span>데이터 초기화</span>
+                    </Link>
+                </li>
+                <li className={styles.list_item}>
                     <QuitOutline />
-                    <span>탈퇴하기</span>
+                    <Link to="/quit">
+                        <span>탈퇴하기</span>
+                    </Link>
                 </li>
             </ul>
         </div>

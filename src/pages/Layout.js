@@ -12,6 +12,7 @@ function Layout() {
     const pathname = location.pathname
     let headerStyle = styles.header_area
     let footerStyle = styles.footer_area
+    let pageTitle
 
     const refrigeratorCategoriesDummy = dummy.categories.filter(category => {
         return category.type === "refrigerator"
@@ -35,14 +36,19 @@ function Layout() {
     }, [isTwoDepthBottomsheetShow])
 
     switch (pathname) {
+        case "/setting":
+            pageTitle = "설정"
+            footerStyle = `${styles.footer_area} hide`
+            break
+        case "/quit":
+            pageTitle = "탈퇴하기"
+            footerStyle = `${styles.footer_area} hide`
+            break
         case "/login":
         case "/diary":
         case "/recipe":
+        default:
             headerStyle = `${styles.header_area} hide`
-            footerStyle = `${styles.footer_area} hide`
-            break
-        case "/setting":
-        case "/quit":
             footerStyle = `${styles.footer_area} hide`
             break
     }
@@ -54,7 +60,7 @@ function Layout() {
         }>
             <header className={headerStyle}>
                 <Header
-                    isBottomsheetShow={isBottomsheetShow}
+                    pageTitle={pageTitle}
                     setIsBottomsheetShow={setIsBottomsheetShow}
                 />
             </header>
