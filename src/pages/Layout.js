@@ -47,7 +47,6 @@ function Layout() {
         case "/login":
         case "/diary":
         case "/recipe":
-        default:
             headerStyle = `${styles.header_area} hide`
             footerStyle = `${styles.footer_area} hide`
             break
