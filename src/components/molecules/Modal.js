@@ -1,23 +1,41 @@
 import { useNavigate } from "react-router-dom";
-import { ModalType } from "type";
+import { ModalConfirmButtonType, ModalMessageType, ModalType } from "type";
 import styles from "./Modal.module.css";
 
 function Modal({
     isModalShow,
     setIsModalShow,
     modalType,
-    message
+    setModalType,
+    modalMessage,
+    setModalMessage,
+    modalConfirmButtonType,
+    setModalConfirmButtonType
 }) {
     const navigate = useNavigate()
 
-    // const clickConfirmButton = () => {
-    //     setIsModalShow(false)
-    //     navigate(-1)
-    // }
+    const clickConfirmButton = () => {
+        console.log("modalConfirmButtonType", modalConfirmButtonType)
 
-    const clickQuitConfirmButton = () => {
-        setIsModalShow(false)
-        navigate("/login")
+        switch(modalConfirmButtonType) {
+            // 데이터 초기화
+            case ModalConfirmButtonType.RESET_DATA:
+                setModalType(ModalType.ALERT)
+                setModalMessage(ModalMessageType.RESET_COMPLETED)
+                setModalConfirmButtonType(ModalConfirmButtonType.CLOSE_MODAL)
+                break
+            
+            // 로그아웃
+            case ModalConfirmButtonType.LINK_TO_LOGIN:
+                setIsModalShow(false)
+                navigate("/login")
+                break
+            
+            // 확인
+            case ModalConfirmButtonType.CLOSE_MODAL:
+                setIsModalShow(false)
+                break
+        }
     }
 
     switch (modalType) {
@@ -28,37 +46,39 @@ function Modal({
                     : `${styles.container} hide`
                 }>
                     <div className={styles.message_wrap}>
-                        <p>{message}</p>
+                        <p>{modalMessage}</p>
+                    </div>
+                    <button
+                        className={`${styles.button} ${styles.confirm_button}`}
+                        onClick={clickConfirmButton}
+                    >확인</button>
+                </div>
+            )
+        case ModalType.CONFIRM:
+            return (
+                <div className={isModalShow
+                    ? `${styles.container}`
+                    : `${styles.container} hide`
+                }>
+                    <div className={styles.message_wrap}>
+                        <p>{modalMessage}</p>
                     </div>
                     <div className={styles.button_wrap}>
                         <button
+                            className={`${styles.button}`}
+                            onClick={() => setIsModalShow(false)}
+                        >취소</button>
+                        <button
                             className={`${styles.button} ${styles.confirm_button}`}
-                            onClick={clickQuitConfirmButton}
-                        >확인</button>
+                            onClick={clickConfirmButton}
+                        >{
+                            modalConfirmButtonType === ModalConfirmButtonType.RESET_DATA
+                                ? "초기화" : "확인"
+                        }</button>
                     </div>
                 </div>
             )
-        
-        // case ModalType.CONFIRM_BACK:
-        //     return (
-        //         <div className={isModalShow && modalType === ModalType.CONFIRM_BACK
-        //             ? `${styles.container}`
-        //             : `${styles.container} hide`
-        //         }>
-        //             <h3>페이지에서 나가시겠습니까?</h3>
-        //             <p>
-        //                 변경사항이 저장되지 않을 수 있습니다.
-        //             </p>
-        //             <div className={styles.button_wrap}>
-        //                 <button onClick={clickConfirmButton}>나가기</button>
-        //                 <button onClick={() => setIsModalShow(false)}>
-        //                     취소
-        //                 </button>
-        //             </div>
-        //         </div>
-        //     )
     }
-
 };
 
 export default Modal;

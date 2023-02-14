@@ -7,7 +7,14 @@ import styles from "./Layout.module.css";
 import SelectMenuBottomsheet from "components/molecules/SelectMenuBottomsheet";
 import AddIngredientBottomsheet from "components/molecules/AddIngredientBottomsheet";
 
-function Layout() {
+function Layout({
+    isModalShow,
+    setIsModalShow,
+    isBottomsheetShow,
+    setIsBottomsheetShow,
+    isTwoDepthBottomsheetShow,
+    setIsTwoDepthBottomsheetShow
+}) {
     const location = useLocation()
     const pathname = location.pathname
     let headerStyle = styles.header_area
@@ -18,9 +25,6 @@ function Layout() {
         return category.type === "refrigerator"
     })
 
-    const [isModalShow, setIsModalShow] = useState(false)
-    const [isBottomsheetShow, setIsBottomsheetShow] = useState(false)
-    const [isTwoDepthBottomsheetShow, setIsTwoDepthBottomsheetShow] = useState(false)
     const [refrigeratorCategories, setRefrigeratorCategories] = useState(refrigeratorCategoriesDummy)
 
     useEffect(() => {

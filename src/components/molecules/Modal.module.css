@@ -17,40 +17,30 @@
 .message_wrap > p {
     display: table-cell;
     vertical-align: middle;
+    white-space: pre-wrap;
     text-align: center;
     font-weight: 600;
     font-size: 16px;
+    letter-spacing: -0.06em;
+    line-height: 22px;
 }
 .button {
     width: 100%;
     height: 54px;
     margin-top: var(--quintuple-unit);
     outline: none;
-    border: none;
+    border: 1px solid var(--gainsboro);
     border-radius: 10px;
-    background: var(--main-orange);
+    background: #fff;
     font-weight: 600;
     font-size: 17px;
-    color: #fff;
-}
-
-
-/* .container > h3 {
-    font-size: 18px;
-    margin-bottom: var(--double-unit);
 }
 .button_wrap {
-    margin-top: var(--quadruple-unit);
-    text-align: right;
+    display: flex;
+    gap: var(--triple-unit);
 }
-.button_wrap > button {
-    margin-left: var(--double-unit);
+.confirm_button {
     border: none;
-    background: none;
+    background: var(--main-orange);
+    color: #fff;
 }
-.button_wrap > button:first-of-type {
-    color: var(--main-orange);
-}
-.button_wrap > button:last-of-type {
-    color: var(--silver);
-} */
