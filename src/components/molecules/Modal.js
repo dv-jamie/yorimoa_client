@@ -74,7 +74,7 @@ function Modal({
                             onClick={clickConfirmButton}
                         >{
                             modalConfirmButtonType === ModalConfirmButtonType.RESET_DATA
-                                ? "초기화" : "확인"
+                                ? "삭제" : "확인"
                         }</button>
                     </div>
                 </div>
