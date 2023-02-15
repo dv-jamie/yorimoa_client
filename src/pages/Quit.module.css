@@ -19,22 +19,33 @@
 
 /* 어떤 부분이 불편하셨나요? */
 .list {
-    margin-bottom: var(--quadruple-unit);
-    padding: var(--sextuple-unit) var(--quadruple-unit);
-    box-shadow: 2px 2px 8px 4px rgba(0, 0, 0, 0.04);
-    border-radius: 16px;
+    /* margin-bottom: var(--quadruple-unit); */
+    padding: var(--quintuple-unit) 0;
+    border-bottom: 1px solid var(--gainsboro);
 }
 .list:last-of-type {
     margin-bottom: 64px;
 }
-.list > h3 {
-    margin-bottom: var(--double-unit);
+.reason {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+.reason > h3 {
     font-weight: 600;
     font-size: 16px;
 }
-.list > p {
-    color: var(--silver);
+.answer {
+    max-height: 0;
+    margin-top: 0;
+    line-height: 18px;
+    letter-spacing: -0.06em;
+    color: var(--gray);
+    overflow: hidden;
+    transition: 0.4s ease-out;
 }
+
 .link_button {
     margin-top: var(--triple-unit);
     padding: 0;
@@ -45,13 +56,21 @@
     color: var(--main-orange);
 }
 
+/* 리스트 클릭 시 */
+.open > svg {
+    transform: rotate(180deg);
+}
+.open + .answer {
+    max-height: 90px;
+    margin-top: var(--quadruple-unit);
+}
+
 /* 그래도 탈퇴를 원하시나요? */
 .guide {
     margin-bottom: 52px;
     font-weight: 600;
     line-height: 19px;
     color: var(--charcoal);
-
 }
 .agree_button,
 .quit_button {
