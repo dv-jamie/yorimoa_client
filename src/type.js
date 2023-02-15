@@ -22,6 +22,7 @@ export const ModalConfirmButtonType = {
     CLOSE_MODAL: "closeModal",
     LINK_TO_LOGIN: "linkToLogin",
     RESET_DATA: "resetData",
+    QUIT: "quit"
 }
 
 export const RecipeOrderType = {

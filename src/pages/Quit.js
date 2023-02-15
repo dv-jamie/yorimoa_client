@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import { useOutletContext } from "react-router-dom";
 import { ArrowDownOutline, CheckboxFill, SmilingFaceWithTear } from "assets/icons";
-import { ColorType, ModalType } from "type";
+import { ColorType, ModalConfirmButtonType, ModalType } from "type";
 import { clickKakaoLink } from "common";
 import Modal from "components/molecules/Modal";
 import styles from "./Quit.module.css";
@@ -19,7 +19,6 @@ function Quit() {
 
     const { isModalShowContext } = useOutletContext()
     const [isModalShow, setIsModalShow] = isModalShowContext
-
     const [isAgree, setIsAgree] = useState(false)
     const [openedList, setOpendList] = useState("")
     
@@ -224,7 +223,8 @@ function Quit() {
                 isModalShow={isModalShow}
                 setIsModalShow={setIsModalShow}
                 modalType={ModalType.ALERT}
-                message="탈퇴가 완료되었습니다."
+                modalMessage="탈퇴가 완료되었습니다."
+                modalConfirmButtonType={ModalConfirmButtonType.QUIT}
             />
         </div>
     );

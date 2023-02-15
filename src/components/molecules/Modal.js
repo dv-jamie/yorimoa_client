@@ -25,8 +25,9 @@ function Modal({
                 setModalConfirmButtonType(ModalConfirmButtonType.CLOSE_MODAL)
                 break
             
-            // 로그아웃
+            // 로그아웃, 탈퇴
             case ModalConfirmButtonType.LINK_TO_LOGIN:
+            case ModalConfirmButtonType.QUIT:
                 setIsModalShow(false)
                 navigate("/login")
                 break
