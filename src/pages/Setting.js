@@ -9,6 +9,7 @@ import {
 import { ModalConfirmButtonType, ModalMessageType, ModalType } from "type";
 import Modal from "components/molecules/Modal";
 import styles from "./Setting.module.css";
+import { clickKakaoLink } from "common";
 
 function Setting({
     isModalShow,
@@ -40,11 +41,12 @@ function Setting({
                     <PowerOutline />
                     <span>로그아웃</span>
                 </li>
-                <li className={styles.list_item}>
+                <li
+                    className={styles.list_item}
+                    onClick={clickKakaoLink}
+                >
                     <HeadsetOutline />
-                    <Link to="/">
-                        <span>문의하기</span>
-                    </Link>
+                    <span>문의하기</span>
                 </li>
                 <li
                     className={styles.list_item}
