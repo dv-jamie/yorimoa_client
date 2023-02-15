@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/yorimoa_client/static/css/main.24e17c4d.css",
-    "main.js": "/yorimoa_client/static/js/main.c2e95717.js",
+    "main.css": "/yorimoa_client/static/css/main.b654895a.css",
+    "main.js": "/yorimoa_client/static/js/main.98edf28d.js",
     "static/media/recipeBannerImage.png": "/yorimoa_client/static/media/recipeBannerImage.07ab32e98644d9858af5.png",
     "static/media/diaryBannerImage.png": "/yorimoa_client/static/media/diaryBannerImage.d00155b7a732d3231124.png",
     "static/media/RefrigeratorImage.png": "/yorimoa_client/static/media/RefrigeratorImage.5fbf9cd98bd31c8cde64.png",
@@ -21,6 +21,7 @@
     "static/media/snack.svg": "/yorimoa_client/static/media/snack.b894481960a9dc150f330b131f8c8346.svg",
     "static/media/simple.svg": "/yorimoa_client/static/media/simple.334f1041e7187d098e37bc72d3bfece5.svg",
     "static/media/oneFan.svg": "/yorimoa_client/static/media/oneFan.8f896e30179e264647f5df0c4084d891.svg",
+    "static/media/deleteOutline.svg": "/yorimoa_client/static/media/deleteOutline.fed4e025c7701bb88b2eeab6a345205c.svg",
     "static/media/categoryOutline.svg": "/yorimoa_client/static/media/categoryOutline.83752d9c2e010b23b54ea49754355b5d.svg",
     "static/media/refrigeratorFill.svg": "/yorimoa_client/static/media/refrigeratorFill.d2f5ee1ae4b08e842be25aee38546895.svg",
     "static/media/pencilFill.svg": "/yorimoa_client/static/media/pencilFill.a4bfd1f982dcf3a3853ec31427be86c8.svg",
@@ -49,11 +50,11 @@
     "static/media/bookmarkOutline.svg": "/yorimoa_client/static/media/bookmarkOutline.eb77fdd5a13da9a15eff0e1ead59b116.svg",
     "static/media/personOutline.svg": "/yorimoa_client/static/media/personOutline.fbb049c5ffb1bf5e82ebbade8dae1f38.svg",
     "static/media/searchOutline.svg": "/yorimoa_client/static/media/searchOutline.f45bc5281a4b110884ce0b16b6a80e6b.svg",
-    "main.24e17c4d.css.map": "/yorimoa_client/static/css/main.24e17c4d.css.map",
-    "main.c2e95717.js.map": "/yorimoa_client/static/js/main.c2e95717.js.map"
+    "main.b654895a.css.map": "/yorimoa_client/static/css/main.b654895a.css.map",
+    "main.98edf28d.js.map": "/yorimoa_client/static/js/main.98edf28d.js.map"
   },
   "entrypoints": [
-    "static/css/main.24e17c4d.css",
-    "static/js/main.c2e95717.js"
+    "static/css/main.b654895a.css",
+    "static/js/main.98edf28d.js"
   ]
 }
