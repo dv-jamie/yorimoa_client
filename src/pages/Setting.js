@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useOutletContext } from "react-router-dom";
 import {
     DeleteOutline,
     HeadsetOutline,
@@ -11,10 +11,9 @@ import Modal from "components/molecules/Modal";
 import styles from "./Setting.module.css";
 import { clickKakaoLink } from "common";
 
-function Setting({
-    isModalShow,
-    setIsModalShow,
-}) {
+function Setting() {
+    const { isModalShowContext } = useOutletContext()
+    const [isModalShow, setIsModalShow] = isModalShowContext
     const [modalType, setModalType] = useState(ModalType.CONFIRM)
     const [modalMessage, setModalMessage] = useState("")
     const [modalConfirmButtonType, setModalConfirmButtonType] = useState(null)

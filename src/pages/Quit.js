@@ -1,24 +1,25 @@
 import { useRef, useState } from "react";
 import { useOutletContext } from "react-router-dom";
 import { ArrowDownOutline, CheckboxFill, SmilingFaceWithTear } from "assets/icons";
-import { ColorType, ModalConfirmButtonType, ModalType } from "type";
+import {
+    ColorType,
+    ModalConfirmButtonType,
+    ModalMessageType,
+    ModalType,
+    QuitReasonType
+} from "type";
 import { clickKakaoLink } from "common";
 import Modal from "components/molecules/Modal";
 import styles from "./Quit.module.css";
 
 function Quit() {
-    const QuitReasonType = {
-        PRIVACY: "privacy",
-        ERROR: "error",
-        UIUX: "uiux",
-        DATA_RESET: "dataReset",
-        AD: "ad"
-    }
-
     const agreeButtonRef = useRef()
 
     const { isModalShowContext } = useOutletContext()
     const [isModalShow, setIsModalShow] = isModalShowContext
+    const [modalType, setModalType] = useState(ModalType.CONFIRM)
+    const [modalMessage, setModalMessage] = useState("")
+    const [modalConfirmButtonType, setModalConfirmButtonType] = useState(null)
     const [isAgree, setIsAgree] = useState(false)
     const [openedList, setOpendList] = useState("")
     
@@ -30,8 +31,18 @@ function Quit() {
         }
     }
     
+    const clickResetDataButton = () => {
+        setModalType(ModalType.CONFIRM)
+        setModalMessage(ModalMessageType.CHECK_RESET)
+        setModalConfirmButtonType(ModalConfirmButtonType.RESET_DATA)
+        setIsModalShow(true)
+    }
+
     const clikcQuitButton = () => {
         if(!isAgree) return
+        setModalType(ModalType.ALERT)
+        setModalMessage(ModalMessageType.QUIT_COMPLETED)
+        setModalConfirmButtonType(ModalConfirmButtonType.QUIT)
         setIsModalShow(true)
     }
 
@@ -149,7 +160,10 @@ function Quit() {
                         계정을 삭제하지 않아도 데이터를 모두 삭제할 수 있어요.<br />
                         아래 버튼을 눌러 바로 초기화 해보세요.<br />
 
-                        <button className={styles.link_button}>
+                        <button
+                            className={styles.link_button}
+                            onClick={clickResetDataButton}
+                        >
                             데이터 초기화하기
                         </button>
                     </p>
@@ -219,12 +233,16 @@ function Quit() {
                     : `${styles.quit_button}`
             }>탈퇴하기</button>
 
+            {/* 모달창 */}
             <Modal
                 isModalShow={isModalShow}
                 setIsModalShow={setIsModalShow}
-                modalType={ModalType.ALERT}
-                modalMessage="탈퇴가 완료되었습니다."
-                modalConfirmButtonType={ModalConfirmButtonType.QUIT}
+                modalType={modalType}
+                setModalType={setModalType}
+                modalMessage={modalMessage}
+                setModalMessage={setModalMessage}
+                modalConfirmButtonType={modalConfirmButtonType}
+                setModalConfirmButtonType={setModalConfirmButtonType}
             />
         </div>
     );
