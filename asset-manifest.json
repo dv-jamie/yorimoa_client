@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/yorimoa_client/static/css/main.b654895a.css",
-    "main.js": "/yorimoa_client/static/js/main.98edf28d.js",
+    "main.css": "/yorimoa_client/static/css/main.3effd592.css",
+    "main.js": "/yorimoa_client/static/js/main.f1bf2166.js",
     "static/media/recipeBannerImage.png": "/yorimoa_client/static/media/recipeBannerImage.07ab32e98644d9858af5.png",
     "static/media/diaryBannerImage.png": "/yorimoa_client/static/media/diaryBannerImage.d00155b7a732d3231124.png",
     "static/media/RefrigeratorImage.png": "/yorimoa_client/static/media/RefrigeratorImage.5fbf9cd98bd31c8cde64.png",
@@ -29,6 +29,7 @@
     "static/media/headsetOutline.svg": "/yorimoa_client/static/media/headsetOutline.1af90b1145c405a063bf3b332ac42adf.svg",
     "static/media/guest.svg": "/yorimoa_client/static/media/guest.062b73c7c18a661577f0f30713546a87.svg",
     "static/media/powerOutline.svg": "/yorimoa_client/static/media/powerOutline.339103610b01897e1661a1060c5cd3bb.svg",
+    "index.html": "/yorimoa_client/index.html",
     "static/media/spoonFill.svg": "/yorimoa_client/static/media/spoonFill.e71b6c46050efa19ba994b7a8e622179.svg",
     "static/media/healthy.svg": "/yorimoa_client/static/media/healthy.8fe82944a81b7adddd0e2ec436d3314f.svg",
     "static/media/commentOutline.svg": "/yorimoa_client/static/media/commentOutline.92fbf61d8db903c7dad80713f5b567aa.svg",
@@ -37,7 +38,6 @@
     "static/media/recipeOutline.svg": "/yorimoa_client/static/media/recipeOutline.ce25fad6a9716c66e4ac57af6319bdb9.svg",
     "static/media/checkboxFill.svg": "/yorimoa_client/static/media/checkboxFill.8c06518bee296817e3e834e05ef90a01.svg",
     "static/media/memoFill.svg": "/yorimoa_client/static/media/memoFill.e8c4d10617f16778686147d478b5f19c.svg",
-    "index.html": "/yorimoa_client/index.html",
     "static/media/bagFill.svg": "/yorimoa_client/static/media/bagFill.185f0c1ee74ff6258da035afe2989007.svg",
     "static/media/servingOutline.svg": "/yorimoa_client/static/media/servingOutline.b6f96cf1adcaff45489e7b901297e7b4.svg",
     "static/media/clockOutline.svg": "/yorimoa_client/static/media/clockOutline.ced29d3ce51e6d76465a41c7a5bcd3b3.svg",
@@ -50,11 +50,11 @@
     "static/media/bookmarkOutline.svg": "/yorimoa_client/static/media/bookmarkOutline.eb77fdd5a13da9a15eff0e1ead59b116.svg",
     "static/media/personOutline.svg": "/yorimoa_client/static/media/personOutline.fbb049c5ffb1bf5e82ebbade8dae1f38.svg",
     "static/media/searchOutline.svg": "/yorimoa_client/static/media/searchOutline.f45bc5281a4b110884ce0b16b6a80e6b.svg",
-    "main.b654895a.css.map": "/yorimoa_client/static/css/main.b654895a.css.map",
-    "main.98edf28d.js.map": "/yorimoa_client/static/js/main.98edf28d.js.map"
+    "main.3effd592.css.map": "/yorimoa_client/static/css/main.3effd592.css.map",
+    "main.f1bf2166.js.map": "/yorimoa_client/static/js/main.f1bf2166.js.map"
   },
   "entrypoints": [
-    "static/css/main.b654895a.css",
-    "static/js/main.98edf28d.js"
+    "static/css/main.3effd592.css",
+    "static/js/main.f1bf2166.js"
   ]
 }
