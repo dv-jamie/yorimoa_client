@@ -15,19 +15,26 @@ function Banner({ type }) {
             subTitle = '다른 사람들과 함께 공유해볼까요?'
             break
         case 'refrigerator':
-            style = `${styles.container} ${styles.container_memo}`
+            style = `${styles.container} ${styles.container_refrigerator}`
             title = `냉장고에 있는\n재료 적어두세요!`
             subTitle = '재료명을 클릭하면 레시피를 볼 수 있어요'
+            break
+        case 'refrigeratorEdit':
+            style = `${styles.container} ${styles.container_edit}`
+            title = `재료명을 클릭해\n수정해보세요!`
+            subTitle = '재료명을 클릭하면 해당 재료를 수정할 수 있어요'
             break
     }
 
     return (
-        <div className={style}>
-            <div className={styles.title_wrap}>
-                <h1 className={styles.title}>{title}</h1>
-                <p className={styles.sub_title}>{subTitle}</p>
+        <>
+            <div className={style}>
+                <div className={styles.title_wrap}>
+                    <h1 className={styles.title}>{title}</h1>
+                    <p className={styles.sub_title}>{subTitle}</p>
+                </div>
             </div>
-        </div>
+        </>
     );
 }
 

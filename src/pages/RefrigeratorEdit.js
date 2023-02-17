@@ -1,15 +1,24 @@
 import { useEffect, useState } from "react";
 import { useOutletContext } from "react-router-dom";
-import RefrigeratorHeader from "components/templetes/RefrigeratorHeader";
 import RefrigetraotrTable from "components/templetes/RefrigeratorTable";
+import Banner from "components/templetes/Banner";
+import SearchBox from "components/molecules/SearchBox";
+import RefrigeratorFilteringWrap from "components/molecules/RefrigeratorFilteringWrap";
+import styles from "../components/templetes/RefrigeratorHeader.module.css";
 
 import dummy from "../data.json";
 
-function Refrigerator() {
+function RefrigeratorEdit() {
     // 더미데이터
     const refrigeratorsDummy = dummy.refrigerators
 
-    const { isModalShowContext, refrigeratorCategoriesContext } = useOutletContext()
+    const {
+        refrigeratorCategoriesContext,
+        bottomsheetTypeContext,
+        isBottomsheetShowContext
+    } = useOutletContext()
+    const [bottomsheetType, setBottomsheetType] = bottomsheetTypeContext
+    const [isBottomsheetShow, setIsBottomsheetShow] = isBottomsheetShowContext
     const [refrigeratorCategories] = refrigeratorCategoriesContext
     const [refrigerators, setRefrigerators] = useState(refrigeratorsDummy)
     const [keyword, setKeyword] = useState("")
@@ -36,17 +45,26 @@ function Refrigerator() {
 
     return (
         <div>
-            <RefrigeratorHeader
-                categories={refrigeratorCategories}
+            <Banner type="refrigeratorEdit" />
+            <SearchBox
+                type="refrigerator"
                 setKeyword={setKeyword}
             />
+            <div className={styles.category_wrap}>
+                <RefrigeratorFilteringWrap
+                    categories={refrigeratorCategories}
+                />
+            </div>
             <RefrigetraotrTable
                 categories={refrigeratorCategories}
                 refrigerators={refrigerators}
                 setRefrigerators={setRefrigerators}
+                setBottomsheetType={setBottomsheetType}
+                isBottomsheetShow={isBottomsheetShow}
+                setIsBottomsheetShow={setIsBottomsheetShow}
             />
         </div>
     );
 }
 
-export default Refrigerator;
+export default RefrigeratorEdit;

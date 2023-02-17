@@ -3,13 +3,16 @@ import { Outlet, useLocation } from "react-router-dom";
 import dummy from "../data.json";
 import Header from "../components/templetes/Header";
 import Nav from "components/templetes/Nav";
-import styles from "./Layout.module.css";
 import SelectMenuBottomsheet from "components/molecules/SelectMenuBottomsheet";
 import AddIngredientBottomsheet from "components/molecules/AddIngredientBottomsheet";
+import EditIngredientBottomsheet from "components/molecules/EditIngredientBottomsheet";
+import styles from "./Layout.module.css";
 
 function Layout({
     isModalShow,
     setIsModalShow,
+    bottomsheetType,
+    setBottomsheetType,
     isBottomsheetShow,
     setIsBottomsheetShow,
     isTwoDepthBottomsheetShow,
@@ -64,6 +67,7 @@ function Layout({
             <header className={headerStyle}>
                 <Header
                     pageTitle={pageTitle}
+                    setBottomsheetType={setBottomsheetType}
                     setIsBottomsheetShow={setIsBottomsheetShow}
                 />
             </header>
@@ -71,6 +75,8 @@ function Layout({
                 <Outlet
                     context={{
                         isModalShowContext: [isModalShow, setIsModalShow],
+                        bottomsheetTypeContext: [bottomsheetType, setBottomsheetType],
+                        isBottomsheetShowContext: [isBottomsheetShow, setIsBottomsheetShow],
                         refrigeratorCategoriesContext: [refrigeratorCategories],
                     }}
                     className={styles.main_area}
@@ -82,13 +88,22 @@ function Layout({
 
             {/* 바텀시트 */}
             <SelectMenuBottomsheet
+                bottomsheetType={bottomsheetType}
+                setBottomsheetType={setBottomsheetType}
                 isBottomsheetShow={isBottomsheetShow}
                 setIsBottomsheetShow={setIsBottomsheetShow}
                 setIsTwoDepthBottomsheetShow={setIsTwoDepthBottomsheetShow}
             />
             <AddIngredientBottomsheet
+                bottomsheetType={bottomsheetType}
                 isTwoDepthBottomsheetShow={isTwoDepthBottomsheetShow}
                 setIsTwoDepthBottomsheetShow={setIsTwoDepthBottomsheetShow}
+                refrigeratorCategories={refrigeratorCategories}
+            />
+            <EditIngredientBottomsheet
+                bottomsheetType={bottomsheetType}
+                isBottomsheetShow={isBottomsheetShow}
+                setIsBottomsheetShow={setIsBottomsheetShow}
                 refrigeratorCategories={refrigeratorCategories}
             />
         </div>

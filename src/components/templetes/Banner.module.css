@@ -9,12 +9,17 @@
 .container_diary {
     background: url('../../assets/images/diaryBannerImage.png');
 }
-.container_memo {
+.container_refrigerator {
     background: url('../../assets/images/RefrigeratorImage.png');
 }
+
+/* 텍스트 */
 .title_wrap {
     color: #fff;
     white-space: pre-line;
+}
+.container_edit > .title_wrap {
+    color: #000;
 }
 .title {
     font-size: 30px;

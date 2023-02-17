@@ -7,9 +7,11 @@ import ComingSoon from "pages/ComingSoon";
 import Login from "pages/Login";
 import Setting from "pages/Setting";
 import Quit from "pages/Quit";
+import RefrigeratorEdit from "pages/RefrigeratorEdit";
 
 function App() {
   const [isModalShow, setIsModalShow] = useState(false)
+  const [bottomsheetType, setBottomsheetType] = useState("")
   const [isBottomsheetShow, setIsBottomsheetShow] = useState(false)
   const [isTwoDepthBottomsheetShow, setIsTwoDepthBottomsheetShow] = useState(false)
 
@@ -20,6 +22,8 @@ function App() {
           <Route element={<Layout
             isModalShow={isModalShow}
             setIsModalShow={setIsModalShow}
+            bottomsheetType={bottomsheetType}
+            setBottomsheetType={setBottomsheetType}
             isBottomsheetShow={isBottomsheetShow}
             setIsBottomsheetShow={setIsBottomsheetShow}
             isTwoDepthBottomsheetShow={isTwoDepthBottomsheetShow}
@@ -35,6 +39,7 @@ function App() {
             <Route path="/diary" element={<ComingSoon type="diary" />}></Route>
             <Route path="/recipe" element={<ComingSoon type="recipe" />}></Route>
             <Route path="/refrigerator" element={<Refrigerator />}></Route>
+            <Route path="/refrigerator/edit" element={<RefrigeratorEdit />}></Route>
             <Route path="*" element={<NotFound />}></Route>
           </Route>
         </Routes>

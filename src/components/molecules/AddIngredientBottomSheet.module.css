@@ -42,12 +42,14 @@
 
 /* 하단 버튼 영역 */
 .button_wrap {
+    display: flex;
+    gap: var(--triple-unit);
     width: 100%;
     margin-top: 51px;
     padding-top: 15px;
 }
-.add_button {
-    width: 100%;
+.button {
+    width: 50%;
     height: 54px;
     border-radius: 12px;
     font-weight: 600;
@@ -56,4 +58,12 @@
     border: none;
     background: var(--main-orange);
     color: #fff;
+}
+.delete_button {
+    border: 1px solid var(--gainsboro);
+    background: #fff;
+    color: #000;
+}
+.add_button {
+    width: 100%;
 }

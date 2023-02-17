@@ -1,9 +1,13 @@
 import { CloseOutline } from "assets/icons";
-import styles from "./EditIngredientBottomsheet.module.css";
+import { BottomsheetType } from "type";
+import styles from "./AddIngredientBottomsheet.module.css";
+import RefrigeratorFilteringWrap from "./RefrigeratorFilteringWrap";
 
 function EditIngredientBottomsheet({
-    isTwoDepthBottomsheetShow,
-    setIsTwoDepthBottomsheetShow
+    bottomsheetType,
+    isBottomsheetShow,
+    setIsBottomsheetShow,
+    refrigeratorCategories
 }) {
     const clickDeleteButton = () => {
         console.log("add")
@@ -14,15 +18,16 @@ function EditIngredientBottomsheet({
     }
 
     return (
-        <div className={isTwoDepthBottomsheetShow
-            ? `bottomsheet ${styles.add_bottomsheet} show`
-            : `bottomsheet ${styles.add_bottomsheet} hide`
+        <div className={
+            isBottomsheetShow && bottomsheetType === BottomsheetType.EDIT_INGREDIENT
+                ? `bottomsheet ${styles.add_bottomsheet} show`
+                : `bottomsheet ${styles.add_bottomsheet} hide`
         }>
             {/* 닫기 버튼 */}
             <div className={styles.close_button_wrap}>
                 <button
                     className={styles.close_button}
-                    onClick={() => setIsTwoDepthBottomsheetShow(false)}
+                    onClick={() => setIsBottomsheetShow(false)}
                 >
                     <CloseOutline />
                 </button>
@@ -32,18 +37,25 @@ function EditIngredientBottomsheet({
             <ul>
                 <li className={styles.list_item}>
                     <label>상품명</label>
-                    <div>
-                        <input />
+                    <div className={styles.input_wrap}>
+                        <input
+                            placeholder="ex) 스테이크용소고기"
+                        />
                     </div>
                 </li>
                 <li className={styles.list_item}>
                     <label>카테고리</label>
-                    <div>카테..</div>
+                    <RefrigeratorFilteringWrap
+                        className={styles.category_wrap}
+                        categories={refrigeratorCategories}
+                    />
                 </li>
                 <li className={styles.list_item}>
                     <label>구매일</label>
-                    <div>
-                        <input />
+                    <div className={styles.input_wrap}>
+                    <input
+                        placeholder="여긴 달력으로.....??"
+                    />
                     </div>
                 </li>
             </ul>

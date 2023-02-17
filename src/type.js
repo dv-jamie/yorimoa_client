@@ -7,6 +7,13 @@ export const ColorType = {
     GAINSBRO: "#E4E4E4"
 }
 
+// 바텀시트 타입
+export const BottomsheetType = {
+    SELECT_MENU: "selectMenu",
+    ADD_INGREDIENT: "addIngredient",
+    EDIT_INGREDIENT: "editIngredient"
+}
+
 // 모달창 타입
 export const ModalType = {
     ALERT: "alert",

@@ -1,8 +1,10 @@
 import { CloseOutline } from "assets/icons";
+import { BottomsheetType } from "type";
 import RefrigeratorFilteringWrap from "components/molecules/RefrigeratorFilteringWrap";
 import styles from "./AddIngredientBottomsheet.module.css";
 
 function AddIngredientBottomsheet({
+    bottomsheetType,
     isTwoDepthBottomsheetShow,
     setIsTwoDepthBottomsheetShow,
     refrigeratorCategories
@@ -12,9 +14,10 @@ function AddIngredientBottomsheet({
     }
 
     return (
-        <div className={isTwoDepthBottomsheetShow
-            ? `bottomsheet ${styles.add_bottomsheet} show`
-            : `bottomsheet ${styles.add_bottomsheet} hide`
+        <div className={
+            isTwoDepthBottomsheetShow && bottomsheetType === BottomsheetType.ADD_INGREDIENT
+                ? `bottomsheet ${styles.add_bottomsheet} show`
+                : `bottomsheet ${styles.add_bottomsheet} hide`
         }>
             {/* 닫기 버튼 */}
             <div className={styles.close_button_wrap}>

@@ -2,17 +2,17 @@
     padding: 10px var(--quadruple-unit);
     text-align: right;
 }
+.button {
+    outline: none;
+    border: none;
+    background: none;
+}
 
 /* 뒤로가기 버튼 있는 헤더 */
 .back_container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-.back_button {
-    outline: none;
-    border: none;
-    background: none;
 }
 .page_title {
     font-weight: 600;
@@ -22,6 +22,11 @@
 .blank {
     width: 24px;
     height: 24px;
+}
+.complete_button {
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--main-orange);
 }
 
 /* 기본 헤더 */

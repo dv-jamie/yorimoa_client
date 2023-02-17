@@ -1,24 +1,26 @@
 import { CloseOutline } from "assets/icons";
+import { Link } from "react-router-dom";
+import { BottomsheetType } from "type";
 import styles from "./SelectMenuBottomsheet.module.css";
 
 function SelectMenuBottomsheet({
+    bottomsheetType,
+    setBottomsheetType,
     isBottomsheetShow,
     setIsBottomsheetShow,
     setIsTwoDepthBottomsheetShow
 }) {
     const clickAddButton = () => {
+        setBottomsheetType(BottomsheetType.ADD_INGREDIENT)
         setIsBottomsheetShow(false)
         setIsTwoDepthBottomsheetShow(true)
     }
 
-    const clickUpdateButton = () => {
-        console.log("update")
-    }
-
     return (
-        <div className={isBottomsheetShow
-            ? "bottomsheet show"
-            : "bottomsheet hide"
+        <div className={
+            isBottomsheetShow && bottomsheetType === BottomsheetType.SELECT_MENU
+                ? "bottomsheet show"
+                : "bottomsheet hide"
         }>
             {/* 닫기 버튼 */}
             <div className={styles.button_wrap}>
@@ -40,9 +42,11 @@ function SelectMenuBottomsheet({
                 </li> 
                 <li
                     className={styles.list_item}
-                    onClick={clickUpdateButton}
+                    onClick={() => setIsBottomsheetShow(false)}
                 >
-                    재료 수정하기
+                    <Link to="/refrigerator/edit">
+                        재료 수정하기
+                    </Link>
                 </li> 
             </ul>
         </div>

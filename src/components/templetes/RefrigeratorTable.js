@@ -1,18 +1,31 @@
 import { useEffect } from "react";
-import { ColorType } from "type";
+import { useLocation, useOutletContext } from "react-router-dom";
+import { BottomsheetType, ColorType } from "type";
 import { BagFill, SpoonFill } from "assets/icons";
 import styles from "./RefrigeratorTable.module.css";
 
 function RefrigetraotrTable({
     categories,
     refrigerators,
-    setRefrigerators
+    setRefrigerators,
+    setBottomsheetType
 }) {
     const today = new Date()
     const NAVER_SERACH_URL = "https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=1&ie=utf8&query="
     
-    const openWindow = (ingredientName) => {
-        window.open(`${NAVER_SERACH_URL}${ingredientName}+레시피`, "_blank")
+    const location = useLocation()
+    const pathname = location.pathname
+    
+    const { isBottomsheetShowContext } = useOutletContext()
+    const [isBottomsheetShow, setIsBottomsheetShow] = isBottomsheetShowContext
+
+    const clickIngredientName = ({ id, name }) => {
+        if(pathname === "/refrigerator") {
+            window.open(`${NAVER_SERACH_URL}${name}+레시피`, "_blank")
+        } else {
+            setBottomsheetType(BottomsheetType.EDIT_INGREDIENT)
+            setIsBottomsheetShow(true)
+        }
     }
 
     const clickIcon = (type) => {
@@ -63,19 +76,21 @@ function RefrigetraotrTable({
                                 </ul>
         
                                 {ingredientsByCategory.map(ingredient => {
+                                    const id = ingredient.id
+                                    const name = ingredient.name
                                     const boughtAt = ingredient.boughtAt;
                                     const diffMSec = today.getTime() - today.getTime();
                                     const diffDate = diffMSec / (24 * 60 * 60 * 1000);
         
                                     return (
-                                        <ul key={ingredient.id} className={styles.row}>
+                                        <ul key={id} className={styles.row}>
                                             {/* 재료명 */}
                                             <li className={`${styles.column} ${styles.ingredient_name_wrap}`}>
                                                 <span
                                                     className={styles.ingredient_name}
-                                                    onClick={() => openWindow(ingredient.name)}
+                                                    onClick={() => clickIngredientName({ id, name })}
                                                     >
-                                                    {ingredient.name}
+                                                    {name}
                                                 </span>
                                                 <span
                                                     className={styles.icon}

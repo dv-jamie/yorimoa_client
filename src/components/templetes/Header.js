@@ -1,4 +1,5 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { BottomsheetType } from "type";
 import {
     BackOutline,
     PencilOutline,
@@ -8,16 +9,26 @@ import styles from "./Header.module.css";
 
 function Header({
     pageTitle,
+    setBottomsheetType,
     setIsBottomsheetShow
 }) {
     const navigate = useNavigate()
     const location = useLocation()
     const pathname = location.pathname
 
+    const clickPencilIcon = () => {
+        setBottomsheetType(BottomsheetType.SELECT_MENU)
+        setIsBottomsheetShow(true)
+    }
+
+    const clickCompleteButton = (pathname) => {
+        navigate(pathname)
+    }
+
     switch (pathname) {
+        // 뒤로가기 버튼 있는 헤더
         case "/setting":
         case "/quit":
-            // 뒤로가기 버튼 있는 헤더
             return (
                 <div className={`${styles.container} ${styles.back_container}`}>
                     <button
@@ -33,12 +44,35 @@ function Header({
                     <div className={styles.blank}></div>
                 </div>
             );
+
+        // 뒤로가기 + 완료 버튼 있는 헤더
+        case "/refrigerator/edit":
+            return (
+                <div className={`${styles.container} ${styles.back_container}`}>
+                    <button
+                        className={`${styles.button} ${styles.back_button}`}
+                        onClick={() => {navigate(-1)}}
+                    >
+                        <BackOutline
+                            width={24}
+                            height={24}
+                        />
+                    </button>
+                    <button
+                        className={`${styles.button} ${styles.complete_button}`}
+                        onClick={() => clickCompleteButton("/refrigerator")}
+                    >
+                        완료
+                    </button>
+                </div>
+            );
+        
+        // 기본 헤더
         default:
-            // 기본 헤더
             return (
                 <div className={styles.container}>
                     <ul className={styles.nav}>
-                        <li onClick={() => setIsBottomsheetShow(true)}>
+                        <li onClick={clickPencilIcon}>
                             <PencilOutline
                                 width={24}
                                 height={24}
