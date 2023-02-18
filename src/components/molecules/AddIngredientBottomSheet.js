@@ -50,7 +50,7 @@ function AddIngredientBottomsheet({
                     <label>구매일</label>
                     <div className={styles.input_wrap}>
                     <input
-                        placeholder="여긴 달력으로.....??"
+                        type="date"
                     />
                     </div>
                 </li>

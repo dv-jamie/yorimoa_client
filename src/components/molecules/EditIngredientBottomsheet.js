@@ -4,17 +4,20 @@ import styles from "./AddIngredientBottomsheet.module.css";
 import RefrigeratorFilteringWrap from "./RefrigeratorFilteringWrap";
 
 function EditIngredientBottomsheet({
+    clickedRefrigerator,
     bottomsheetType,
     isBottomsheetShow,
     setIsBottomsheetShow,
     refrigeratorCategories
 }) {
+    console.log(clickedRefrigerator.name)
+
     const clickDeleteButton = () => {
-        console.log("add")
+        setIsBottomsheetShow(false)
     }
 
     const clickEditButton = () => {
-        console.log("add")
+        setIsBottomsheetShow(false)
     }
 
     return (
@@ -40,6 +43,8 @@ function EditIngredientBottomsheet({
                     <div className={styles.input_wrap}>
                         <input
                             placeholder="ex) 스테이크용소고기"
+                            value={clickedRefrigerator.name}
+                        onChange={() => console.log("name")}
                         />
                     </div>
                 </li>
@@ -54,7 +59,10 @@ function EditIngredientBottomsheet({
                     <label>구매일</label>
                     <div className={styles.input_wrap}>
                     <input
-                        placeholder="여긴 달력으로.....??"
+                        type="date"
+                        value={"2023-01-01"}
+                        // value={clickedRefrigerator.boughtAt}
+                        onChange={() => console.log("date")}
                     />
                     </div>
                 </li>

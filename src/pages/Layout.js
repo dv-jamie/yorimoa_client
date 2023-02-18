@@ -29,6 +29,7 @@ function Layout({
     })
 
     const [refrigeratorCategories, setRefrigeratorCategories] = useState(refrigeratorCategoriesDummy)
+    const [clickedRefrigerator, setClickedRefrigerator] = useState()
 
     useEffect(() => {
         document.body.classList.toggle("unscrollable", isModalShow)
@@ -75,6 +76,7 @@ function Layout({
             <main className={styles.main_area}>
                 <Outlet
                     context={{
+                        clickedRefrigeratorContext: [clickedRefrigerator, setClickedRefrigerator],
                         isModalShowContext: [isModalShow, setIsModalShow],
                         bottomsheetTypeContext: [bottomsheetType, setBottomsheetType],
                         isBottomsheetShowContext: [isBottomsheetShow, setIsBottomsheetShow],
@@ -101,12 +103,18 @@ function Layout({
                 setIsTwoDepthBottomsheetShow={setIsTwoDepthBottomsheetShow}
                 refrigeratorCategories={refrigeratorCategories}
             />
-            <EditIngredientBottomsheet
-                bottomsheetType={bottomsheetType}
-                isBottomsheetShow={isBottomsheetShow}
-                setIsBottomsheetShow={setIsBottomsheetShow}
-                refrigeratorCategories={refrigeratorCategories}
-            />
+            {
+                clickedRefrigerator &&
+                <EditIngredientBottomsheet
+                    clickedRefrigerator={clickedRefrigerator}
+                    bottomsheetType={bottomsheetType}
+                    isBottomsheetShow={isBottomsheetShow}
+                    setIsBottomsheetShow={setIsBottomsheetShow}
+                    setIsModalShow={setIsModalShow}
+                    isModalShow={isModalShow}
+                    refrigeratorCategories={refrigeratorCategories}
+                />
+            }
         </div>
     );
 }

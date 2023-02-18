@@ -16,13 +16,18 @@ function RefrigetraotrTable({
     const location = useLocation()
     const pathname = location.pathname
     
-    const { isBottomsheetShowContext } = useOutletContext()
+    const { clickedRefrigeratorContext, isBottomsheetShowContext } = useOutletContext()
     const [isBottomsheetShow, setIsBottomsheetShow] = isBottomsheetShowContext
+    const [clickedRefrigerator, setClickedRefrigerator] = clickedRefrigeratorContext
 
     const clickIngredientName = ({ id, name }) => {
         if(pathname === "/refrigerator") {
             window.open(`${NAVER_SERACH_URL}${name}+레시피`, "_blank")
         } else {
+            const clickedRefrigerator = refrigerators.find((refrigerator) => {
+                return refrigerator.id === id
+            })
+            setClickedRefrigerator(clickedRefrigerator)
             setBottomsheetType(BottomsheetType.EDIT_INGREDIENT)
             setIsBottomsheetShow(true)
         }
