@@ -22,8 +22,9 @@ export const ModalType = {
 
 // 모달창 메시지
 export const ModalMessageType = {
+    EDIT_CANCEL: `재료 수정을 취소하시겠어요?\n변경 사항은 저장되지 않아요.`,
     LOGOUT: `정말 로그아웃 하시겠어요?\n로그인 화면으로 이동됩니다.`,
-    CHECK_RESET: `정말 초기화하시겠어요?\n그동안 기록한 모든 데이터가 삭제돼요`,
+    CHECK_RESET: `정말 초기화하시겠어요?\n그동안 기록한 모든 데이터가 삭제돼요.`,
     RESET_COMPLETED: "데이터 초기화가 완료되었습니다.",
     QUIT_COMPLETED: "탈퇴가 완료됐습니다.\n이용해 주셔서 감사합니다.",
 }
