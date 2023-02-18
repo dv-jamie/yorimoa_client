@@ -48,6 +48,7 @@ function Layout({
             footerStyle = `${styles.footer_area} hide`
             break
         case "/quit":
+        case "/refrigerator/edit":
             pageTitle = "탈퇴하기"
             footerStyle = `${styles.footer_area} hide`
             break

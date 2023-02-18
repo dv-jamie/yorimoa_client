@@ -12,6 +12,7 @@ function Header({
     setBottomsheetType,
     setIsBottomsheetShow
 }) {
+    const backButtonStyle = `${styles.button} ${styles.back_button}`
     const navigate = useNavigate()
     const location = useLocation()
     const pathname = location.pathname
@@ -32,7 +33,7 @@ function Header({
             return (
                 <div className={`${styles.container} ${styles.back_container}`}>
                     <button
-                        className={styles.back_button}
+                        className={backButtonStyle}
                         onClick={() => {navigate(-1)}}
                     >
                         <BackOutline
@@ -50,7 +51,7 @@ function Header({
             return (
                 <div className={`${styles.container} ${styles.back_container}`}>
                     <button
-                        className={`${styles.button} ${styles.back_button}`}
+                        className={backButtonStyle}
                         onClick={() => {navigate(-1)}}
                     >
                         <BackOutline

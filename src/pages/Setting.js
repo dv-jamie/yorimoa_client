@@ -6,10 +6,10 @@ import {
     PowerOutline,
     QuitOutline
 } from "assets/icons";
+import { clickKakaoLink } from "common";
 import { ModalConfirmButtonType, ModalMessageType, ModalType } from "type";
 import Modal from "components/molecules/Modal";
 import styles from "./Setting.module.css";
-import { clickKakaoLink } from "common";
 
 function Setting() {
     const { isModalShowContext } = useOutletContext()
