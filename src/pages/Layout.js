@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Outlet, useLocation } from "react-router-dom";
-import dummy from "../data.json";
+import axios from "axios";
 import Header from "../components/templetes/Header";
 import Nav from "components/templetes/Nav";
 import SelectMenuBottomsheet from "components/molecules/SelectMenuBottomsheet";
@@ -24,12 +24,29 @@ function Layout({
     let footerStyle = styles.footer_area
     let pageTitle
 
-    const refrigeratorCategoriesDummy = dummy.categories.filter(category => {
-        return category.type === "refrigerator"
-    })
-
-    const [refrigeratorCategories, setRefrigeratorCategories] = useState(refrigeratorCategoriesDummy)
+    const [refrigeratorCategories, setRefrigeratorCategories] = useState([])
     const [clickedRefrigerator, setClickedRefrigerator] = useState()
+    const [selectedRefrigeratorCategories, setSelectedRefrigeratorCategories] = useState([])
+
+    const getCategories = async () => {
+        const refrigeratorCategorySet = new Set()
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/categories`)
+        const categories = response.data
+        const categoriesByRefrigerator = categories.filter(category => {
+            return category.type === "refrigerator"
+        })
+        setRefrigeratorCategories(categoriesByRefrigerator)
+
+        categoriesByRefrigerator.forEach((category) => {
+            refrigeratorCategorySet.add(category.id)
+        })
+
+        setSelectedRefrigeratorCategories([...refrigeratorCategorySet])
+    }
+
+    useEffect(() => {
+        getCategories()
+    }, [])
 
     useEffect(() => {
         document.body.classList.toggle("unscrollable", isModalShow)
@@ -81,6 +98,7 @@ function Layout({
                         bottomsheetTypeContext: [bottomsheetType, setBottomsheetType],
                         isBottomsheetShowContext: [isBottomsheetShow, setIsBottomsheetShow],
                         refrigeratorCategoriesContext: [refrigeratorCategories],
+                        selectedRefrigeratorCategoriesContext: [selectedRefrigeratorCategories, setSelectedRefrigeratorCategories],
                     }}
                     className={styles.main_area}
                 />
