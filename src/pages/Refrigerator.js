@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import { useOutletContext } from "react-router-dom";
+import { useNavigate, useOutletContext } from "react-router-dom";
 import axios from "axios";
 import RefrigeratorHeader from "components/templetes/RefrigeratorHeader";
 import RefrigetraotrTable from "components/templetes/RefrigeratorTable";
 
 function Refrigerator() {
-    const size = 10
+    const navigate = useNavigate()
 
     const { refrigeratorCategoriesContext, selectedRefrigeratorCategoriesContext } = useOutletContext()
     const [refrigeratorCategories] = refrigeratorCategoriesContext
@@ -13,6 +13,7 @@ function Refrigerator() {
     const [refrigerators, setRefrigerators] = useState([])
     const [keyword, setKeyword] = useState("")
     const [page, setPage] = useState(0)
+    const size = 10
 
     const getRefrigerators = async () => {
         if(selectedRefrigeratorCategories.length === 0) return
@@ -27,7 +28,7 @@ function Refrigerator() {
         })
         
         if(response.data.status === 401) {
-            console.log("로그인 필요")
+            navigate("/login")
             return
         }
         
