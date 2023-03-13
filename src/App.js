@@ -25,7 +25,7 @@ function App() {
     const jwtToken = localStorage.getItem("JWT_TOKEN")
     
     if(jwtToken) {
-      axios.defaults.headers.common['Authorization'] = jwtToken
+      axios.defaults.headers.common['Authorization'] = `Bearer ${jwtToken}`
       setIsLogin(true)
     }
   }, [])

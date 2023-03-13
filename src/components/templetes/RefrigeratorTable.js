@@ -65,7 +65,7 @@ function RefrigetraotrTable({
                     {/* 테이블 영역 */}
                     {categories.map(category => {
                         const ingredientsByCategory = refrigerators.filter(refrigerator => {
-                            return refrigerator.category === category.id
+                            return refrigerator.category.id === category.id
                         })
                         if(ingredientsByCategory.length === 0) return
         

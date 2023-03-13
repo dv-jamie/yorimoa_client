@@ -1,12 +1,10 @@
 import { useEffect, useState } from "react";
-import { useNavigate, useOutletContext } from "react-router-dom";
+import { useOutletContext } from "react-router-dom";
 import axios from "axios";
 import RefrigeratorHeader from "components/templetes/RefrigeratorHeader";
 import RefrigetraotrTable from "components/templetes/RefrigeratorTable";
 
 function Refrigerator() {
-    const navigate = useNavigate()
-
     const { refrigeratorCategoriesContext, selectedRefrigeratorCategoriesContext } = useOutletContext()
     const [refrigeratorCategories] = refrigeratorCategoriesContext
     const [selectedRefrigeratorCategories, setSelectedRefrigeratorCategories] = selectedRefrigeratorCategoriesContext
@@ -16,9 +14,7 @@ function Refrigerator() {
     const size = 10
 
     const getRefrigerators = async () => {
-        if(selectedRefrigeratorCategories.length === 0) return
-
-        const response = await axios.get(`${process.env.REACT_APP_API_URL}/refrigerators`, {
+        const { data: getRefrigerators } = await axios.get(`${process.env.REACT_APP_API_URL}/refrigerators`, {
             params: {
                 categoryIds: JSON.stringify(selectedRefrigeratorCategories),
                 keyword,
@@ -26,13 +22,8 @@ function Refrigerator() {
                 page
             }
         })
-        
-        if(response.data.status === 401) {
-            navigate("/login")
-            return
-        }
-        
-        const refrigerators = response.data.data
+
+        const refrigerators = getRefrigerators.data.list
         setRefrigerators(refrigerators)
     }
     

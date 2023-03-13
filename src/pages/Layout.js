@@ -29,19 +29,11 @@ function Layout({
     const [selectedRefrigeratorCategories, setSelectedRefrigeratorCategories] = useState([])
 
     const getCategories = async () => {
-        const refrigeratorCategorySet = new Set()
-        const response = await axios.get(`${process.env.REACT_APP_API_URL}/categories`)
-        const categories = response.data
+        const { data: categories } = await axios.get(`${process.env.REACT_APP_API_URL}/categories`)
         const categoriesByRefrigerator = categories.filter(category => {
             return category.type === "refrigerator"
         })
         setRefrigeratorCategories(categoriesByRefrigerator)
-
-        categoriesByRefrigerator.forEach((category) => {
-            refrigeratorCategorySet.add(category.id)
-        })
-
-        setSelectedRefrigeratorCategories([...refrigeratorCategorySet])
     }
 
     useEffect(() => {

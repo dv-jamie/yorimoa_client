@@ -10,10 +10,15 @@ function KakaoAuthHandle({ setIsLogin }) {
         const { data } = await axios.get(`${process.env.REACT_APP_API_URL}/auth/login/kakao`, {
             params: { code }
         })
-        const { jwtToken } = data.data
-        localStorage.setItem("JWT_TOKEN", jwtToken)
-        setIsLogin(true)
-        navigate("/")
+        
+        if(data.status === 200) {
+            const { jwtToken } = data.data
+            localStorage.setItem("JWT_TOKEN", jwtToken)
+            setIsLogin(true)
+            navigate("/")
+        } else {
+            console.log("서버 오류: ", data)
+        }
     }
 
     useEffect(() => {
