@@ -1,13 +1,14 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useLocation, useOutletContext } from "react-router-dom";
 import { BottomsheetType, ColorType } from "type";
 import { BagFill, SpoonFill } from "assets/icons";
 import styles from "./RefrigeratorTable.module.css";
+import axios from "axios";
 
 function RefrigetraotrTable({
     categories,
+    getRefrigerators,
     refrigerators,
-    setRefrigerators,
     setBottomsheetType
 }) {
     const today = new Date()
@@ -15,12 +16,12 @@ function RefrigetraotrTable({
     
     const location = useLocation()
     const pathname = location.pathname
-    
+
     const { clickedRefrigeratorContext, isBottomsheetShowContext } = useOutletContext()
     const [isBottomsheetShow, setIsBottomsheetShow] = isBottomsheetShowContext
     const [clickedRefrigerator, setClickedRefrigerator] = clickedRefrigeratorContext
 
-    const clickIngredientName = ({ id, name }) => {
+    const clickIngredientName = (id, name) => {
         if(pathname === "/refrigerator") {
             window.open(`${NAVER_SERACH_URL}${name}+레시피`, "_blank")
         } else {
@@ -33,13 +34,10 @@ function RefrigetraotrTable({
         }
     }
 
-    const clickIcon = (type) => {
-        refrigerators[type] = refrigerators[type] ? false : true
+    const clickIcon = async (id, type) => {
+        await axios.patch(`${process.env.REACT_APP_API_URL}/refrigerators/${id}/tag/${type}`)
+        getRefrigerators()
     }
-
-    // useEffect(() => {
-    //     setRefrigerators(refrigerators)
-    // }, clickIcon)
 
     return (
         <div className={styles.container}>
@@ -93,13 +91,13 @@ function RefrigetraotrTable({
                                             <li className={`${styles.column} ${styles.ingredient_name_wrap}`}>
                                                 <span
                                                     className={styles.ingredient_name}
-                                                    onClick={() => clickIngredientName({ id, name })}
+                                                    onClick={() => clickIngredientName(id, name)}
                                                     >
                                                     {name}
                                                 </span>
                                                 <span
                                                     className={styles.icon}
-                                                    onClick={() => clickIcon("eatTag")}
+                                                    onClick={() => clickIcon(id, "eat")}
                                                 >
                                                     <SpoonFill
                                                         fill={ingredient.eatTag
@@ -110,7 +108,7 @@ function RefrigetraotrTable({
                                                 </span>
                                                 <span
                                                     className={styles.icon}
-                                                    onClick={() => clickIcon("buyTag")}
+                                                    onClick={() => clickIcon(id, "buy")}
                                                 >
                                                     <BagFill
                                                         fill={ingredient.buyTag

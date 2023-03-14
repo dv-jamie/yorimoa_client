@@ -5,13 +5,15 @@ import RefrigeratorHeader from "components/templetes/RefrigeratorHeader";
 import RefrigetraotrTable from "components/templetes/RefrigeratorTable";
 
 function Refrigerator() {
+    const size = 10
+
     const { refrigeratorCategoriesContext, selectedCategoryContext } = useOutletContext()
     const [refrigeratorCategories] = refrigeratorCategoriesContext
     const [selectedCategory, setSelectedCategory] = selectedCategoryContext
+
     const [refrigerators, setRefrigerators] = useState([])
     const [keyword, setKeyword] = useState("")
     const [page, setPage] = useState(0)
-    const size = 10
 
     const getRefrigerators = async () => {
         const { data: getRefrigerators } = await axios.get(`${process.env.REACT_APP_API_URL}/refrigerators`, {
@@ -41,8 +43,8 @@ function Refrigerator() {
             />
             <RefrigetraotrTable
                 categories={refrigeratorCategories}
+                getRefrigerators={getRefrigerators}
                 refrigerators={refrigerators}
-                setRefrigerators={setRefrigerators}
             />
         </div>
     );
