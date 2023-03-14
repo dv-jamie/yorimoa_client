@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { useLocation, useOutletContext } from "react-router-dom";
 import { BottomsheetType, ColorType } from "type";
 import { BagFill, SpoonFill } from "assets/icons";
@@ -81,9 +80,9 @@ function RefrigetraotrTable({
                                 {ingredientsByCategory.map(ingredient => {
                                     const id = ingredient.id
                                     const name = ingredient.name
-                                    const boughtAt = ingredient.boughtAt;
-                                    const diffMSec = today.getTime() - today.getTime();
-                                    const diffDate = diffMSec / (24 * 60 * 60 * 1000);
+                                    const boughtAt = new Date(ingredient.boughtAt);
+                                    const diffMSec = today.getTime() - boughtAt.getTime();
+                                    const diffDate = Math.floor(diffMSec / (24 * 60 * 60 * 1000));
         
                                     return (
                                         <ul key={id} className={styles.row}>

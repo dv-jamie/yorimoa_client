@@ -17,6 +17,8 @@ function AddIngredientBottomsheet({
     const dateRef = useRef()
 
     const clickAddButton = async () => {
+        // *** 입력 안 했을 때 로직 추가 필요
+
         const createRefrigeratorDto = {
             name: nameRef.current.value,
             boughtAt: new Date(dateRef.current.value),
@@ -25,6 +27,8 @@ function AddIngredientBottomsheet({
         await axios.post(`${process.env.REACT_APP_API_URL}/refrigerators`, {
             ...createRefrigeratorDto
         })
+        nameRef.current.value = ""
+        dateRef.current.value = ""
         setIsTwoDepthBottomsheetShow(false)
     }
 
