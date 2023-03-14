@@ -25,6 +25,10 @@
 .icon_name {
     font-size: 11px;
 }
+.selected_icon_name {
+    font-size: 11px;
+    color: var(--main-orange);
+}
 .upload_button {
     position: relative;
 }

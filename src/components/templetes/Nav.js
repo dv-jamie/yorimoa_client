@@ -1,5 +1,4 @@
 import { Link, useLocation } from "react-router-dom";
-import styles from "./Nav.module.css";
 import {
     DiaryFill,
     MemoFill,
@@ -8,6 +7,7 @@ import {
     ToqueFill,
 } from "../../assets/icons"
 import { ColorType, ModalType } from "type";
+import styles from "./Nav.module.css";
 
 function Nav({
     isModalShow,
@@ -38,7 +38,10 @@ function Nav({
                                 }
                             />
                         </div>
-                        <span className={styles.icon_name}>요리일기</span>
+                        <span className={pathname === "/diary"
+                            ? styles.selected_icon_name
+                            : styles.icon_name
+                        }>요리일기</span>
                     </Link>
                 </li>
                 <li>
@@ -53,7 +56,10 @@ function Nav({
                                 }
                             />
                         </div>
-                        <span className={styles.icon_name}>레시피</span>
+                        <span className={pathname === "/recipe"
+                            ? styles.selected_icon_name
+                            : styles.icon_name
+                        }>레시피</span>
                     </Link>
                 </li>
                 <li>
@@ -68,7 +74,10 @@ function Nav({
                                 }
                             />
                         </div>
-                        <span className={styles.icon_name}>냉장고</span>
+                        <span className={pathname === "/refrigerator"
+                            ? styles.selected_icon_name
+                            : styles.icon_name
+                        }>냉장고</span>
                     </Link>
                 </li>
                 {/* <li
