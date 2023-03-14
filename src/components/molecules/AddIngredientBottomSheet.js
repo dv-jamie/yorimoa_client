@@ -1,3 +1,5 @@
+import { useRef } from "react";
+import axios from "axios";
 import { CloseOutline } from "assets/icons";
 import { BottomsheetType } from "type";
 import RefrigeratorFilteringWrap from "components/molecules/RefrigeratorFilteringWrap";
@@ -7,9 +9,22 @@ function AddIngredientBottomsheet({
     bottomsheetType,
     isTwoDepthBottomsheetShow,
     setIsTwoDepthBottomsheetShow,
-    refrigeratorCategories
+    refrigeratorCategories,
+    selectedCategory,
+    setSelectedCategory
 }) {
-    const clickAddButton = () => {
+    const nameRef = useRef()
+    const dateRef = useRef()
+
+    const clickAddButton = async () => {
+        const createRefrigeratorDto = {
+            name: nameRef.current.value,
+            boughtAt: new Date(dateRef.current.value),
+            categoryId: selectedCategory
+        }
+        await axios.post(`${process.env.REACT_APP_API_URL}/refrigerators`, {
+            ...createRefrigeratorDto
+        })
         setIsTwoDepthBottomsheetShow(false)
     }
 
@@ -36,6 +51,7 @@ function AddIngredientBottomsheet({
                     <div className={styles.input_wrap}>
                         <input
                             placeholder="ex) 스테이크용소고기"
+                            ref={nameRef}
                         />
                     </div>
                 </li>
@@ -44,6 +60,8 @@ function AddIngredientBottomsheet({
                     <RefrigeratorFilteringWrap
                         className={styles.category_wrap}
                         categories={refrigeratorCategories}
+                        selectedCategory={selectedCategory}
+                        setSelectedCategory={setSelectedCategory}
                     />
                 </li>
                 <li className={styles.list_item}>
@@ -51,6 +69,7 @@ function AddIngredientBottomsheet({
                     <div className={styles.input_wrap}>
                     <input
                         type="date"
+                        ref={dateRef}
                     />
                     </div>
                 </li>

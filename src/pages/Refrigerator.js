@@ -7,9 +7,14 @@ import RefrigetraotrTable from "components/templetes/RefrigeratorTable";
 function Refrigerator() {
     const size = 10
 
-    const { refrigeratorCategoriesContext, selectedCategoryContext } = useOutletContext()
+    const {
+        refrigeratorCategoriesContext,
+        selectedCategoryContext,
+        isTwoDepthBottomsheetShowContext
+    } = useOutletContext()
     const [refrigeratorCategories] = refrigeratorCategoriesContext
     const [selectedCategory, setSelectedCategory] = selectedCategoryContext
+    const [isTwoDepthBottomsheetShow] = isTwoDepthBottomsheetShowContext
 
     const [refrigerators, setRefrigerators] = useState([])
     const [keyword, setKeyword] = useState("")
@@ -31,7 +36,7 @@ function Refrigerator() {
     
     useEffect(() => {
         getRefrigerators()
-    }, [selectedCategory])
+    }, [selectedCategory, isTwoDepthBottomsheetShow])
 
     return (
         <div>

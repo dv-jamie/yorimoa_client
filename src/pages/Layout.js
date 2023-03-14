@@ -89,6 +89,7 @@ function Layout({
                         isModalShowContext: [isModalShow, setIsModalShow],
                         bottomsheetTypeContext: [bottomsheetType, setBottomsheetType],
                         isBottomsheetShowContext: [isBottomsheetShow, setIsBottomsheetShow],
+                        isTwoDepthBottomsheetShowContext: [isTwoDepthBottomsheetShow],
                         refrigeratorCategoriesContext: [refrigeratorCategories],
                         selectedCategoryContext: [selectedCategory, setSelectedCategory],
                     }}
@@ -112,6 +113,8 @@ function Layout({
                 isTwoDepthBottomsheetShow={isTwoDepthBottomsheetShow}
                 setIsTwoDepthBottomsheetShow={setIsTwoDepthBottomsheetShow}
                 refrigeratorCategories={refrigeratorCategories}
+                selectedCategory={selectedCategory}
+                setSelectedCategory={setSelectedCategory}
             />
             {
                 clickedRefrigerator &&
