@@ -26,7 +26,7 @@ function Layout({
 
     const [refrigeratorCategories, setRefrigeratorCategories] = useState([])
     const [clickedRefrigerator, setClickedRefrigerator] = useState()
-    const [selectedRefrigeratorCategories, setSelectedRefrigeratorCategories] = useState([])
+    const [selectedCategory, setSelectedCategory] = useState(null)
 
     const getCategories = async () => {
         const { data: categories } = await axios.get(`${process.env.REACT_APP_API_URL}/categories`)
@@ -90,7 +90,7 @@ function Layout({
                         bottomsheetTypeContext: [bottomsheetType, setBottomsheetType],
                         isBottomsheetShowContext: [isBottomsheetShow, setIsBottomsheetShow],
                         refrigeratorCategoriesContext: [refrigeratorCategories],
-                        selectedRefrigeratorCategoriesContext: [selectedRefrigeratorCategories, setSelectedRefrigeratorCategories],
+                        selectedCategoryContext: [selectedCategory, setSelectedCategory],
                     }}
                     className={styles.main_area}
                 />

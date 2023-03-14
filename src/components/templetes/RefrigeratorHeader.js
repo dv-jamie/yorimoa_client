@@ -3,7 +3,12 @@ import SearchBox from "components/molecules/SearchBox";
 import RefrigeratorFilteringWrap from "components/molecules/RefrigeratorFilteringWrap";
 import styles from "./RefrigeratorHeader.module.css";
 
-function RefrigeratorHeader({ categories, setKeyword }) {
+function RefrigeratorHeader({
+    categories,
+    selectedCategory,
+    setSelectedCategory,
+    setKeyword
+}) {
     return (
         <div>
             <Banner type="refrigerator" />
@@ -14,6 +19,8 @@ function RefrigeratorHeader({ categories, setKeyword }) {
             <div className={styles.category_wrap}>
                 <RefrigeratorFilteringWrap
                     categories={categories}
+                    selectedCategory={selectedCategory}
+                    setSelectedCategory={setSelectedCategory}
                 />
             </div>
         </div>

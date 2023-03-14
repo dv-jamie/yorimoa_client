@@ -1,18 +1,18 @@
 import SelectButtonList from "./SelectButtonList";
 
 function RefrigeratorFilteringWrap({
-    categories
+    categories,
+    selectedCategory,
+    setSelectedCategory
 }) {
-    const clickSelectButtonWrap= () => {
-        console.log("click")
-    }
-
     return (
         <div>
-            <div
-                onClick={clickSelectButtonWrap}
-            >
-                <SelectButtonList selectItems={categories} />
+            <div>
+                <SelectButtonList
+                    selectItems={categories}
+                    selectedCategory={selectedCategory}
+                    setSelectedCategory={setSelectedCategory}
+                />
             </div>
         </div>
     );

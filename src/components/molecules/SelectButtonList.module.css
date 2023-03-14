@@ -9,7 +9,7 @@
     color: var(--dim-gray);
     cursor: pointer;
 }
-.filter_item_wrap > li.selected {
+.select_button_list > li.selected {
     border: 1px solid var(--main-orange);
     color: var(--main-orange);
 }
