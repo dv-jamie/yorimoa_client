@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import { ModalConfirmButtonType, ModalMessageType, ModalType } from "type";
 import styles from "./Modal.module.css";
 
@@ -14,12 +15,11 @@ function Modal({
 }) {
     const navigate = useNavigate()
 
-    const clickConfirmButton = () => {
-        console.log("modalConfirmButtonType", modalConfirmButtonType)
-
+    const clickConfirmButton = async () => {
         switch(modalConfirmButtonType) {
             // 데이터 초기화
             case ModalConfirmButtonType.RESET_DATA:
+                await axios.delete(`${process.env.REACT_APP_API_URL}/reset`)
                 setModalType(ModalType.ALERT)
                 setModalMessage(ModalMessageType.RESET_COMPLETED)
                 setModalConfirmButtonType(ModalConfirmButtonType.CLOSE_MODAL)

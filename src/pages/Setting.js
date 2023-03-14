@@ -24,7 +24,7 @@ function Setting() {
         setIsModalShow(true)
     }
 
-    const clickResetDataButton = () => {
+    const clickResetDataButton = async () => {
         setModalMessage(ModalMessageType.CHECK_RESET)
         setModalConfirmButtonType(ModalConfirmButtonType.RESET_DATA)
         setIsModalShow(true)
