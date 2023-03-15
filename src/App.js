@@ -34,9 +34,9 @@ function App() {
     <>
       <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Routes>
-          <Route path="/auth/kakao" element={<KakaoAuthHandle setIsLogin={setIsLogin} />}></Route>
-
           <Route element={<Layout
+            isLogin={isLogin}
+            setIsLogin={setIsLogin}
             isModalShow={isModalShow}
             setIsModalShow={setIsModalShow}
             bottomsheetType={bottomsheetType}
@@ -46,18 +46,15 @@ function App() {
             isTwoDepthBottomsheetShow={isTwoDepthBottomsheetShow}
             setIsTwoDepthBottomsheetShow={setIsTwoDepthBottomsheetShow}
           />}>
+            <Route path="/auth/kakao" element={<KakaoAuthHandle setIsLogin={setIsLogin} />}></Route>
+            
             <Route path="/" element={
               <Navigate to={ isLogin ? HOME_PAGE_PATH : LOGIN_PAGE_PATH } />
             }></Route>
             <Route path="/login" element={
               isLogin ? <Navigate to="/" /> : <Login />
             }></Route>
-            <Route path="/setting" element={
-              <Setting
-                isModalShow={isModalShow}
-                setIsModalShow={setIsModalShow}
-              />
-            }></Route>
+            <Route path="/setting" element={<Setting />}></Route>
             <Route path="/quit" element={<Quit />}></Route>
 
             <Route path="/diary" element={<ComingSoon type="diary" />}></Route>

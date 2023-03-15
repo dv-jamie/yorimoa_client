@@ -32,8 +32,8 @@ export const ModalMessageType = {
 // 모달창 확인 버튼
 export const ModalConfirmButtonType = {
     CLOSE_MODAL: "closeModal",
-    LINK_TO_LOGIN: "linkToLogin",
     RESET_DATA: "resetData",
+    LOGOUT: "linkToLogin",
     QUIT: "quit"
 }
 

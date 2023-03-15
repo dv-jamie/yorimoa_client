@@ -9,6 +9,8 @@ import EditIngredientBottomsheet from "components/molecules/EditIngredientBottom
 import styles from "./Layout.module.css";
 
 function Layout({
+    isLogin,
+    setIsLogin,
     isModalShow,
     setIsModalShow,
     bottomsheetType,
@@ -85,6 +87,7 @@ function Layout({
             <main className={styles.main_area}>
                 <Outlet
                     context={{
+                        isLoginContext: [isLogin, setIsLogin],
                         clickedRefrigeratorContext: [clickedRefrigerator, setClickedRefrigerator],
                         isModalShowContext: [isModalShow, setIsModalShow],
                         bottomsheetTypeContext: [bottomsheetType, setBottomsheetType],

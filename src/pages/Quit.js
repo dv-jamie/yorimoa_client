@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import { useOutletContext } from "react-router-dom";
+import axios from "axios";
 import { ArrowDownOutline, CheckboxFill, SmilingFaceWithTear } from "assets/icons";
 import {
     ColorType,
@@ -15,7 +16,8 @@ import styles from "./Quit.module.css";
 function Quit() {
     const agreeButtonRef = useRef()
 
-    const { isModalShowContext } = useOutletContext()
+    const { isLoginContext, isModalShowContext } = useOutletContext()
+    const [_, setIsLogin] = isLoginContext
     const [isModalShow, setIsModalShow] = isModalShowContext
     const [modalType, setModalType] = useState(ModalType.CONFIRM)
     const [modalMessage, setModalMessage] = useState("")
@@ -38,12 +40,19 @@ function Quit() {
         setIsModalShow(true)
     }
 
-    const clikcQuitButton = () => {
+    const clikcQuitButton = async () => {
         if(!isAgree) return
-        setModalType(ModalType.ALERT)
-        setModalMessage(ModalMessageType.QUIT_COMPLETED)
-        setModalConfirmButtonType(ModalConfirmButtonType.QUIT)
-        setIsModalShow(true)
+
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/auth/unlink/kakao`)
+
+        if(response.status === 200) {
+            localStorage.clear()
+            setIsLogin(false)
+            setModalType(ModalType.ALERT)
+            setModalMessage(ModalMessageType.QUIT_COMPLETED)
+            setModalConfirmButtonType(ModalConfirmButtonType.QUIT)
+            setIsModalShow(true)
+        }
     }
 
     return (

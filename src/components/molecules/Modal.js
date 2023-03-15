@@ -4,6 +4,7 @@ import { ModalConfirmButtonType, ModalMessageType, ModalType } from "type";
 import styles from "./Modal.module.css";
 
 function Modal({
+    setIsLogin,
     isModalShow,
     setIsModalShow,
     modalType,
@@ -25,8 +26,15 @@ function Modal({
                 setModalConfirmButtonType(ModalConfirmButtonType.CLOSE_MODAL)
                 break
             
-            // 로그아웃, 탈퇴
-            case ModalConfirmButtonType.LINK_TO_LOGIN:
+            // 로그아웃
+            case ModalConfirmButtonType.LOGOUT:
+                localStorage.clear()
+                setIsLogin(false)
+                setIsModalShow(false)
+                navigate("/login")
+                break
+
+            // 탈퇴
             case ModalConfirmButtonType.QUIT:
                 setIsModalShow(false)
                 navigate("/login")

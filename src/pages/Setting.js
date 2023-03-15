@@ -12,15 +12,17 @@ import Modal from "components/molecules/Modal";
 import styles from "./Setting.module.css";
 
 function Setting() {
-    const { isModalShowContext } = useOutletContext()
+    const { isLoginContext, isModalShowContext } = useOutletContext()
+    const [_, setIsLogin] = isLoginContext
     const [isModalShow, setIsModalShow] = isModalShowContext
+
     const [modalType, setModalType] = useState(ModalType.CONFIRM)
     const [modalMessage, setModalMessage] = useState("")
     const [modalConfirmButtonType, setModalConfirmButtonType] = useState(null)
 
     const clickLogoutButton = () => {
         setModalMessage(ModalMessageType.LOGOUT)
-        setModalConfirmButtonType(ModalConfirmButtonType.LINK_TO_LOGIN)
+        setModalConfirmButtonType(ModalConfirmButtonType.LOGOUT)
         setIsModalShow(true)
     }
 
@@ -64,6 +66,7 @@ function Setting() {
 
             {/* 데이터 초기화 모달창 */}
             <Modal
+                setIsLogin={setIsLogin}
                 isModalShow={isModalShow}
                 setIsModalShow={setIsModalShow}
                 modalType={modalType}
