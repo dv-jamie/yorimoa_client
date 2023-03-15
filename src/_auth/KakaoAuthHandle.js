@@ -1,23 +1,24 @@
-import axios from "axios";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 function KakaoAuthHandle({ setIsLogin }) {
     const navigate = useNavigate()
 
     const kakaoLogin = async () => {
         const code = new URL(window.location.href).searchParams.get('code')
-        const { data } = await axios.get(`${process.env.REACT_APP_API_URL}/auth/login/kakao`, {
+        const { data: loginKakao } = await axios.get(`${process.env.REACT_APP_API_URL}/auth/login/kakao`, {
             params: { code }
         })
         
-        if(data.status === 200) {
-            const { jwtToken } = data.data
+        if(loginKakao.status === 200) {
+            const { jwtToken } = loginKakao.data
             localStorage.setItem("JWT_TOKEN", jwtToken)
+            axios.defaults.headers.common['Authorization'] = `Bearer ${jwtToken}`
             setIsLogin(true)
             navigate("/")
         } else {
-            console.log("서버 오류: ", data)
+            return loginKakao.data
         }
     }
 
