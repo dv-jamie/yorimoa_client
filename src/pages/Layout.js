@@ -26,6 +26,11 @@ function Layout({
     let footerStyle = styles.footer_area
     let pageTitle
 
+    const size = 10
+    const [keyword, setKeyword] = useState("")
+    const [page, setPage] = useState(0)
+
+    // 카테고리
     const [refrigeratorCategories, setRefrigeratorCategories] = useState([])
     const [clickedRefrigerator, setClickedRefrigerator] = useState()
     const [selectedCategory, setSelectedCategory] = useState(null)
@@ -42,6 +47,28 @@ function Layout({
         getCategories()
     }, [])
 
+    // 냉장고
+    const [refrigerators, setRefrigerators] = useState([])
+
+    const getRefrigerators = async () => {
+        const { data: getRefrigerators } = await axios.get(`${process.env.REACT_APP_API_URL}/refrigerators`, {
+            params: {
+                categoryId: selectedCategory,
+                keyword,
+                size,
+                page
+            }
+        })
+
+        const refrigerators = getRefrigerators.data.list
+        setRefrigerators(refrigerators)
+    }
+
+    useEffect(() => {
+        pathname === '/refrigerator' && getRefrigerators()
+    }, [])
+
+    // 모달/바텀시트 관련
     useEffect(() => {
         document.body.classList.toggle("unscrollable", isModalShow)
     }, [isModalShow])
@@ -88,13 +115,21 @@ function Layout({
                 <Outlet
                     context={{
                         isLoginContext: [isLogin, setIsLogin],
-                        clickedRefrigeratorContext: [clickedRefrigerator, setClickedRefrigerator],
+                        
+                        keywordContext: [keyword, setKeyword],
+                        pageContext: [page, setPage],
+
                         isModalShowContext: [isModalShow, setIsModalShow],
                         bottomsheetTypeContext: [bottomsheetType, setBottomsheetType],
                         isBottomsheetShowContext: [isBottomsheetShow, setIsBottomsheetShow],
                         isTwoDepthBottomsheetShowContext: [isTwoDepthBottomsheetShow],
-                        refrigeratorCategoriesContext: [refrigeratorCategories],
+                        
                         selectedCategoryContext: [selectedCategory, setSelectedCategory],
+
+                        refrigeratorCategoriesContext: [refrigeratorCategories],
+                        refrigeratorContext: [refrigerators, setRefrigerators],
+                        clickedRefrigeratorContext: [clickedRefrigerator, setClickedRefrigerator],
+                        getRefrigeratorsContext: [getRefrigerators]
                     }}
                     className={styles.main_area}
                 />
@@ -115,6 +150,7 @@ function Layout({
                 bottomsheetType={bottomsheetType}
                 isTwoDepthBottomsheetShow={isTwoDepthBottomsheetShow}
                 setIsTwoDepthBottomsheetShow={setIsTwoDepthBottomsheetShow}
+                
                 refrigeratorCategories={refrigeratorCategories}
                 selectedCategory={selectedCategory}
                 setSelectedCategory={setSelectedCategory}
@@ -122,15 +158,15 @@ function Layout({
             {
                 clickedRefrigerator &&
                 <EditIngredientBottomsheet
-                    clickedRefrigerator={clickedRefrigerator}
                     bottomsheetType={bottomsheetType}
                     isBottomsheetShow={isBottomsheetShow}
                     setIsBottomsheetShow={setIsBottomsheetShow}
-                    setIsModalShow={setIsModalShow}
-                    isModalShow={isModalShow}
+                    
                     refrigeratorCategories={refrigeratorCategories}
                     selectedCategory={selectedCategory}
                     setSelectedCategory={setSelectedCategory}
+                    clickedRefrigerator={clickedRefrigerator}
+                    getRefrigerators={getRefrigerators}
                 />
             }
         </div>

@@ -6,36 +6,18 @@ import RefrigeratorFilteringWrap from "./RefrigeratorFilteringWrap";
 import styles from "./AddIngredientBottomsheet.module.css";
 
 function EditIngredientBottomsheet({
-    clickedRefrigerator,
     bottomsheetType,
     isBottomsheetShow,
     setIsBottomsheetShow,
+    
     refrigeratorCategories,
     selectedCategory,
     setSelectedCategory,
+    clickedRefrigerator,
+    getRefrigerators
 }) {
-    const size = 10
-
     const [nameValue, setNameValue] = useState(clickedRefrigerator.name)
     const [boughtAtValue, setBoughtAtValue] = useState(clickedRefrigerator.boughtAt.slice(0, 10))
-
-    const [refrigerators, setRefrigerators] = useState([])
-    const [keyword, setKeyword] = useState("")
-    const [page, setPage] = useState(0)
-
-    const getRefrigerators = async () => {
-        const { data: getRefrigerators } = await axios.get(`${process.env.REACT_APP_API_URL}/refrigerators`, {
-            params: {
-                categoryId: selectedCategory,
-                keyword,
-                size,
-                page
-            }
-        })
-
-        const refrigerators = getRefrigerators.data.list
-        setRefrigerators(refrigerators)
-    }
 
     const clickDeleteButton = async () => {
         await axios.delete(`${process.env.REACT_APP_API_URL}/refrigerators/${clickedRefrigerator.id}`)

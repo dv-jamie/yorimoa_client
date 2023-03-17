@@ -9,6 +9,7 @@ function AddIngredientBottomsheet({
     bottomsheetType,
     isTwoDepthBottomsheetShow,
     setIsTwoDepthBottomsheetShow,
+
     refrigeratorCategories,
     selectedCategory,
     setSelectedCategory

@@ -1,6 +1,5 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useOutletContext } from "react-router-dom";
-import axios from "axios";
 import RefrigeratorHeader from "components/templetes/RefrigeratorHeader";
 import RefrigetraotrTable from "components/templetes/RefrigeratorTable";
 
@@ -8,32 +7,24 @@ function Refrigerator() {
     const size = 10
 
     const {
+        keywordContext,
+        pageContext,
+
+        isTwoDepthBottomsheetShowContext,
+        
         refrigeratorCategoriesContext,
+        refrigeratorContext,
         selectedCategoryContext,
-        isTwoDepthBottomsheetShowContext
+        getRefrigeratorsContext
     } = useOutletContext()
-    const [refrigeratorCategories] = refrigeratorCategoriesContext
-    const [selectedCategory, setSelectedCategory] = selectedCategoryContext
+    const [keyword, setKeyword] = keywordContext
+    const [page, setPage] = pageContext
     const [isTwoDepthBottomsheetShow] = isTwoDepthBottomsheetShowContext
+    const [refrigeratorCategories] = refrigeratorCategoriesContext
+    const [refrigerators, setRefrigerators] = refrigeratorContext
+    const [selectedCategory, setSelectedCategory] = selectedCategoryContext
+    const [getRefrigerators] = getRefrigeratorsContext
 
-    const [refrigerators, setRefrigerators] = useState([])
-    const [keyword, setKeyword] = useState("")
-    const [page, setPage] = useState(0)
-
-    const getRefrigerators = async () => {
-        const { data: getRefrigerators } = await axios.get(`${process.env.REACT_APP_API_URL}/refrigerators`, {
-            params: {
-                categoryId: selectedCategory,
-                keyword,
-                size,
-                page
-            }
-        })
-
-        const refrigerators = getRefrigerators.data.list
-        setRefrigerators(refrigerators)
-    }
-    
     useEffect(() => {
         getRefrigerators()
     }, [selectedCategory, isTwoDepthBottomsheetShow])

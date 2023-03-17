@@ -1,6 +1,5 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useOutletContext } from "react-router-dom";
-import axios from "axios";
 import RefrigetraotrTable from "components/templetes/RefrigeratorTable";
 import Banner from "components/templetes/Banner";
 import SearchBox from "components/molecules/SearchBox";
@@ -11,33 +10,23 @@ function RefrigeratorEdit() {
     const size = 10
 
     const {
-        refrigeratorCategoriesContext,
-        selectedCategoryContext,
         bottomsheetTypeContext,
-        isBottomsheetShowContext
+        isBottomsheetShowContext,
+        selectedCategoryContext,
+        refrigeratorCategoriesContext,
+        refrigeratorContext,
+        getRefrigeratorsContext,
+        keywordContext,
+        pageContext
     } = useOutletContext()
     const [bottomsheetType, setBottomsheetType] = bottomsheetTypeContext
     const [isBottomsheetShow, setIsBottomsheetShow] = isBottomsheetShowContext
-    const [refrigeratorCategories] = refrigeratorCategoriesContext
     const [selectedCategory, setSelectedCategory] = selectedCategoryContext
-
-    const [refrigerators, setRefrigerators] = useState([])
-    const [keyword, setKeyword] = useState("")
-    const [page, setPage] = useState(0)
-
-    const getRefrigerators = async () => {
-        const { data: getRefrigerators } = await axios.get(`${process.env.REACT_APP_API_URL}/refrigerators`, {
-            params: {
-                categoryId: selectedCategory,
-                keyword,
-                size,
-                page
-            }
-        })
-
-        const refrigerators = getRefrigerators.data.list
-        setRefrigerators(refrigerators)
-    }
+    const [refrigeratorCategories] = refrigeratorCategoriesContext
+    const [refrigerators, setRefrigerators] = refrigeratorContext
+    const [getRefrigerators] = getRefrigeratorsContext
+    const [keyword, setKeyword] = keywordContext
+    const [page, setPage] = pageContext
     
     useEffect(() => {
         getRefrigerators()
@@ -58,13 +47,16 @@ function RefrigeratorEdit() {
                 />
             </div>
             <RefrigetraotrTable
-                categories={refrigeratorCategories}
-                getRefrigerators={getRefrigerators}
-                refrigerators={refrigerators}
-                setRefrigerators={setRefrigerators}
                 setBottomsheetType={setBottomsheetType}
                 isBottomsheetShow={isBottomsheetShow}
                 setIsBottomsheetShow={setIsBottomsheetShow}
+                
+                categories={refrigeratorCategories}
+                
+                refrigerators={refrigerators}
+                setRefrigerators={setRefrigerators}
+                getRefrigerators={getRefrigerators}
+                setPage={setPage}
             />
         </div>
     );

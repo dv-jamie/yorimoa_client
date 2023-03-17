@@ -5,10 +5,11 @@ import styles from "./RefrigeratorTable.module.css";
 import axios from "axios";
 
 function RefrigetraotrTable({
+    setBottomsheetType,
     categories,
-    getRefrigerators,
     refrigerators,
-    setBottomsheetType
+    getRefrigerators,
+    setPage,
 }) {
     const today = new Date()
     const NAVER_SERACH_URL = "https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=1&ie=utf8&query="
