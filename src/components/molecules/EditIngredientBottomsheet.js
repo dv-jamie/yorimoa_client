@@ -3,7 +3,7 @@ import axios from "axios";
 import { BottomsheetType } from "type";
 import { CloseOutline } from "assets/icons";
 import RefrigeratorFilteringWrap from "./RefrigeratorFilteringWrap";
-import styles from "./AddIngredientBottomsheet.module.css";
+import styles from "./AddIngredientBottomSheet.module.css";
 
 function EditIngredientBottomsheet({
     bottomsheetType,

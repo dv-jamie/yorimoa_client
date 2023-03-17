@@ -4,7 +4,7 @@ import axios from "axios";
 import Header from "../components/templetes/Header";
 import Nav from "components/templetes/Nav";
 import SelectMenuBottomsheet from "components/molecules/SelectMenuBottomsheet";
-import AddIngredientBottomsheet from "components/molecules/AddIngredientBottomsheet";
+import AddIngredientBottomsheet from "../components/molecules/AddIngredientBottomSheet";
 import EditIngredientBottomsheet from "components/molecules/EditIngredientBottomsheet";
 import styles from "./Layout.module.css";
 
