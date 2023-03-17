@@ -30,10 +30,11 @@ function Layout({
     const [keyword, setKeyword] = useState("")
     const [page, setPage] = useState(0)
 
-    // 카테고리
     const [refrigeratorCategories, setRefrigeratorCategories] = useState([])
     const [clickedRefrigerator, setClickedRefrigerator] = useState()
     const [selectedCategory, setSelectedCategory] = useState(null)
+
+    const [refrigerators, setRefrigerators] = useState([])
 
     const getCategories = async () => {
         const { data: categories } = await axios.get(`${process.env.REACT_APP_API_URL}/categories`)
@@ -42,13 +43,6 @@ function Layout({
         })
         setRefrigeratorCategories(categoriesByRefrigerator)
     }
-
-    useEffect(() => {
-        getCategories()
-    }, [])
-
-    // 냉장고
-    const [refrigerators, setRefrigerators] = useState([])
 
     const getRefrigerators = async () => {
         const { data: getRefrigerators } = await axios.get(`${process.env.REACT_APP_API_URL}/refrigerators`, {
@@ -65,7 +59,11 @@ function Layout({
     }
 
     useEffect(() => {
-        pathname === '/refrigerator' && getRefrigerators()
+        getCategories()
+    }, [])
+
+    useEffect(() => {
+        pathname.slice(0, 13) === '/refrigerator' && getRefrigerators()
     }, [])
 
     // 모달/바텀시트 관련

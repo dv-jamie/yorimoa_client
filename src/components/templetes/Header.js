@@ -47,7 +47,7 @@ function Header({
             );
 
         // 뒤로가기 + 완료 버튼 있는 헤더
-        case "/refrigerator/edit":
+        case "/diary/edit":
             return (
                 <div className={`${styles.container} ${styles.back_container}`}>
                     <button
@@ -59,6 +59,18 @@ function Header({
                             height={24}
                         />
                     </button>
+                    <button
+                        className={`${styles.button} ${styles.complete_button}`}
+                        onClick={() => clickCompleteButton("/refrigerator")}
+                    >
+                        완료
+                    </button>
+                </div>
+            );
+        
+        case "/refrigerator/edit":
+            return (
+                <div className={`${styles.container}`}>
                     <button
                         className={`${styles.button} ${styles.complete_button}`}
                         onClick={() => clickCompleteButton("/refrigerator")}
