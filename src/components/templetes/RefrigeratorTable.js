@@ -23,13 +23,15 @@ function RefrigetraotrTable({
     const clickIngredientName = (id, name) => {
         if(pathname === "/refrigerator") {
             window.open(`${NAVER_SERACH_URL}${name}+레시피`, "_blank")
-        } else {
+        } else if(pathname === "/refrigerator/edit") {
             const clickedRefrigerator = refrigerators.find((refrigerator) => {
                 return refrigerator.id === id
             })
             setClickedRefrigerator(clickedRefrigerator)
             setBottomsheetType(BottomsheetType.EDIT_INGREDIENT)
             setIsBottomsheetShow(true)
+        } else {
+            return
         }
     }
 

@@ -1,47 +1,47 @@
 import { useEffect, useState } from "react";
 import { useOutletContext } from "react-router-dom";
+import axios from "axios";
 import RefrigetraotrTable from "components/templetes/RefrigeratorTable";
 import Banner from "components/templetes/Banner";
 import SearchBox from "components/molecules/SearchBox";
 import RefrigeratorFilteringWrap from "components/molecules/RefrigeratorFilteringWrap";
 import styles from "../components/templetes/RefrigeratorHeader.module.css";
 
-import dummy from "../data.json";
-
 function RefrigeratorEdit() {
-    // 더미데이터
-    const refrigeratorsDummy = dummy.refrigerators
+    const size = 10
 
     const {
         refrigeratorCategoriesContext,
+        selectedCategoryContext,
         bottomsheetTypeContext,
         isBottomsheetShowContext
     } = useOutletContext()
     const [bottomsheetType, setBottomsheetType] = bottomsheetTypeContext
     const [isBottomsheetShow, setIsBottomsheetShow] = isBottomsheetShowContext
     const [refrigeratorCategories] = refrigeratorCategoriesContext
-    const [refrigerators, setRefrigerators] = useState(refrigeratorsDummy)
+    const [selectedCategory, setSelectedCategory] = selectedCategoryContext
+
+    const [refrigerators, setRefrigerators] = useState([])
     const [keyword, setKeyword] = useState("")
-    // const [page, setPage] = useState(0)
+    const [page, setPage] = useState(0)
 
-    // const getRefrigerators = async () => {
-    //     // if(selectedThemes.length === 0) return
+    const getRefrigerators = async () => {
+        const { data: getRefrigerators } = await axios.get(`${process.env.REACT_APP_API_URL}/refrigerators`, {
+            params: {
+                categoryId: selectedCategory,
+                keyword,
+                size,
+                page
+            }
+        })
 
-    //     const response = await axios.get(`${process.env.REACT_APP_API_URL}/refrigerators`, {
-    //         params: {
-    //             themeIds: JSON.stringify(selectedThemes),
-    //             onlyRecipesLinked,
-    //             size,
-    //             page
-    //         }
-    //     })
-    //     const refrigerators = response.data.data
-    //     setRefrigerators(diaries)
-    // }
+        const refrigerators = getRefrigerators.data.list
+        setRefrigerators(refrigerators)
+    }
     
-    // useEffect(() => {
-    //     getRefrigerators()
-    // }, [selectedThemes])
+    useEffect(() => {
+        getRefrigerators()
+    }, [selectedCategory])
 
     return (
         <div>
@@ -53,10 +53,13 @@ function RefrigeratorEdit() {
             <div className={styles.category_wrap}>
                 <RefrigeratorFilteringWrap
                     categories={refrigeratorCategories}
+                    selectedCategory={selectedCategory}
+                    setSelectedCategory={setSelectedCategory}
                 />
             </div>
             <RefrigetraotrTable
                 categories={refrigeratorCategories}
+                getRefrigerators={getRefrigerators}
                 refrigerators={refrigerators}
                 setRefrigerators={setRefrigerators}
                 setBottomsheetType={setBottomsheetType}

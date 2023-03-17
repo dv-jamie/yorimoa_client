@@ -1,23 +1,59 @@
-import { CloseOutline } from "assets/icons";
+import { useState } from "react";
+import axios from "axios";
 import { BottomsheetType } from "type";
-import styles from "./AddIngredientBottomsheet.module.css";
+import { CloseOutline } from "assets/icons";
 import RefrigeratorFilteringWrap from "./RefrigeratorFilteringWrap";
+import styles from "./AddIngredientBottomsheet.module.css";
 
 function EditIngredientBottomsheet({
     clickedRefrigerator,
     bottomsheetType,
     isBottomsheetShow,
     setIsBottomsheetShow,
-    refrigeratorCategories
+    refrigeratorCategories,
+    selectedCategory,
+    setSelectedCategory,
 }) {
-    console.log(clickedRefrigerator.name)
+    const size = 10
 
-    const clickDeleteButton = () => {
-        setIsBottomsheetShow(false)
+    const [nameValue, setNameValue] = useState(clickedRefrigerator.name)
+    const [boughtAtValue, setBoughtAtValue] = useState(clickedRefrigerator.boughtAt.slice(0, 10))
+
+    const [refrigerators, setRefrigerators] = useState([])
+    const [keyword, setKeyword] = useState("")
+    const [page, setPage] = useState(0)
+
+    const getRefrigerators = async () => {
+        const { data: getRefrigerators } = await axios.get(`${process.env.REACT_APP_API_URL}/refrigerators`, {
+            params: {
+                categoryId: selectedCategory,
+                keyword,
+                size,
+                page
+            }
+        })
+
+        const refrigerators = getRefrigerators.data.list
+        setRefrigerators(refrigerators)
     }
 
-    const clickEditButton = () => {
+    const clickDeleteButton = async () => {
+        await axios.delete(`${process.env.REACT_APP_API_URL}/refrigerators/${clickedRefrigerator.id}`)
         setIsBottomsheetShow(false)
+        getRefrigerators()
+    }
+
+    const clickEditButton = async () => {
+        const updateRefrigeratorDto = {
+            name: nameValue,
+            boughtAt: boughtAtValue,
+            categoryId: selectedCategory
+        }
+        await axios.patch(`${process.env.REACT_APP_API_URL}/refrigerators/${clickedRefrigerator.id}`, {
+            ...updateRefrigeratorDto
+        })
+        setIsBottomsheetShow(false)
+        getRefrigerators()
     }
 
     return (
@@ -43,8 +79,8 @@ function EditIngredientBottomsheet({
                     <div className={styles.input_wrap}>
                         <input
                             placeholder="ex) 스테이크용소고기"
-                            value={clickedRefrigerator.name}
-                        onChange={() => console.log("name")}
+                            value={nameValue}
+                            onChange={(e) => setNameValue(e.target.value)}
                         />
                     </div>
                 </li>
@@ -53,6 +89,8 @@ function EditIngredientBottomsheet({
                     <RefrigeratorFilteringWrap
                         className={styles.category_wrap}
                         categories={refrigeratorCategories}
+                        selectedCategory={selectedCategory}
+                        setSelectedCategory={setSelectedCategory}
                     />
                 </li>
                 <li className={styles.list_item}>
@@ -60,9 +98,8 @@ function EditIngredientBottomsheet({
                     <div className={styles.input_wrap}>
                     <input
                         type="date"
-                        value={"2023-01-01"}
-                        // value={clickedRefrigerator.boughtAt}
-                        onChange={() => console.log("date")}
+                        value={boughtAtValue}
+                        onChange={(e) => setBoughtAtValue(e.target.value)}
                     />
                     </div>
                 </li>

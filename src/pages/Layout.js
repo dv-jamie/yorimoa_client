@@ -129,6 +129,8 @@ function Layout({
                     setIsModalShow={setIsModalShow}
                     isModalShow={isModalShow}
                     refrigeratorCategories={refrigeratorCategories}
+                    selectedCategory={selectedCategory}
+                    setSelectedCategory={setSelectedCategory}
                 />
             }
         </div>
