@@ -64,7 +64,7 @@ function App() {
             }></Route>
             <Route path="/refrigerator/edit" element={<RefrigeratorEdit />}></Route>
             
-            <Route path="*" element={<NotFound />}></Route>
+            <Route path="*" element={<Navigate to="/" />}></Route>
           </Route>
         </Routes>
       </BrowserRouter>
