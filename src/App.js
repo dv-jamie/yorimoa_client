@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import axios from "axios";
-import NotFound from './pages/NotFound';
 import Layout from './pages/Layout';
 import Refrigerator from "pages/Refrigerator";
 import ComingSoon from "pages/ComingSoon";
