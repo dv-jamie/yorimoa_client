@@ -72,10 +72,10 @@ function AddIngredientBottomsheet({
             {/* 리스트 */}
             <ul>
                 <li className={styles.list_item}>
-                    <label>상품명</label>
+                    <label>재료명</label>
                     <div className={styles.input_wrap}>
                         <input
-                            placeholder="ex) 스테이크용소고기"
+                            placeholder="ex) 스테이크용소고기 (최대 18자)"
                             ref={nameRef}
                             onChange={changeInputValue}
                         />

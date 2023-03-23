@@ -1,8 +1,8 @@
 import { useLocation, useOutletContext } from "react-router-dom";
+import axios from "axios";
 import { BottomsheetType, ColorType } from "type";
 import { BagFill, SpoonFill } from "assets/icons";
 import styles from "./RefrigeratorTable.module.css";
-import axios from "axios";
 
 function RefrigetraotrTable({
     setBottomsheetType,

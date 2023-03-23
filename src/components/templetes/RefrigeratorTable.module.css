@@ -59,10 +59,10 @@
 
 /* column */
 .column:first-of-type {
-    width: 70%;
+    width: 85%;
 }
 .column:last-of-type {
-    width: 30%;
+    width: 15%;
     text-align: right;
 }
 
