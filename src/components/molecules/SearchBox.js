@@ -3,7 +3,10 @@ import { SearchOutline } from "../../assets/icons"
 import { ColorType } from "type";
 import styles from "./SearchBox.module.css";
 
-function SearchBox({ type, setKeyword }) {
+function SearchBox({
+    type,
+    setKeyword
+}) {
     let placeholder = ""
     switch (type) {
         case "diary":
@@ -17,10 +20,10 @@ function SearchBox({ type, setKeyword }) {
             break
     }
 
-    const [InputText, setInputText] = useState("")
+    const [inputText, setInputText] = useState("")
 
     const clickSearchButton = () => {
-        setKeyword(InputText)
+        setKeyword(inputText)
     }
 
     return (

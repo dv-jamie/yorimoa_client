@@ -29,8 +29,12 @@ function RefrigeratorEdit() {
     const [page, setPage] = pageContext
     
     useEffect(() => {
+        setKeyword("")
+    }, [])
+
+    useEffect(() => {
         getRefrigerators()
-    }, [selectedCategory, setKeyword])
+    }, [keyword, selectedCategory, setKeyword])
 
     return (
         <div>

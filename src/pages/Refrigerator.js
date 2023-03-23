@@ -27,7 +27,7 @@ function Refrigerator() {
 
     useEffect(() => {
         getRefrigerators()
-    }, [setKeyword, selectedCategory, isTwoDepthBottomsheetShow])
+    }, [keyword, selectedCategory, isTwoDepthBottomsheetShow])
 
     return (
         <div>
