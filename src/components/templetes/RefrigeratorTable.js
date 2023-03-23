@@ -42,7 +42,7 @@ function RefrigetraotrTable({
     }
 
     return (
-        <div className={styles.container}>
+        refrigerators && <div className={styles.container}>
             {refrigerators.length === 0
                 ? <p className={styles.no_data}>아직 추가된 재료가 없습니다.</p>
                 : <>

@@ -30,7 +30,7 @@ function RefrigeratorEdit() {
     
     useEffect(() => {
         getRefrigerators()
-    }, [selectedCategory])
+    }, [selectedCategory, setKeyword])
 
     return (
         <div>
@@ -38,6 +38,7 @@ function RefrigeratorEdit() {
             <SearchBox
                 type="refrigerator"
                 setKeyword={setKeyword}
+                getRefrigerators={getRefrigerators}
             />
             <div className={styles.category_wrap}>
                 <RefrigeratorFilteringWrap
