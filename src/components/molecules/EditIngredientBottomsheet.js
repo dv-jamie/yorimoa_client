@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import { BottomsheetType } from "type";
 import { CloseOutline } from "assets/icons";
@@ -16,8 +16,17 @@ function EditIngredientBottomsheet({
     clickedRefrigerator,
     getRefrigerators
 }) {
+    const [isInputFilled, setIsInputFilled] = useState(false) 
     const [nameValue, setNameValue] = useState(clickedRefrigerator.name)
     const [boughtAtValue, setBoughtAtValue] = useState(clickedRefrigerator.boughtAt.slice(0, 10))
+
+    const changeInputValue = () => {
+        if(nameValue.length === 0 || !selectedCategory || boughtAtValue.length === 0) {
+            setIsInputFilled(false)
+        } else {
+            setIsInputFilled(true)
+        }
+    }
 
     const clickDeleteButton = async () => {
         await axios.delete(`${process.env.REACT_APP_API_URL}/refrigerators/${clickedRefrigerator.id}`)
@@ -26,6 +35,8 @@ function EditIngredientBottomsheet({
     }
 
     const clickEditButton = async () => {
+        if(nameValue.length === 0 || !selectedCategory || boughtAtValue.length === 0) return
+
         const updateRefrigeratorDto = {
             name: nameValue,
             boughtAt: boughtAtValue,
@@ -37,6 +48,10 @@ function EditIngredientBottomsheet({
         setIsBottomsheetShow(false)
         getRefrigerators()
     }
+
+    useEffect(() => {
+        changeInputValue()
+    }, [nameValue, boughtAtValue, selectedCategory])
 
     return (
         <div className={
@@ -96,7 +111,10 @@ function EditIngredientBottomsheet({
                     삭제하기
                 </button>
                 <button
-                    className={`${styles.button} ${styles.edit_button}`}
+                    className={isInputFilled
+                        ? `${styles.button} ${styles.edit_button}`
+                        : `${styles.button} ${styles.edit_button} ${styles.disabled_button}`
+                    }
                     onClick={clickEditButton}
                 >
                     수정하기

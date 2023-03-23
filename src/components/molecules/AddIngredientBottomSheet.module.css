@@ -67,3 +67,7 @@
 .add_button {
     width: 100%;
 }
+.disabled_button {
+    background: var(--silver);
+    cursor: default;
+}

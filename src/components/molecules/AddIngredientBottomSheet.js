@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import { CloseOutline } from "assets/icons";
 import { BottomsheetType } from "type";
@@ -14,15 +14,31 @@ function AddIngredientBottomsheet({
     selectedCategory,
     setSelectedCategory
 }) {
+    const [isInputFilled, setIsInputFilled] = useState(false) 
+
     const nameRef = useRef()
     const dateRef = useRef()
 
+    const changeInputValue = () => {
+        const name = nameRef.current.value
+        const date = dateRef.current.value
+
+        if(name.length === 0 || !selectedCategory || date.length === 0) {
+            setIsInputFilled(false)
+        } else {
+            setIsInputFilled(true)
+        }
+    }
+
     const clickAddButton = async () => {
-        // *** 입력 안 했을 때 로직 추가 필요
+        const name = nameRef.current.value
+        const date = dateRef.current.value
+
+        if(name.length === 0 || !selectedCategory || date.length === 0) return
 
         const createRefrigeratorDto = {
-            name: nameRef.current.value,
-            boughtAt: new Date(dateRef.current.value),
+            name,
+            boughtAt: new Date(date),
             categoryId: selectedCategory
         }
         await axios.post(`${process.env.REACT_APP_API_URL}/refrigerators`, {
@@ -32,6 +48,10 @@ function AddIngredientBottomsheet({
         dateRef.current.value = ""
         setIsTwoDepthBottomsheetShow(false)
     }
+
+    useEffect(() => {
+        changeInputValue()
+    }, [selectedCategory])
 
     return (
         <div className={
@@ -57,6 +77,7 @@ function AddIngredientBottomsheet({
                         <input
                             placeholder="ex) 스테이크용소고기"
                             ref={nameRef}
+                            onChange={changeInputValue}
                         />
                     </div>
                 </li>
@@ -75,6 +96,7 @@ function AddIngredientBottomsheet({
                     <input
                         type="date"
                         ref={dateRef}
+                        onChange={changeInputValue}
                     />
                     </div>
                 </li>
@@ -83,7 +105,10 @@ function AddIngredientBottomsheet({
             {/* 하단 버튼 영역 */}
             <div className={styles.button_wrap}>
                 <button
-                    className={`${styles.button} ${styles.add_button}`}
+                    className={isInputFilled
+                        ? `${styles.button} ${styles.add_button}`
+                        : `${styles.button} ${styles.add_button} ${styles.disabled_button}`
+                    }
                     onClick={clickAddButton}
                 >
                     추가하기
