@@ -77,6 +77,7 @@ function EditIngredientBottomsheet({
                         <input
                             placeholder="ex) 스테이크용소고기 (최대 18자)"
                             value={nameValue}
+                            maxlength="18"
                             onChange={(e) => setNameValue(e.target.value)}
                         />
                     </div>
