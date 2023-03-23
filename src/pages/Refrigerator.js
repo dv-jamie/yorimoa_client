@@ -4,11 +4,8 @@ import RefrigeratorHeader from "components/templetes/RefrigeratorHeader";
 import RefrigetraotrTable from "components/templetes/RefrigeratorTable";
 
 function Refrigerator() {
-    const size = 10
-
     const {
         keywordContext,
-        pageContext,
 
         isTwoDepthBottomsheetShowContext,
         
@@ -18,7 +15,6 @@ function Refrigerator() {
         getRefrigeratorsContext
     } = useOutletContext()
     const [keyword, setKeyword] = keywordContext
-    const [page, setPage] = pageContext
     const [isTwoDepthBottomsheetShow] = isTwoDepthBottomsheetShowContext
     const [refrigeratorCategories] = refrigeratorCategoriesContext
     const [refrigerators, setRefrigerators] = refrigeratorContext

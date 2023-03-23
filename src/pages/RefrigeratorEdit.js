@@ -7,8 +7,6 @@ import RefrigeratorFilteringWrap from "components/molecules/RefrigeratorFilterin
 import styles from "../components/templetes/RefrigeratorHeader.module.css";
 
 function RefrigeratorEdit() {
-    const size = 10
-
     const {
         bottomsheetTypeContext,
         isBottomsheetShowContext,

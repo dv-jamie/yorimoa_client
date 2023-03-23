@@ -26,7 +26,6 @@ function Layout({
     let footerStyle = styles.footer_area
     let pageTitle
 
-    const size = 10
     const [keyword, setKeyword] = useState("")
     const [page, setPage] = useState(0)
 
@@ -49,8 +48,6 @@ function Layout({
             params: {
                 categoryId: selectedCategory,
                 keyword,
-                size,
-                page
             }
         })
 
