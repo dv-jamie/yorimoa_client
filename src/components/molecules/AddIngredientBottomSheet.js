@@ -12,53 +12,56 @@ function AddIngredientBottomsheet({
 
     refrigeratorCategories,
     selectedCategory,
-    setSelectedCategory
+    setSelectedCategory,
 }) {
-    const [isInputFilled, setIsInputFilled] = useState(false) 
+    const [isInputFilled, setIsInputFilled] = useState(false);
 
-    const nameRef = useRef()
-    const dateRef = useRef()
+    const nameRef = useRef();
+    const dateRef = useRef();
 
     const changeInputValue = () => {
-        const name = nameRef.current.value
-        const date = dateRef.current.value
+        const name = nameRef.current.value;
+        const date = dateRef.current.value;
 
-        if(name.length === 0 || !selectedCategory || date.length === 0) {
-            setIsInputFilled(false)
+        if (name.length === 0 || !selectedCategory || date.length === 0) {
+            setIsInputFilled(false);
         } else {
-            setIsInputFilled(true)
+            setIsInputFilled(true);
         }
-    }
+    };
 
     const clickAddButton = async () => {
-        const name = nameRef.current.value
-        const date = dateRef.current.value
+        const name = nameRef.current.value;
+        const date = dateRef.current.value;
 
-        if(name.length === 0 || !selectedCategory || date.length === 0) return
+        if (name.length === 0 || !selectedCategory || date.length === 0) return;
 
         const createRefrigeratorDto = {
             name,
             boughtAt: new Date(date),
-            categoryId: selectedCategory
-        }
+            categoryId: selectedCategory,
+        };
         await axios.post(`${process.env.REACT_APP_API_URL}/refrigerators`, {
-            ...createRefrigeratorDto
-        })
-        nameRef.current.value = ""
-        dateRef.current.value = ""
-        setIsTwoDepthBottomsheetShow(false)
-    }
+            ...createRefrigeratorDto,
+        });
+        nameRef.current.value = "";
+        dateRef.current.value = "";
+        setIsTwoDepthBottomsheetShow(false);
+    };
 
     useEffect(() => {
-        changeInputValue()
-    }, [selectedCategory])
+        changeInputValue();
+    }, [selectedCategory]);
 
     return (
-        <div className={
-            isTwoDepthBottomsheetShow && bottomsheetType === BottomsheetType.ADD_INGREDIENT
-                ? `bottomsheet ${styles.add_bottomsheet} show`
-                : `bottomsheet ${styles.add_bottomsheet} hide`
-        }>
+        <div
+            className={
+                isTwoDepthBottomsheetShow &&
+                bottomsheetType === BottomsheetType.ADD_INGREDIENT
+                    ? `bottomsheet ${styles.add_bottomsheet} show`
+                    : `bottomsheet ${styles.add_bottomsheet} hide`
+            }
+        >
             {/* 닫기 버튼 */}
             <div className={styles.close_button_wrap}>
                 <button
@@ -76,7 +79,7 @@ function AddIngredientBottomsheet({
                     <div className={styles.input_wrap}>
                         <input
                             placeholder="ex) 스테이크용소고기 (최대 18자)"
-                            maxlength="18"
+                            maxLength="18"
                             ref={nameRef}
                             onChange={changeInputValue}
                         />
@@ -94,11 +97,11 @@ function AddIngredientBottomsheet({
                 <li className={styles.list_item}>
                     <label>구매일</label>
                     <div className={styles.input_wrap}>
-                    <input
-                        type="date"
-                        ref={dateRef}
-                        onChange={changeInputValue}
-                    />
+                        <input
+                            type="date"
+                            ref={dateRef}
+                            onChange={changeInputValue}
+                        />
                     </div>
                 </li>
             </ul>
@@ -106,9 +109,10 @@ function AddIngredientBottomsheet({
             {/* 하단 버튼 영역 */}
             <div className={styles.button_wrap}>
                 <button
-                    className={isInputFilled
-                        ? `${styles.button} ${styles.add_button}`
-                        : `${styles.button} ${styles.add_button} ${styles.disabled_button}`
+                    className={
+                        isInputFilled
+                            ? `${styles.button} ${styles.add_button}`
+                            : `${styles.button} ${styles.add_button} ${styles.disabled_button}`
                     }
                     onClick={clickAddButton}
                 >
