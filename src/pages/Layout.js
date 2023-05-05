@@ -18,87 +18,100 @@ function Layout({
     isBottomsheetShow,
     setIsBottomsheetShow,
     isTwoDepthBottomsheetShow,
-    setIsTwoDepthBottomsheetShow
+    setIsTwoDepthBottomsheetShow,
 }) {
-    const location = useLocation()
-    const pathname = location.pathname
-    let headerStyle = styles.header_area
-    let footerStyle = styles.footer_area
-    let pageTitle
+    const location = useLocation();
+    const pathname = location.pathname;
+    let headerStyle = styles.header_area;
+    let footerStyle = styles.footer_area;
+    let pageTitle;
 
-    const [keyword, setKeyword] = useState("")
-    const [page, setPage] = useState(0)
+    const [keyword, setKeyword] = useState("");
+    const [page, setPage] = useState(0);
 
-    const [refrigeratorCategories, setRefrigeratorCategories] = useState([])
-    const [clickedRefrigerator, setClickedRefrigerator] = useState()
-    const [selectedCategory, setSelectedCategory] = useState(null)
+    const [refrigeratorCategories, setRefrigeratorCategories] = useState([]);
+    const [clickedRefrigerator, setClickedRefrigerator] = useState();
+    const [selectedCategory, setSelectedCategory] = useState(null);
 
-    const [refrigerators, setRefrigerators] = useState([])
+    const [refrigerators, setRefrigerators] = useState([]);
 
     const getCategories = async () => {
-        const { data: categories } = await axios.get(`${process.env.REACT_APP_API_URL}/categories`)
-        const categoriesByRefrigerator = categories.filter(category => {
-            return category.type === "refrigerator"
-        })
-        setRefrigeratorCategories(categoriesByRefrigerator)
-    }
+        const { data: categories } = await axios.get(
+            `${process.env.REACT_APP_API_URL}/categories`
+        );
+        const categoriesByRefrigerator = categories.filter((category) => {
+            return category.type === "refrigerator";
+        });
+        setRefrigeratorCategories(categoriesByRefrigerator);
+    };
 
     const getRefrigerators = async () => {
-        const { data: getRefrigerators } = await axios.get(`${process.env.REACT_APP_API_URL}/refrigerators`, {
-            params: {
-                categoryId: selectedCategory,
-                keyword,
+        const { data: getRefrigerators } = await axios.get(
+            `${process.env.REACT_APP_API_URL}/refrigerators`,
+            {
+                params: {
+                    categoryId: selectedCategory,
+                    keyword,
+                },
             }
-        })
+        );
 
-        const refrigerators = getRefrigerators.data.list
-        setRefrigerators(refrigerators)
-    }
-
-    useEffect(() => {
-        getCategories()
-    }, [])
+        const refrigerators = getRefrigerators.data.list;
+        setRefrigerators(refrigerators);
+    };
 
     useEffect(() => {
-        pathname.slice(0, 13) === '/refrigerator' && getRefrigerators()
-    }, [])
+        if (isLogin) {
+            getCategories();
+        }
+    }, []);
+
+    useEffect(() => {
+        pathname.slice(0, 13) === "/refrigerator" && getRefrigerators();
+    }, []);
 
     // 모달/바텀시트 관련
     useEffect(() => {
-        document.body.classList.toggle("unscrollable", isModalShow)
-    }, [isModalShow])
-    
+        document.body.classList.toggle("unscrollable", isModalShow);
+    }, [isModalShow]);
+
     useEffect(() => {
-        document.body.classList.toggle("unscrollable", isBottomsheetShow)
-    }, [isBottomsheetShow])
-    
+        document.body.classList.toggle("unscrollable", isBottomsheetShow);
+    }, [isBottomsheetShow]);
+
     useEffect(() => {
-        document.body.classList.toggle("unscrollable", isTwoDepthBottomsheetShow)
-    }, [isTwoDepthBottomsheetShow])
+        document.body.classList.toggle(
+            "unscrollable",
+            isTwoDepthBottomsheetShow
+        );
+    }, [isTwoDepthBottomsheetShow]);
 
     switch (pathname) {
         case "/setting":
-            pageTitle = "설정"
-            footerStyle = `${styles.footer_area} hide`
-            break
+            pageTitle = "설정";
+            footerStyle = `${styles.footer_area} hide`;
+            break;
         case "/quit":
         case "/refrigerator/edit":
-            pageTitle = "탈퇴하기"
-            footerStyle = `${styles.footer_area} hide`
-            break
+            pageTitle = "탈퇴하기";
+            footerStyle = `${styles.footer_area} hide`;
+            break;
         case "/login":
         case "/diary":
         case "/recipe":
-            headerStyle = `${styles.header_area} hide`
-            footerStyle = `${styles.footer_area} hide`
-            break
+            headerStyle = `${styles.header_area} hide`;
+            footerStyle = `${styles.footer_area} hide`;
+            break;
     }
 
     return (
-        <div className={isModalShow || isBottomsheetShow || isTwoDepthBottomsheetShow
-            ? `${styles.container} overlap`
-            : `${styles.container}`
-        }>
+        <div
+            className={
+                isModalShow || isBottomsheetShow || isTwoDepthBottomsheetShow
+                    ? `${styles.container} overlap`
+                    : `${styles.container}`
+            }
+        >
             <header className={headerStyle}>
                 <Header
                     pageTitle={pageTitle}
@@ -110,21 +123,35 @@ function Layout({
                 <Outlet
                     context={{
                         isLoginContext: [isLogin, setIsLogin],
-                        
+
                         keywordContext: [keyword, setKeyword],
                         pageContext: [page, setPage],
 
                         isModalShowContext: [isModalShow, setIsModalShow],
-                        bottomsheetTypeContext: [bottomsheetType, setBottomsheetType],
-                        isBottomsheetShowContext: [isBottomsheetShow, setIsBottomsheetShow],
-                        isTwoDepthBottomsheetShowContext: [isTwoDepthBottomsheetShow],
-                        
-                        selectedCategoryContext: [selectedCategory, setSelectedCategory],
+                        bottomsheetTypeContext: [
+                            bottomsheetType,
+                            setBottomsheetType,
+                        ],
+                        isBottomsheetShowContext: [
+                            isBottomsheetShow,
+                            setIsBottomsheetShow,
+                        ],
+                        isTwoDepthBottomsheetShowContext: [
+                            isTwoDepthBottomsheetShow,
+                        ],
+
+                        selectedCategoryContext: [
+                            selectedCategory,
+                            setSelectedCategory,
+                        ],
 
                         refrigeratorCategoriesContext: [refrigeratorCategories],
                         refrigeratorContext: [refrigerators, setRefrigerators],
-                        clickedRefrigeratorContext: [clickedRefrigerator, setClickedRefrigerator],
-                        getRefrigeratorsContext: [getRefrigerators]
+                        clickedRefrigeratorContext: [
+                            clickedRefrigerator,
+                            setClickedRefrigerator,
+                        ],
+                        getRefrigeratorsContext: [getRefrigerators],
                     }}
                     className={styles.main_area}
                 />
@@ -145,25 +172,22 @@ function Layout({
                 bottomsheetType={bottomsheetType}
                 isTwoDepthBottomsheetShow={isTwoDepthBottomsheetShow}
                 setIsTwoDepthBottomsheetShow={setIsTwoDepthBottomsheetShow}
-                
                 refrigeratorCategories={refrigeratorCategories}
                 selectedCategory={selectedCategory}
                 setSelectedCategory={setSelectedCategory}
             />
-            {
-                clickedRefrigerator &&
+            {clickedRefrigerator && (
                 <EditIngredientBottomsheet
                     bottomsheetType={bottomsheetType}
                     isBottomsheetShow={isBottomsheetShow}
                     setIsBottomsheetShow={setIsBottomsheetShow}
-                    
                     refrigeratorCategories={refrigeratorCategories}
                     selectedCategory={selectedCategory}
                     setSelectedCategory={setSelectedCategory}
                     clickedRefrigerator={clickedRefrigerator}
                     getRefrigerators={getRefrigerators}
                 />
-            }
+            )}
         </div>
     );
 }
