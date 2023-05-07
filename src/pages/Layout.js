@@ -64,7 +64,7 @@ function Layout({
         if (isLogin) {
             getCategories();
         }
-    }, []);
+    }, [isLogin]);
 
     useEffect(() => {
         pathname.slice(0, 13) === "/refrigerator" && getRefrigerators();
